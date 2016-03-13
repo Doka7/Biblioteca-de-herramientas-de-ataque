@@ -1,0 +1,351 @@
+ATAQUES KALI
+
+	- WIFI
+		- Aircrack-ng: Uno de los ataques más populares para WEP/WPA/WPA2 cracking. Este ataque es capaz de capturar paquetes y handshakes, desauenticar clientes que ya estén conectados y generar tráfico y herramientas para realizar ataques de fuerza bruta o de diccionario. Este ataque contiene las siguientes herramientas: 
+			- Aircrack-ng para obtener contraseñas de puntos WiFi.
+			- Aireplay-ng para generar tráfico y desautenticar clientes.
+			- Airodump-ng para capturar paquetes.
+			- Airbase-ng para configurar puntos de acceso falsos.
+		Este ataque está disponible para Linux y viene uncluído en la distribución estándar de Kali Linux. Si deseas usar este ataque debes asegurarte de que tu tarjeta WiFi soporta injección de paquetes.
+		Palabras clave: Wifi, WPA, WEP, WPA2, ataque de diccionario, ataque de fuerza bruta.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Reaver: Este ataque se centra especialmente en vulnerabilidades del protocolo WPS. Nos permite realizar ataques de fuerza bruta contra WiFi Protected Setup (WPS) que permiten obtener la passphrase de WPA/WPA2. Dado que gran cantidad de ISPs y distribuidoras router utilizan WPS por defecto, hay gran cantidad de routers vulnerables a este ataque.
+		Para utilizar este ataque es necesario que tengamos una señal lo suficientemente potente del router que pretendemos vulnerar. De media, con este ataque podremos obtener la passphrase de los router vulnerables en 4-10 horas.
+		Palabras clave: Wifi, WPA, WPS, ataque de fuerza bruta.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- PixieWPS: Es una herramienta relativamente nueva que también se centra en explotar vulnerabilidades WPS. Este ataque está escrito en C y se utiliza para obtener claves WPS mediante fuerza bruta aprovechando la mala o inexistente entropía de puntos de acceso vulnerables. PixieWPS utiliza una versión modificada de Reaver o Wifite para funcionar.
+		Palabras clave: Wifi, WPS, ataque de fuerza bruta.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Wifite: Se trata de una herramienta de ataque automatizada que permite atacar multiples redes inalámbricas WEP/WPA/WPA2/WPS. Tan solo necesita una serie de parámetros iniciales para funcionar y después la herramienta se encarga de realizar todo el trabajo. Permite capturar WPA handshakes, desautenticar clientes, spoofear tu MAC y almacenar las contraseñas obtenidas.
+		Palabras clave: Wifi, WEP, WPA, WPA2, WPS, ataque de fuerza bruta.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Wireshark: Es una de las mejores herramientas para analizar tráfico. Puede usarse para capturar paquetes, investigar acerca de los protocolos que se usan en distintas comunicaciones o buscar/filtrar cualquier paquete. Además es una herramienta multiplataforma.
+		Palabras clave: Wifi, capturar paquetes, analisis.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- oclHashcat: De momento no se trata porque no viene en Kali.
+
+		- Fern Wifi Cracker: Escrita en Python, dispone de una interfaz grafica de usuario. Permite crackear y recuperar claves WEP/WPA/WPS y además contiene herramientas para realizar ataques MiTM. 
+		Palabras clave: Wifi, MiTM, WEP, WPA, WPS.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Wash: Esta herramienta nos permite conocer si un punto de acceso tiene o no activado WPS. También permite conocer si un determinado punto de acceso activó WPS tras una serie de ataques Reaver. Esta herramienta viene incluida en el paquete Reaver.
+		Palabras clave: WPS, Reaver.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Crunch: Es una herramienta sencilla que nos permite configurar una lista de palabras que se usarán para realizar ataques de diccionario. Además permite usarse en conjunto con otros ataques como Aircrack-ng. 
+		Palabras clave: Ataque de diccionario, aircrack-ng.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+		- Macchanger: Nos permite spoofear nuestra MAC, lo cual nos permitirá pasar determinados filtros de MAC o esconder nuestra verdadera identidad.
+		Palabras clave: Spoffing, MAC.
+
+		Fuente: http://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/
+
+
+HERRAMIENTAS KALI
+
+	- Information gathering:
+		- dmitry: dmitry (Deepmagic Information Gathering Tool) es una herramienta creada en C que se utiliza para recopilar toda la información posible sobre un host. Permite conocer subdominios, direcciones de correo, información sobre el tiempo de actividad del sistema, escanear puertos tcp, whois lookups, entre otras cosas. 
+		Palabras clave: recopilar informacion, C, escaneo puertos.
+
+		Fuente: http://tools.kali.org/information-gathering/dmitry
+
+		- dnmap-client/dnmap-server: Es un framework que se utiliza para distribuir escaner nmap entre diferentes clientes. La herramienta lee un fichero que contiene comandos nmap, y envía estos comandos a los clientes conectados. Esta herramienta utiliza una arquitectura cliente/servidor, donde el servidor conoce lo que hay que hacer y el cliente lo ejecuta. Toda la lógica y estadística se ejecuta en el lado servidor. La salida nmap se almacena tanto en el servidor como en el cliente. Esta herramienta te puede ser de utilidad si deseas escanear un gran número de hosts y tienes varias conexiones a intenet diferentes (o trabajas en colaboración con otras personas). 
+		Palabras clave: escaner, nmap, arquitectura cliente/servidor, recoplilar informacion.
+
+		Fuente: http://tools.kali.org/information-gathering/dnmap
+
+		- ike-scan: Es una herramienta de línea de comandos que se utiliza para identificación y evaluación de sistemas IPSEC VPN. Su funcionamiento consiste en observar las respuestas de los hosts a los que se le envían paquetes IKE (fase 1: fase de autenticación y establecimiento de canal seguro). Permite decodificar y mostrar los paquetes devueltos.
+		Palabras clave: IPSEC, VPN, IKE, recopilar información.
+
+		Fuente: http://kalilinux.foroactivo.com/t41-manual-ike-scan-para-kali-linux
+
+		- maltego: Es una herramienta que nos permite obtener información como nombres de dominio, whois information, DNS, netblocks, o direcciones IP, entre otras cosas. También nos permite conocer, a partir de información como el nombre de una persona, su email, sitios web, número de teléfono, grupos sociales, organizaciones relacionadas... etc. 
+		Palabras clave: ingeniería social, recopilación información. 
+
+		Fuente: http://www.geekyshows.com/2013/07/how-to-use-maltego-in-kali-linux.html
+
+		- netdiscover: Es un active/pasive ARP scanner. Desarrollado principalmente para aquellas redes inalámbricas que no disponen de servidor DHCP, aunque también puede utilizarse en hub/switched networks. Puede detectar pasivamente hosts en línea, o buscarlos de forma activa mediante el envío de peticiones arp. También puede emplearse para inspeccionar el tráfico arp de tu red, escanear redes...
+		Palabras clave: ARP, recopilación información.
+
+		Fuente: http://nixgeneration.com/~jaime/netdiscover/
+
+		- nmap: Esta herramienta nos permite escanear de manera sencilla redes extensas. Nos permite conocer que hosts están operativos en la red escaneada, que servicios ofrece cada uno, que versión del sistema operativo tienen, qué puertos están abiertos y muchas otras cosas. 
+		Palabras clave: Escanear red, recopilacion informacion, analisis de vulnerabilidades.
+
+		Fuente: http://www.geekyshows.com/2013/07/how-to-use-nmap-in-kali-linux.html
+
+		- pOf: Es una herramienta que nos permite identificar usuarios que se estén realizando comunicaciones TCP/IP (espiando algo tan simple como puede ser un SYN) sin interferir estas comunicaciones de ninguna manera. Se caracteriza por realizar una rápida identificación del SO y software de los usuarios finales entre una comunicación TCP. 
+		Palabras clave: recopilacion informacion, TCP, IP, escaner. 
+
+		Fuente: http://tools.kali.org/information-gathering/p0f
+		
+		- recon-ng: Esta herramienta es un framework que nos permitirá realizar tareas de reconocimiento de redes, lo cual nos permite encontrar vulnerabilidades, definir objetivos y acumular experiencia. Esté escrita en Python y podría asemejarse a Metasploit Framework, aunque la curva de aprendizaje de recon-ng es menor. 
+		Palabras clave: reconocimiento de redes, recopilacion de informacion, python, metasploit framework.
+
+		Fuente: http://www.drchaos.com/recon-ng-advanced-reconnaissance-framework/
+
+		- sparta: Es una herramienta escrita en Python que simplifica la tarea de reconocimiento de redes, ayudando en las tareas de escaneo de red y fase de enumeración. Para ello, incluye herramientas como nmap para el escaneo de redes.
+		Palabras clave: reconocimiento de redes, nmap, recopilacion de informacion, python, analisis de vulnerabilidades.
+
+		Fuente: http://sparta.secforce.com/
+
+		- zenmap: Es una herramienta multiplataforma de código abierto que trata de simplificar el uso de nmap para principiantes, además de ofrecer herramientas avanzadas para los más experimentados. Permite guardar escáneres para utilizarlos posteriormente, además de almacenar los escáneres recientes para realizar comparaciones o consultarlos cuando se desee. 
+		Palabras clave: reconocimiento de redes, recopilacion informacion, multiplataforma, nmap, codigo abierto.
+
+		Fuente: http://ultimatepeter.com/how-to-use-zenmap-in-kali-linux-scan-local-network-for-victims-or-intruders-find-open-ports/
+
+	- Vulnerability Analysis:
+		- golismero: Esta herramienta multiplataforma escrita en Python, permite escanear aplicaciones web para detectar vulnerabilidades en ellas. Dispone de otras herramientas de seguridad como OpenVas, Nikto, DNS recon o robot analyzer, entre otras, que nos permiten combinar todos los resultados en un único informe.
+		Palabras clave: análisis de vulnerabilidades, python, escanear aplicaciones, OpenVas, Nikto, DNS recon, robot analyzer.
+
+		Fuente: http://www.behindthefirewalls.com/2013/09/golismero-new-hacking-tool-for.html
+
+		- lynis: Es una herramienta de auditoría de código abierto. Su principal objetivo es el de auditar y blindar los sistemas basados en Unix o Linux. Para ello, realiza escaneos del sistema buscando, por ejemplo, configuraciones defectuosas en alguno de los software instalados. 
+		Palabras clave: auditoria, codigo abierto, escanear programas, escaner de vulnerabilidades, Linux, Unix.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/lynis
+
+		- nikto: Herramienta sencilla de utilizar que nos permite escanear un sitio web en busca de vulnerabilidades que puedan ser explotadas. Hay que recalcar que si el objetivo que pretendemos escanear posee un IDS o similar, seremos descubiertos. Originalmente fue creada para auditorías de seguridad.
+		Palabras clave: escaner aplicaciones, auditoria seguridad, analisis de vulnerabilidades.
+
+		Fuente: http://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/
+
+		- nmap: Ya explicada.
+
+		- sparta: Ya explicada. 
+
+		- unix-privesc-check: Es un script que puede ser ejecutado en sistemas Unix. Su objetivo es el de buscar defectos en configuraciones que permitan a un usuario cualquiera escalar privilegios para acceder a determinados archivos. Puede ser ejecutado como usuario normal o como root.
+		Palabras clave: analisis de vulnerabilidades, defectos en configuraciones, script, Unix, escalar privilaegios.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/unix-privesc-check
+
+	- Web application analysis:
+		- burpsuite: Herramienta que permite el anásis de aplicaciones web, mediante su escaneo, tratando de encontrar y explotar sus vulnerabilidades.
+		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades.
+
+		Fuente: http://tools.kali.org/web-applications/burpsuite
+
+		- commix: Herramienta escrita en Python que nos permite el análisis de aplicaciones web con el objetivo de encontrar bugs, errores o vulnerabilidades en ellas que puedan ser explotadas.
+		Palabras clave: python, analisis de vulnerabilidades, analisis de aplicaciones web, escaner de aplicaciones.
+
+		Fuente: https://bugs.kali.org/view.php?id=2243
+
+		- httrack: Herramienta que nos permite replicar un sitio web objetivo a nuestro disco duro. Una vez replicada podremos realizar una búsqueda exhaustiva de datos que podría ser útil para realizar técnicas de ingeniería social, localizar archivos ocultos y demás. También podríamos aprovecharnos de la réplica de la página para realizar phising.
+		Palabras clave: análisis de aplicaciones web, phising, ingeniería social.
+
+		Fuente: http://null-byte.wonderhowto.com/how-to/hack-like-pro-clone-any-website-using-httrack-0152420/
+
+		- owasp-zap:  Herramienta que permite el anásis de aplicaciones web, mediante su escaneo, tratando de encontrar y explotar sus vulnerabilidades.
+		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades.
+
+		Fuente: http://tools.kali.org/web-applications/zaproxy
+
+		- paros: Proxy HTTP/HTTPS basado en Java utilizado para evaluar el nivel de seguridad de aplicaciones web. Entre sus características adicionales incluye análisis de certificados de cliente, escaneo inteligente de XSS o SQLinjection.
+		Palabras clave: análisis aplicaciones web, java, http, https, proxy, escaneo de aplicaciones, sqlinjection.
+
+		Fuente: http://tools.kali.org/web-applications/paros
+
+		- skipfish: Herramienta de reconocimiento aplicada en aplicaciones web a las que se les hace pasar una serie de pruebas para comprobar su nivel de seguridad. Se caracteriza por su elevada rapidez (está escrita en C puro) y su facilidad de uso.
+		Palabras clave: C, herramienta de reconocimiento, análisis de aplicaciones web.
+
+		Fuente: http://tools.kali.org/web-applications/skipfish
+
+		- sqlmap: Herramienta de código abierto que automatiza el proceso de detección y explotación de SQLinjection para obtener información de bases de datos.
+		Palabras clave: sqlinjection, análisis de vulnerabilidades, analisis de aplicaciones web.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/sqlmap
+
+		- w3af:  Herramienta escrita en Python que permite el anásis de aplicaciones web, mediante su escaneo, tratando de encontrar y explotar sus vulnerabilidades. Posee plugins entre los que destacan la identificación y explotación de SQLinjection, inclusión remota de archivos o XSS.
+		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades, SQLinjection, python.
+
+		Fuente: http://tools.kali.org/web-applications/w3af
+		
+		- webscarab: Herramienta que nos permite exponer nuestras aplicaciones HTTP/HTTPS para que especialistas en seguridad busquen e informen sobre posibles vulnerabilidades en ellas.
+		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades, HTTP, HTTPS.
+
+		Fuente: http://tools.kali.org/web-applications/webscarab
+
+		- wpscan: Es un escaner de vulnerabilidades de WordPress, escrito en Ruby, capaz de detectar vulnerabilidades comunes así como una lista de todos los plugins utilizados en páginas hostedas por WordPress.
+		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades, Ruby, wordpress.
+
+		Fuente: http://kali4hackers.blogspot.com.es/2013/05/wpscan-in-kali-linux-wpscan-is.html
+
+	- Database assessment:
+		- bbqsql: Es una aplicación versátil que sirve de gran ayuda a la hora de realizar Blind SQLinjection. Al estar escrita en Python se caracteriza presenta una gran repidez.
+		Palabras clave: bases de datos, sqlinjection, blind sqlinjection, python.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/bbqsql
+
+		- hexorbase: Aplicación que permite la administración de múltiples servidores de bases de datos de forma centralizada. Es capaz de realizar SQL queries y ataques de fuerza bruta contra servidores de bases de datos comunes (MySQL, SQLite, PostgreSQL...). 
+		Palabras clave: bases de datos, ataque fuerza bruta, MySQL, SQLite, PostgreSQL. 
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/hexorbase
+
+		- jsql: Aplicación ligera multiplataforma utilizada para encontrar información en bases de datos remotamente. Es de código abierto.
+		Palabras clave: aplicacion multiplataforma, codigo abierto, bases de datos, busqueda de informacion.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/jsql
+
+		- mdb-sql: Aplicación que permite realizar queries a bases de datos MDB. 
+		Palabras clave: bases de datos, MDB.
+
+		Fuente: http://linux.die.net/man/1/mdb-sql
+
+		- oscanner: Consiste en un framework de evaluación desarrollado en Java, con un funcionamiento basado en plugins. Inicialmente permite realizar enumeraciones SID, password tests, enumerar roles y privilegios de cuentas, políticas de contraseñas... entre otras cosas. Los resultados se muestran en forma de gráfica. 
+		Palabras clave: java, bases de datos, analisis de vulnerabilidades.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/oscanner
+
+		- sidguesser: Adivina los SID de bases de datos a partir de un diccionario de búsqueda predefinido. Funciona lento pero cumple con su objetivo.
+		Palabras clave: bases de datos, ataque de diccionario.
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/sidguesser
+
+		- sqldict: Es una herramienta diseñada para SQL Server que permite configurar ataques de diccionario. 
+		Palabras clave: base de datos, ataque diccionario.
+
+		Fuente: http://tools.kali.org/password-attacks/sqldict
+
+		- SQLite database browser: Herramienta de código abierto utilizada para facilitar la tarea de diseñar, editar y crear archivos compatibles con SQLite. Es utilizada por gente que desea crear bases de datos o realizar búsquedas de informacion sin tener que aprenderse comandos SQL que pueden resultar complicados.
+		Palabras clave: bases de datos, SQLite. 
+
+		Fuente: http://www.binarytides.com/view-sqlite-database-files-with-sqlitebrowser-on-ubuntu/
+
+		- sqlmap: Ya realizada.
+		- sqlninja: Herrmienta utilizada para explotar vulnerabilidades de SQLinjection en aplicaciones web que utilizen Microsoft SQL Server como back-end. Su principal objetivo es el de permitir acceso remoto en los servidores de bases de datos vulnerables. 
+		Palabras clave: sqlinjection, microsoft sql server, bases de datos. 
+
+		Fuente: http://tools.kali.org/vulnerability-analysis/sqlninja
+
+		- sqlsus: Herramienta empleada para realizar ataques de SQLinjection a través de lineas de comandos. También permite descargar archivos del servidor web objetivo o clonar bases de datos. Esta desarrollada en Perl y es muy rápida y efiente. 
+		Palabras clave: perl, bases de datos, sqlinjection. 
+		
+		- tnscmd10g
+
+	- Password attacks:
+		- cewl
+		- crunch
+		- hashcat
+		- john
+		- johnny
+		- medusa
+		- ncrack
+		- ophcrack
+		- pyrit
+		- rainbowcrack
+		- rcracki_mt
+		- wordlists
+
+	- Wireless attacks:
+		- aircrack-ng
+		- chirp
+		- cowpatty
+		- fern wifi crack
+		- ghost phisher
+		- giskismet
+		- kismet
+		- mdk3
+		- mfoc
+		- mfterm
+		- pixiewps
+		- reaver
+		- wifite
+
+	- Reverse engineering:
+		- apktool
+		- clang
+		- clang++
+		- dex2jar
+		- edb-debugger
+		- flasm 
+		- jad
+		- javasnoop
+		- NASM shell
+		- ollydbg
+		- radare2
+
+	- Exploitation tools:
+		- armitage
+		- beef xss frame???
+		- ginguma
+		- inguma
+		- metasploit
+		- msf payload
+		- searchsploit
+		- social engineering
+		- sqlmap
+		- termineter
+
+	- Sniffing & spoofing:
+		- bdfproxy
+		- driftnet
+		- ettercap
+		- hamster
+		- macchanger
+		- mitmproxy
+		- netsniff-ng
+		- responder
+		- wireshark
+
+	- Post exploitation:
+		- backdoor-framework????
+		- bdfproxy
+		- intersect
+		- mimikatz
+		- nishang
+		- powersploit
+		- proxychains
+		- weevely
+
+	- Forensics:
+		- Autopsy
+		- binwalk
+		- bulk_extractor
+		- chkrootkit
+		- dff
+		- dff gui
+		- foremost
+		- galleta
+		- hashdepp
+		- volafox
+		- volatility
+
+	- Reporting tools:
+		- casefile
+		- cutycapt
+		- dradis
+		- faraday IDE
+		- keepnote
+		- magictree
+		- pipal
+		- recordmydesktop
+
+	- Social engineering tools:
+		- backdoor-framework???
+		- beef xss framework???
+		- ghost phiser
+		- maltego
+		- msf payload
+		- social engineering
+		- u3-pwn
+
+	- System services:
+		- beef start
+		- beef stop
+		- dradis start
+		- dradis stop
+
