@@ -6,7 +6,7 @@ function checkAndSubmit()
      || document.getElementById('Enum_vulnera').selectedIndex > 0
      || document.getElementById('Enum_info').selectedIndex > 0)
   {
-      //document.getElementById('formID').submit();
-      alert('La consulta se ha actualizado');
+      //document.getElementById('consulta').submit();
+      //alert('La consulta se ha actualizado');
   }
 }

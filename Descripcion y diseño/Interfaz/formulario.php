@@ -12,8 +12,8 @@
 
   <!-- Favicon -->
   <link rel="icon" 
-      type="image/png" 
-      href="kali.png">
+  type="image/png" 
+  href="kali.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="formulario.css" type="text/css" media="all">
@@ -36,26 +36,12 @@
 
   <h2>Biblioteca de herramientas de ataque</h2><br>
 
-  <p>Bienvenido a la herramienta online de consulta de ataques de la distribución Kali Linux.</p>
-  <p>A través de esta aplicación usted podrá:</p>
-  <p class="enumeracion">1. Obtener información sobre un ataque en concreto.</p>
-  <p class="enumeracion">2. Medir el nivel de seguridad de una aplicación o sitio web concreto.</p>
-  <p class="enumeracion">3. Obtener herramientas necesarias para realizar un ataque, teniendo claro cual será el objetivo.</p><br>
 
-  <p><b>Instrucciones:</b></p>
-  <p>Dispone del siguiente formulario para realizar búsquedas de ataques según distintos parámetros:</p>
-  <p class="enumeracion">- Lenguaje en el que están desarrollados.</p>
-  <p class="enumeracion">- Protocolo objetivo.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de reconocimiento de redes.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de analizar vulnerabilidades de aplicaciones web.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de obtener información como contraseñas o archivos confidenciales.</p><br>
-
-
-  <form class="form-horizontal">
+  <form id="consulta" class="form-horizontal" method="post" action="">
     <fieldset>
 
       <!-- Form Name -->
-      <legend>Realice su consulta</legend>
+      <legend>Realice su consulta <a href="informacion.html"> (Información) </a> </legend>
 
       <!-- Search input-->
       <div class="form-group">
@@ -69,7 +55,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="Lenguaje">Seleccionar Lenguaje:</label>
         <div class="col-md-4">
-          <select id="Lenguaje" name="Lenguaje" class="form-control" onchange="checkAndSubmit()">
+          <select id="Lenguaje" name="Lenguaje" class="form-control">
             <option value="1">Seleccionar</option>
             <option value="2">Python</option>
             <option value="3">Perl</option>
@@ -86,7 +72,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="Protocolo">Seleccionar Protocolo:</label>
         <div class="col-md-4">
-          <select id="Protocolo" name="Protocolo" class="form-control" onchange="checkAndSubmit()">
+          <select id="Protocolo" name="Protocolo" class="form-control">
             <option value="1">Seleccionar</option>
             <option value="2">WEP</option>
             <option value="3">WPA</option>
@@ -105,9 +91,9 @@
 
       <!-- Select Basic -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_reco">Seleccionar tipo de ataque:</label>
+        <label class="col-md-4 control-label" for="Enum_reco">Ataque de reconocimiento de redes:</label>
         <div class="col-md-4">
-          <select id="Enum_reco" name="Enum_reco" class="form-control" onchange="checkAndSubmit()">
+          <select id="Enum_reco" name="Enum_reco" class="form-control">
             <option value="1">Seleccionar</option>
             <option value="2">Recopilación de información</option>
             <option value="3">Ingeniería inversa</option>
@@ -119,9 +105,9 @@
 
       <!-- Select Basic -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_vulnera">Seleccionar tipo de ataque:</label>
+        <label class="col-md-4 control-label" for="Enum_vulnera">Ataque de análisis de vulnerabilidades:</label>
         <div class="col-md-4">
-          <select id="Enum_vulnera" name="Enum_vulnera" class="form-control" onchange="checkAndSubmit()">
+          <select id="Enum_vulnera" name="Enum_vulnera" class="form-control">
             <option value="1">Seleccionar</option>          
             <option value="2">Escáner de programas</option>
             <option value="3">IDS</option>
@@ -133,9 +119,9 @@
 
       <!-- Select Basic -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_info">Seleccionar tipo de ataque:</label>
+        <label class="col-md-4 control-label" for="Enum_info">Ataque de obtención de información:</label>
         <div class="col-md-4">
-          <select id="Enum_info" name="Enum_info" class="form-control" onchange="checkAndSubmit()">
+          <select id="Enum_info" name="Enum_info" class="form-control">
             <option value="1">Seleccionar</option>         
             <option value="2">SQLinjection</option>
             <option value="3">Ataque de fuerza bruta</option>
@@ -150,58 +136,72 @@
         </div>
       </div>
 
+      <input class="btn btn-default" type="submit" value="Enviar">
+
     </fieldset>
   </form><br><br>
 
   <legend>Resultados de la búsqueda</legend>
 
-  <div class="table-responsive">
+  <?php
+
+  try
+  {
+
+  //Abrir conexión con la BBDD utilizando PDO
+    $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+  //Para recuperar los datos da las consultas
+  echo 'Estás buscando según estos criterios: ' . '<br/>';
+
+  $ID_LENGUAJE = $_POST['Lenguaje'];
+  echo 'ID del lenguaje: ' . $ID_LENGUAJE . '<br/>';
+
+  $ID_PROTOCOLO = $_POST['Protocolo'];
+  echo 'ID del protocolo: ' . $ID_PROTOCOLO . '<br/>'; 
+
+  $ID_RECONOCIMIENTO = $_POST['Enum_reco'];
+  echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
+
+  $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
+  echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>'; 
+
+  $ID_TIPO = $_POST['Enum_info'];
+  echo 'ID de ataque de obtencion de información: ' . $ID_TIPO . '<br/>'; 
+
+
+  //Recuperar datos de la BBDD con prepare()
+    $stmt = $con->prepare("SELECT * FROM Ataques WHERE Ataques.ID_LENGUAJE=$ID_LENGUAJE AND Ataques.ID_PROTOCOLO=$ID_PROTOCOLO"); 
+    $stmt->execute();
+  }
+
+  catch(PDOException $e)
+  {
+    echo 'Error: ' . $e->getMessage();
+  }
+
+  //Imprimir resultados en una tabla.
+  echo '<div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
           <th>Nombre ataque</th>
           <th>Descripción</th>
         </tr>
-      </thead>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-      </tr>
+      </thead>';
 
-    </table>
-  </div>
+  while( $datos = $stmt->fetch() ){
+    echo '<tr> <td>' . $datos[1] . '<td/> <td>' . $datos[2] . '<td/> <tr/>';
+  }
+  echo '<table/><div/>';
+
+# close the connection
+  $DBH = null;
+
+  ?>
+
 
 </body>
 
