@@ -8,7 +8,7 @@
   <meta name="description" content="Formulario de ataques">
   <meta name="author" content="Alejandro Docasar Moreno">
 
-  <title>Formulario de ataques</title>
+  <title>Formulario de búsqueda</title>
 
   <!-- Favicon -->
   <link rel="icon" 
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <!-- Select Basic -->
+      <!-- Select Basic 
       <div class="form-group">
         <label class="col-md-4 control-label" for="Lenguaje">Seleccionar Lenguaje:</label>
         <div class="col-md-4">
@@ -66,9 +66,9 @@
             <option value="8">PHP</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Select Basic -->
+      <!-- Select Basic 
       <div class="form-group">
         <label class="col-md-4 control-label" for="Protocolo">Seleccionar Protocolo:</label>
         <div class="col-md-4">
@@ -87,7 +87,7 @@
             <option value="12">HTTPS</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
       <!-- Select Basic -->
       <div class="form-group">
@@ -145,8 +145,7 @@
 
   <?php
 
-  try
-  {
+  try {
 
   //Abrir conexión con la BBDD utilizando PDO
     $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
@@ -154,56 +153,87 @@
 
 
   //Para recuperar los datos da las consultas
-  echo 'Estás buscando según estos criterios: ' . '<br/>';
+    echo 'Estás buscando según estos criterios: ' . '<br/>';
 
-  $ID_LENGUAJE = $_POST['Lenguaje'];
-  echo 'ID del lenguaje: ' . $ID_LENGUAJE . '<br/>';
+    /*$ID_LENGUAJE = $_POST['Lenguaje'];
+    echo 'ID del lenguaje: ' . $ID_LENGUAJE . '<br/>';
 
-  $ID_PROTOCOLO = $_POST['Protocolo'];
-  echo 'ID del protocolo: ' . $ID_PROTOCOLO . '<br/>'; 
+    $ID_PROTOCOLO = $_POST['Protocolo'];
+    echo 'ID del protocolo: ' . $ID_PROTOCOLO . '<br/>'; */
 
-  $ID_RECONOCIMIENTO = $_POST['Enum_reco'];
-  echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
+    $ID_RECONOCIMIENTO = $_POST['Enum_reco'];
+    echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
-  $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
-  echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>'; 
+    $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
+    echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>'; 
 
-  $ID_TIPO = $_POST['Enum_info'];
-  echo 'ID de ataque de obtencion de información: ' . $ID_TIPO . '<br/>'; 
+    $ID_TIPO = $_POST['Enum_info'];
+    echo 'ID de ataque de obtencion de información: ' . $ID_TIPO . '<br/>'; 
 
 
-  //Recuperar datos de la BBDD con prepare()
-    $stmt = $con->prepare("SELECT * FROM Ataques WHERE Ataques.ID_LENGUAJE=$ID_LENGUAJE AND Ataques.ID_PROTOCOLO=$ID_PROTOCOLO"); 
+  //Recuperar datos de la BBDD con prepare().
+
+    //Si se deja todo sin marcar se muestra todo.
+    $sentencia = "SELECT * FROM Ataques"; 
+
+    //Esto solo sirve de guía para construir una sentencia compleja.
+    $sentencia_mas_compleja = "SELECT * FROM Ataques INNER JOIN Reco ON Reco.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Obtener_info ON Obtener_info.ID_ATAQUE = Ataques.ID_ATAQUE WHERE Reco.ID_RECONOCIMIENTO = $ID_RECONOCIMIENTO AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD AND Obtener_info.ID_TIPO = $ID_TIPO";
+
+    if ($ID_RECONOCIMIENTO != 1) {
+      $sentencia_01 = " INNER JOIN Reco ON Reco.ID_ATAQUE = Ataques.ID_ATAQUE";
+      $sentencia_04 = " WHERE Reco.ID_RECONOCIMIENTO = $ID_RECONOCIMIENTO";
+    } else {
+      $sentencia_01 = null;
+      $sentencia_04 = null;
+    }
+    if ($ID_VULNERABILIDAD != 1) {
+      $sentencia_02 = " INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE";
+      $sentencia_05 = " AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD";
+    } else {
+      $sentencia_02 = null;
+      $sentencia_05 = null;
+    }
+    if ($ID_TIPO != 1) {
+      $sentencia_03 = " INNER JOIN Obtener_info ON Obtener_info.ID_ATAQUE = Ataques.ID_ATAQUE";
+      $sentencia_06 = " AND Obtener_info.ID_TIPO = $ID_TIPO";
+    } else {
+      $sentencia_03 = null;
+      $sentencia_06 = null;
+    }
+
+    //La sentencia se crea en función de lo que el usuario haya buscado.
+    $sentencia = $sentencia . $sentencia_01 . $sentencia_02 . $sentencia_03 . $sentencia_04 . $sentencia_05 . $sentencia_06; 
+
+    //Ejecución de la sentencia.
+    $stmt = $con->prepare($sentencia); 
     $stmt->execute();
-  }
 
-  catch(PDOException $e)
-  {
+  }catch(PDOException $e) {
     echo 'Error: ' . $e->getMessage();
   }
 
   //Imprimir resultados en una tabla.
   echo '<div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Nombre ataque</th>
-          <th>Descripción</th>
-        </tr>
-      </thead>';
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre ataque</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>';
 
-  while( $datos = $stmt->fetch() ){
-    echo '<tr> <td>' . $datos[1] . '<td/> <td>' . $datos[2] . '<td/> <tr/>';
-  }
-  echo '<table/><div/>';
+  //Mostrar nombre y descripción de cada ataque.
+    while( $datos = $stmt->fetch() ){
+      echo '<tr> <td>' . $datos[1] . '<td/> <td>' . $datos[2] . '<td/> <tr/>';
+    }
+    echo '<table/><div/>';
 
 # close the connection
-  $DBH = null;
+    $DBH = null;
 
-  ?>
+    ?>
 
-
-</body>
+  </body>
 
 
 

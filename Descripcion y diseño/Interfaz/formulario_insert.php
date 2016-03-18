@@ -202,13 +202,13 @@
       $stmt->bindParam(':id_reconocimiento', $ID_RECONOCIMIENTO);
       $stmt->execute();
     } elseif ($ID_VULNERABILIDAD != 1) {
-      $stmt = $con->prepare("INSERT INTO Analisis_vulnera (ID_ataque, ID_vulnerabilidad) VALUES (Ataques.ID_ATAQUE, :id_vulnerabilidad)"); 
-      //$stmt->bindValue(':id_ataque', Ataques.ID_ATAQUE);
+      $stmt = $con->prepare("INSERT INTO Analisis_vulnera (ID_ataque, ID_vulnerabilidad) VALUES (:id_ataque, :id_vulnerabilidad)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_vulnerabilidad', $ID_VULNERABILIDAD);
       $stmt->execute();
     } elseif ($ID_TIPO != 1) {
-      $stmt = $con->prepare("INSERT INTO Obtener_info (ID_ATAQUE, ID_TIPO) VALUES (Ataques.ID_ATAQUE, :id_tipo)"); 
-      //$stmt->bindValue(':id_ataque', Ataques.ID_ATAQUE);
+      $stmt = $con->prepare("INSERT INTO Obtener_info (ID_ATAQUE, ID_TIPO) VALUES (:id_ataque, :id_tipo)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_tipo', $ID_TIPO);
       $stmt->execute();    
     }
