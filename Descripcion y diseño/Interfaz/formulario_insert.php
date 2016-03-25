@@ -19,13 +19,13 @@
   <link rel="stylesheet" href="formulario.css" type="text/css" media="all">
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css"> 
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
   <!-- js -->
   <script src="formulario.js"></script>
@@ -34,123 +34,152 @@
 
 <body>
 
-  <h2>Insertar ataques en la BBDD (root)</h2><br>
+  <div class="container">
 
+    <div class="page-header">
+      <h1>Insertar ataques en la BBDD (root)</h1>
+      <p>Realice búsquedas y encuentre la herramienta más adecuada para sus fines.</p>      
+    </div>
 
-  <form id="insertar" class="form-horizontal" method="post" action="">
-    <fieldset>
+    <form id="insertar" class="form-horizontal" method="post" action="">
 
-      <!-- Form Name -->
-      <legend>Insertar ataque</legend>
+      <fieldset>
 
-      <!-- Name input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="searchinput">Nombre ataque:</label>
-        <div class="col-md-4">
-          <input id="searchinput" name="searchinput" type="search" placeholder="Ej: nmap" class="form-control input-md">
+        <!-- Form Name -->
+        <legend>Insertar ataque</legend>
+
+        <!-- Name input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="searchinput">Nombre ataque:</label>
+          <div class="col-md-4">
+            <input id="searchinput" name="searchinput" type="search" placeholder="Ej: nmap" class="form-control input-md">
+          </div>
         </div>
-      </div>
 
-      <!-- Description input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="searchinput">Descripción ataque:</label>
-        <div class="col-md-4">
-          <textarea id="description" name="description" placeholder="Esto es un texto de prueba" class="form-control" rows="3"></textarea>
+        <!-- Description input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="searchinput">Descripción ataque:</label>
+          <div class="col-md-4">
+            <textarea id="description" name="description" placeholder="Introduzca aquí la descripción del ataque." class="form-control" rows="3"></textarea>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Lenguaje">Seleccionar Lenguaje:</label>
-        <div class="col-md-4">
-          <select id="Lenguaje" name="Lenguaje" class="form-control">
-            <option value="1">Seleccionar</option>
-            <option value="2">Python</option>
-            <option value="3">Perl</option>
-            <option value="4">C</option>
-            <option value="5">Ruby</option>
-            <option value="6">Java</option>
-            <option value="7">Powershell</option>
-            <option value="8">PHP</option>
-            <option value="9">Sin determinar</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Lenguaje">Seleccionar Lenguaje:</label>
+          <div class="col-md-4">
+            <select multiple id="Lenguaje" name="Lenguaje" class="form-control">
+              <option value="1">Seleccionar</option>
+              <option value="2">Python</option>
+              <option value="3">Perl</option>
+              <option value="4">C</option>
+              <option value="5">Ruby</option>
+              <option value="6">Java</option>
+              <option value="7">Powershell</option>
+              <option value="8">PHP</option>
+              <option value="9">Sin determinar</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Protocolo">Seleccionar Protocolo:</label>
-        <div class="col-md-4">
-          <select id="Protocolo" name="Protocolo" class="form-control">
-            <option value="1">Seleccionar</option>
-            <option value="2">WEP</option>
-            <option value="3">WPA</option>
-            <option value="4">WPA2</option>
-            <option value="5">WPS</option>
-            <option value="6">TCP</option>
-            <option value="7">IP</option>
-            <option value="8">IPSEC</option>
-            <option value="9">IKE</option>
-            <option value="10">ARP</option>
-            <option value="11">HTTP</option>
-            <option value="12">HTTPS</option>
-            <option value="13">ICMP</option>
-            <option value="14">Sin determinar</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Protocolo">Seleccionar Protocolo:</label>
+          <div class="col-md-4">
+            <select multiple id="Protocolo" name="Protocolo" class="form-control">
+              <option value="1">Seleccionar</option>
+              <option value="2">WEP</option>
+              <option value="3">WPA</option>
+              <option value="4">WPA2</option>
+              <option value="5">WPS</option>
+              <option value="6">TCP</option>
+              <option value="7">IP</option>
+              <option value="8">IPSEC</option>
+              <option value="9">IKE</option>
+              <option value="10">ARP</option>
+              <option value="11">HTTP</option>
+              <option value="12">HTTPS</option>
+              <option value="13">ICMP</option>
+              <option value="14">Sin determinar</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_reco">Ataque de reconocimiento de redes:</label>
-        <div class="col-md-4">
-          <select id="Enum_reco" name="Enum_reco" class="form-control">
-            <option value="1">Seleccionar</option>
-            <option value="2">Recopilación de información</option>
-            <option value="3">Ingeniería inversa</option>
-            <option value="4">Escáner de puertos</option>
-            <option value="5">Forense</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_reco">Ataque de reconocimiento de redes:</label>
+          <div class="col-md-4">
+            <select multiple id="Enum_reco" name="Enum_reco" class="form-control">
+              <option value="1">Seleccionar</option>
+              <option value="2">Ingeniería inversa</option>
+              <option value="3">Escáner de redes</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_vulnera">Ataque de análisis de vulnerabilidades:</label>
-        <div class="col-md-4">
-          <select id="Enum_vulnera" name="Enum_vulnera" class="form-control">
-            <option value="1">Seleccionar</option>          
-            <option value="2">Escáner de programas</option>
-            <option value="3">IDS</option>
-            <option value="4">Configuraciones por defecto</option>
-            <option value="5">Exploit</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_vulnera">Ataque de análisis de vulnerabilidades:</label>
+          <div class="col-md-4">
+            <select multiple id="Enum_vulnera" name="Enum_vulnera" class="form-control">
+              <option value="1">Seleccionar</option>          
+              <option value="2">Escáner de programas</option>
+              <option value="3">Configuraciones por defecto</option>
+              <option value="4">Exploit</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_info">Ataque de obtención de información:</label>
-        <div class="col-md-4">
-          <select id="Enum_info" name="Enum_info" class="form-control">
-            <option value="1">Seleccionar</option>         
-            <option value="2">SQLinjection</option>
-            <option value="3">Ataque de fuerza bruta</option>
-            <option value="4">Ataque de diccionario</option>
-            <option value="5">Rainbow tables</option>
-            <option value="6">Phising</option>
-            <option value="7">Spoofing</option>
-            <option value="8">MiTM</option>
-            <option value="9">Ingeniería social</option>
-            <option value="10">Post exploit</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_contrasenas">Ataque para romper contraseñas:</label>
+          <div class="col-md-4">
+            <select multiple id="Enum_contrasenas" name="Enum_contrasenas" class="form-control">
+              <option value="1">Seleccionar</option>
+              <option value="2">Ataque wireless</option>
+              <option value="3">Ataque de fuerza bruta</option>
+              <option value="4">Ataque de diccionario</option>
+              <option value="5">Rainbow tables</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <input class="btn btn-default" type="submit" value="Enviar">
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_suplantacion">Herramientas de soporte de suplantación:</label>
+          <div class="col-md-4">
+            <select multiple id="Enum_suplantacion" name="Enum_suplantacion" class="form-control">
+              <option value="1">Seleccionar</option>         
+              <option value="2">Phising</option>
+              <option value="3">Spoofing</option>
+              <option value="4">Ingeniería social</option>
+            </select>
+          </div>
+        </div>
 
-    </fieldset>
-  </form><br><br>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_info">Herramientas de obtención de información:</label>
+          <div class="col-md-4">
+            <select multiple id="Enum_info" name="Enum_info" class="form-control">
+              <option value="1">Seleccionar</option>         
+              <option value="2">SQLinjection</option>
+              <option value="3">MiTM</option>
+              <option value="4">Post exploit</option>
+              <option value="5">Forense</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="boton">
+          <input class="btn btn-default" type="submit" value="Enviar">
+        </div><br>
+
+      </fieldset>
+
+    </form>
+
+  </div>
 
   <?php
 
@@ -181,19 +210,24 @@
     $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
     echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>'; 
 
+    $ID_CONTRASENA = $_POST['Enum_contrasenas'];
+    echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
+
+    $ID_SUPLANTACION = $_POST['Enum_suplantacion'];
+    echo 'ID de ataque de soporte de suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
+
     $ID_TIPO = $_POST['Enum_info'];
     echo 'ID de ataque de obtencion de información: ' . $ID_TIPO . '<br/>'; 
 
 
   //Insertar datos de la BBDD con prepare()
 
-    $stmt = $con->prepare("INSERT INTO Ataques (Nombre, Descripcion, ID_LENGUAJE, ID_PROTOCOLO) VALUES (:nombre, :descripcion, :id_lenguaje, :id_protocolo)"); 
+    $stmt = $con->prepare("INSERT INTO Ataques (Nombre, Descripcion) VALUES (:nombre, :descripcion)"); 
     $stmt->bindParam(':nombre', $NOMBRE);
     $stmt->bindParam(':descripcion', $DESCRIPTION);
-    $stmt->bindParam(':id_lenguaje', $ID_LENGUAJE);
-    $stmt->bindParam(':id_protocolo', $ID_PROTOCOLO);
     $stmt->execute();
 
+    //Recupero el ID del ultimo ataque que se ha insertado en la bbdd.
     $ID_ATAQUE = $con->lastInsertId();
 
     if ($ID_RECONOCIMIENTO != 1) {
@@ -201,16 +235,42 @@
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_reconocimiento', $ID_RECONOCIMIENTO);
       $stmt->execute();
-    } elseif ($ID_VULNERABILIDAD != 1) {
+    } 
+    if ($ID_VULNERABILIDAD != 1) {
       $stmt = $con->prepare("INSERT INTO Analisis_vulnera (ID_ataque, ID_vulnerabilidad) VALUES (:id_ataque, :id_vulnerabilidad)"); 
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_vulnerabilidad', $ID_VULNERABILIDAD);
       $stmt->execute();
-    } elseif ($ID_TIPO != 1) {
+    } 
+    if ($ID_CONTRASENA != 1) {
+      $stmt = $con->prepare("INSERT INTO Contrasenas (ID_ATAQUE, ID_CONTRASENA) VALUES (:id_ataque, :id_contrasena)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_contrasena', $ID_CONTRASENA);
+      $stmt->execute();    
+    } 
+    if ($ID_SUPLANTACION != 1) {
+      $stmt = $con->prepare("INSERT INTO Suplantacion (ID_ATAQUE, ID_SUPLANTACION) VALUES (:id_ataque, :id_suplantacion)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_suplantacion', $ID_SUPLANTACION);
+      $stmt->execute();    
+    } 
+    if ($ID_TIPO != 1) {
       $stmt = $con->prepare("INSERT INTO Obtener_info (ID_ATAQUE, ID_TIPO) VALUES (:id_ataque, :id_tipo)"); 
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_tipo', $ID_TIPO);
       $stmt->execute();    
+    } 
+    if ($ID_LENGUAJE != 1) {
+      $stmt = $con->prepare("INSERT INTO Lenguajes (ID_ATAQUE, ID_LENGUAJE) VALUES (:id_ataque, :id_lenguaje)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_lenguaje', $ID_LENGUAJE);
+      $stmt->execute();
+    } 
+    if ($ID_PROTOCOLO != 1) {
+      $stmt = $con->prepare("INSERT INTO Protocolos (ID_ATAQUE, ID_PROTOCOLO) VALUES (:id_ataque, :id_protocolo)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_protocolo', $ID_PROTOCOLO);
+      $stmt->execute();
     }
 
   }

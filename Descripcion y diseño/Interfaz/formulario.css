@@ -3,8 +3,42 @@ body {
 	text-indent:15px;
 }
 
+.table-hover tbody tr:hover,
+            .table-hover tbody tr:hover td,
+            .table-hover tbody tr:hover th{
+                background:#ffffff !important;
+            }
+
+/*.page-header {
+	background-color: #eee;
+}*/
+
+.container {
+	background-color: #efefef;
+}
+
+.boton {
+	text-align: center;
+}
+
+.header {
+	text-align: center;
+}
+
+.centrado {
+	text-align: center;
+}
+
+.justificado {
+	text-align: justify;
+}
+
+#nombre {
+	width: 12%;
+}
+
 .enumeracion {
-	padding:0px 0px 0px 10px; 
+	padding:0px 0px 0px 15px; 
 }	
 
 

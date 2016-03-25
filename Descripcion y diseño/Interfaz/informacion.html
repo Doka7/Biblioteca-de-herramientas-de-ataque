@@ -18,29 +18,39 @@
   <link rel="stylesheet" href="formulario.css" type="text/css" media="all">
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
 
 </head>
 <body>
 
-<h2>Información</h2><br>
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Información</h1>
+      <p>Realice búsquedas y encuentre la herramienta más adecuada para sus fines.</p>      
+    </div>
+
+    <!--<p>Bienvenido, aquí podrá consultar las distintas herramientas de ataque de la distribución Kali Linux.</p>
+    <p>A través de esta aplicación usted podrá:</p>
+    <p class="enumeracion">1. Obtener información sobre un ataque en concreto.</p>
+    <p class="enumeracion">2. Encontrar ataques que le permitan medir el nivel de seguridad de una aplicación o sitio web concreto.</p>
+    <p class="enumeracion">3. Obtener herramientas necesarias para realizar un ataque, teniendo claro cual será el objetivo.</p><br>
+
+    <p><b>Instrucciones:</b></p>-->
+    <p>Dispone de un formulario para realizar búsquedas de ataques según distintos parámetros.</p>
+    <p>Si deja todos los campos sin marcar, se mostrarán todos los ataques de la base de datos. A partir de ahí, cada parámetro que incluya refinará cada vez más la búsqueda:</p>
+    <p class="enumeracion">1. Ataques cuyo objetivo sea el de <b>reconocimiento de redes</b>. Incluye herramientas basadas en recopilación de información, ingeniería inversa, escáner de redes, o herramientas forenses.</p>
+    <p class="enumeracion">2. Ataques cuyo objetivo sea el de <b>analizar vulnerabilidades</b> de aplicaciones web. Incluye herramientas basadas en escanear programas, IDS, analizar configuraciones por defecto o exploits.</p>
+    <p class="enumeracion">3. Ataques cuyo objetivo sea el de <b>obtener información confidencial</b> (contraseñas, archivos...). Incluye herramientas basadas en SQLinjection, ataques de fuerza bruta, ataques de diccionario, rainbow tables, phising, Man in The Middle, ingeniería social o post exploit.</p><br>
+
+    <div class="boton">
+      <a class="btn btn-default" href="formulario.php" role="button">Volver</a>
+    </div><br>
+
+  </div>
 
 
-<p>Bienvenido a la herramienta online de consulta de ataques de la distribución Kali Linux.</p>
-  <p>A través de esta aplicación usted podrá:</p>
-  <p class="enumeracion">1. Obtener información sobre un ataque en concreto.</p>
-  <p class="enumeracion">2. Medir el nivel de seguridad de una aplicación o sitio web concreto.</p>
-  <p class="enumeracion">3. Obtener herramientas necesarias para realizar un ataque, teniendo claro cual será el objetivo.</p><br>
-
-  <p><b>Instrucciones:</b></p>
-  <p>Dispone del siguiente formulario para realizar búsquedas de ataques según distintos parámetros:</p>
-  <p class="enumeracion">- Lenguaje en el que están desarrollados.</p>
-  <p class="enumeracion">- Protocolo objetivo.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de reconocimiento de redes.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de analizar vulnerabilidades de aplicaciones web.</p>
-  <p class="enumeracion">- Ataques cuyo objetivo sea el de obtener información como contraseñas o archivos confidenciales.</p><br>
-
-  <a class="btn btn-default" href="formulario.php" role="button">Volver</a>
+  
 
 </body>
 </html>
