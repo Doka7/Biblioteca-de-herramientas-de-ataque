@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<html>
+
 <head>
 
   <meta charset="utf-8">
@@ -124,11 +126,11 @@
         <label class="col-md-4 control-label" for="Enum_contrasenas">Romper contraseñas:</label>
         <div class="col-md-4">
           <select id="Enum_contrasenas" name="Enum_contrasenas" class="form-control" onchange="checkAndSubmit()">
-            <option value="1" <?php if($_POST['Enum_info']==1) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="2" <?php if($_POST['Enum_info']==2) echo 'selected="selected" ';?>>Ataque wireless</option>
-            <option value="3" <?php if($_POST['Enum_info']==3) echo 'selected="selected" ';?>>Ataque de fuerza bruta</option>
-            <option value="4" <?php if($_POST['Enum_info']==4) echo 'selected="selected" ';?>>Ataque de diccionario</option>
-            <option value="5" <?php if($_POST['Enum_info']==5) echo 'selected="selected" ';?>>Rainbow tables</option>
+          <option value="1" <?php if($_POST['Enum_contrasenas']==1) echo 'selected="selected" ';?>>Seleccionar</option>
+            <option value="2" <?php if($_POST['Enum_contrasenas']==2) echo 'selected="selected" ';?>>Ataque wireless</option>
+            <option value="3" <?php if($_POST['Enum_contrasenas']==3) echo 'selected="selected" ';?>>Ataque de fuerza bruta</option>
+            <option value="4" <?php if($_POST['Enum_contrasenas']==4) echo 'selected="selected" ';?>>Ataque de diccionario</option>
+            <option value="5" <?php if($_POST['Enum_contrasenas']==5) echo 'selected="selected" ';?>>Rainbow tables</option>
           </select>
         </div>
       </div>
@@ -138,10 +140,10 @@
         <label class="col-md-4 control-label" for="Enum_suplantacion">Soporte para suplantación:</label>
         <div class="col-md-4">
           <select id="Enum_suplantacion" name="Enum_suplantacion" class="form-control" onchange="checkAndSubmit()">
-            <option value="1" <?php if($_POST['Enum_info']==1) echo 'selected="selected" ';?>>Seleccionar</option>         
-            <option value="2" <?php if($_POST['Enum_info']==2) echo 'selected="selected" ';?>>Phising</option>
-            <option value="3" <?php if($_POST['Enum_info']==3) echo 'selected="selected" ';?>>Spoofing</option>
-            <option value="4" <?php if($_POST['Enum_info']==4) echo 'selected="selected" ';?>>Ingeniería social</option>
+            <option value="1" <?php if($_POST['Enum_suplantacion']==1) echo 'selected="selected" ';?>>Seleccionar</option>         
+            <option value="2" <?php if($_POST['Enum_suplantacion']==2) echo 'selected="selected" ';?>>Phising</option>
+            <option value="3" <?php if($_POST['Enum_suplantacion']==3) echo 'selected="selected" ';?>>Spoofing</option>
+            <option value="4" <?php if($_POST['Enum_suplantacion']==4) echo 'selected="selected" ';?>>Ingeniería social</option>
           </select>
         </div>
       </div>
@@ -295,6 +297,8 @@
     </div>  <!-- div container -->
 
   </body>
+
+  </html>
 
 
 

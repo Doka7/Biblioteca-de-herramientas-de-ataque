@@ -1,56 +1,57 @@
 ATAQUES KALI
 
 	- Information gathering:
-		- dmitry: DMitry (Deepmagic Information Gathering Tool) is a UNIX/(GNU)Linux Command Line Application coded in C. DMitry has the ability to gather as much information as possible about a host. Base functionality is able to gather possible subdomains, email addresses, uptime information, tcp port scan, whois lookups, and more.
-		Palabras clave: recopilar informacion, C, escaneo puertos, código abierto.
+		- DMitry: DMitry (Deepmagic Information Gathering Tool) is a UNIX/GNU Linux Command Line Application coded in C. DMitry has the ability to gather as much information as possible about a host. Base functionality is able to gather possible subdomains, email addresses, uptime information, tcp port scan, whois lookups, and more. The following is a list of the current features: an Open Source Project; perform an Internet Number whois lookup; retrieve possible uptime data, system and server data; perform a SubDomain search on a target host; perform an E-Mail address search on a target host; perform a TCP Portscan on the host target; or a Modular program allowing user specified modules.
+		Palabras clave: escaneo de redes, C, código abierto.
 
 		Fuente: http://tools.kali.org/information-gathering/dmitry
 
-		- dnmap-client/dnmap-server: dnmap is a framework to distribute nmap scans among several clients. It reads an already created file with nmap commands and send those commands to each client connected to it.
+		- dnmap: Dnmap is a framework to distribute nmap scans among several clients. It reads an already created file with nmap commands and send those commands to each client connected to it.
 		The framework use a client/server architecture. The server knows what to do and the clients do it. All the logic and statistics are managed in the server. Nmap output is stored on both server and client.
 		Usually you would want this if you have to scan a large group of hosts and you have several different internet connections (or friends that want to help you).
 		Palabras clave: escaner, arquitectura cliente/servidor, recoplilar informacion.
 
 		Fuente: http://tools.kali.org/information-gathering/dnmap
 
-		- ike-scan: ike-scan is a command-line tool for discovering, fingerprinting and testing IPsec VPN systems. It constructs and sends IKE Phase-1 packets to the specified hosts, and displays any responses that are received. 
+		- Ike-scan: Ike-scan is a command-line tool for discovering, fingerprinting and testing IPsec VPN systems. Allows you to: Send IKE packets to any number of destination hosts, using a configurable output bandwidth or packet rate (this is useful for VPN detection, when you may need to scan large address spaces); construct the outgoing IKE packet in a flexible way (this includes IKE packets which do not comply with the RFC requirements); decode and display any returned packets; and crack aggressive mode pre-shared keys (you can use ike-scan to obtain the PSK hash data, and then use psk-crack to obtain the key).
 		Palabras clave: IPSEC, IKE, recopilar información, objetivo sistemas VPN.
 
 		Fuente: http://kalilinux.foroactivo.com/t41-manual-ike-scan-para-kali-linux
 
-		- maltego: Maltego is a unique platform developed to deliver a clear threat picture to the environment that an organization owns and operates. Maltego’s unique advantage is to demonstrate the complexity and severity of single points of failure as well as trust relationships that exist currently within the scope of your infrastructure. 
+		- Maltego: Maltego is a unique platform developed to deliver a clear threat picture to the environment that an organization owns and operates. Maltego’s unique advantage is to demonstrate the complexity and severity of single points of failure as well as trust relationships that exist currently within the scope of your infrastructure. The unique perspective that Maltego offers to both network and resource based entities is the aggregation of information posted all over the internet – whether it’s the current configuration of a router poised on the edge of your network or the current whereabouts of your Vice President on his international visits, Maltego can locate, aggregate and visualize this information.
 		Palabras clave: ingeniería social, recopilación información. 
 
 		Fuente: http://www.geekyshows.com/2013/07/how-to-use-maltego-in-kali-linux.html
 
-		- netdiscover: Netdiscover is an active/passive address reconnaissance tool, mainly developed for those wireless networks without dhcp server, when you are wardriving. It can be also used on hub/switched networks.
+		- Netdiscover: Netdiscover is an active/passive address reconnaissance tool, mainly developed for those wireless networks without dhcp server, when you are wardriving. It can be also used on hub/switched networks.
 		Built on top of libnet and libpcap, it can passively detect online hosts, or search for them, by actively sending arp requests, it can also be used to inspect your network arp traffic, or find network addresses using auto scan mode, which will scan for common local networks. 
-		Palabras clave: ARP, recopilación información.
+		Palabras clave: ARP, recopilación información, ataque wireless.
 
 		Fuente: http://nixgeneration.com/~jaime/netdiscover/
 
-		- nmap: Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. It was designed to rapidly scan large networks, but works fine against single hosts. Nmap runs on all major computer operating systems, and official binary packages are available for Linux, Windows, and Mac OS X.
+		- Nmap: Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. It was designed to rapidly scan large networks, but works fine against single hosts. Nmap runs on all major computer operating systems, and official binary packages are available for Linux, Windows, and Mac OS X. In addition to the classic command-line Nmap executable, the Nmap suite includes an advanced GUI and results viewer (Zenmap), a flexible data transfer, redirection, and debugging tool (Ncat), a utility for comparing scan results (Ndiff), and a packet generation and response analysis tool (Nping).
 		Palabras clave: Escanear red, recopilacion informacion, analisis de vulnerabilidades.
 
 		Fuente: http://tools.kali.org/information-gathering/nmap
 
-		- pOf: P0f is a tool that utilizes an array of sophisticated, purely passive traffic fingerprinting mechanisms to identify the players behind any incidental TCP/IP communications (often as little as a single normal SYN) without interfering in any way. Version 3 is a complete rewrite of the original codebase, incorporating a significant number of improvements to network-level fingerprinting, and introducing the ability to reason about application-level payloads (e.g., HTTP).
+		- P0f: P0f is a tool that utilizes an array of sophisticated, purely passive traffic fingerprinting mechanisms to identify the players behind any incidental TCP/IP communications (often as little as a single normal SYN) without interfering in any way. Version 3 is a complete rewrite of the original codebase, incorporating a significant number of improvements to network-level fingerprinting, and introducing the ability to reason about application-level payloads (e.g., HTTP). Common uses for p0f include reconnaissance during penetration tests; routine network monitoring; detection of unauthorized network interconnects in corporate environments; providing signals for abuse-prevention tools; and miscellanous forensics.
 		Palabras clave: recopilacion informacion, TCP, IP, escaner. 
 
 		Fuente: http://tools.kali.org/information-gathering/p0f
 		
-		- recon-ng: Recon-ng is a full-featured Web Reconnaissance framework written in Python. Complete with independent modules, database interaction, built in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted quickly and thoroughly.
+		- Recon-ng: Recon-ng is a full-featured Web Reconnaissance framework written in Python. Complete with independent modules, database interaction, built in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted quickly and thoroughly.
 		Recon-ng has a look and feel similar to the Metasploit Framework, reducing the learning curve for leveraging the framework.
-		Palabras clave: reconocimiento de redes, recopilacion de informacion, python, metasploit framework.
+		However, it is quite different. Recon-ng is not intended to compete with existing frameworks, as it is designed exclusively for web-based open source reconnaissance. If you want to exploit, use the Metasploit Framework. If you want to Social Engineer, use the Social Engineer Toolkit. If you want to conduct reconnaissance, use Recon-ng!
+		Palabras clave: reconocimiento de redes, recopilacion de informacion, python, metasploit framework. 
 
 		Fuente: http://www.drchaos.com/recon-ng-advanced-reconnaissance-framework/
 
-		- sparta: SPARTA is a python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase. It allows the tester to save time by having point-and-click access to his toolkit and by displaying all tool output in a convenient way. If little time is spent setting up commands and tools, more time can be spent focusing on analysing results.
+		- sparta: Sparta is a python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase. It allows the tester to save time by having point-and-click access to his toolkit and by displaying all tool output in a convenient way. If little time is spent setting up commands and tools, more time can be spent focusing on analysing results. Some features of Sparta are: Run nmap from SPARTA or import nmap XML output; Transparent staged nmap (get results quickly and achieve thorough coverage); identify password reuse on the tested infrastructure. If any usernames/passwords are found by Hydra they are stored in internal wordlists which can then be used on other targets in the same network.
 		Palabras clave: reconocimiento de redes, nmap, recopilacion de informacion, python, analisis de vulnerabilidades.
 
 		Fuente: http://sparta.secforce.com/
 
-		- zenmap: Zenmap is the official Nmap Security Scanner GUI. It is a multi-platform (Linux, Windows, Mac OS X, BSD, etc.) free and open source application which aims to make Nmap easy for beginners to use while providing advanced features for experienced Nmap users. Frequently used scans can be saved as profiles to make them easy to run repeatedly. A command creator allows interactive creation of Nmap command lines. Scan results can be saved and viewed later. Saved scan results can be compared with one another to see how they differ. 
+		- zenmap: Zenmap is the official Nmap Security Scanner GUI. It is a multi-platform (Linux, Windows, Mac OS X, BSD, etc.) free and open source application which aims to make Nmap easy for beginners to use while providing advanced features for experienced Nmap users. Frequently used scans can be saved as profiles to make them easy to run repeatedly. A command creator allows interactive creation of Nmap command lines. Scan results can be saved and viewed later. Saved scan results can be compared with one another to see how they differ. The results of recent scans are stored in a searchable database.
 		Palabras clave: reconocimiento de redes, recopilacion informacion, multiplataforma, nmap, codigo abierto.
 
 		Fuente: http://ultimatepeter.com/how-to-use-zenmap-in-kali-linux-scan-local-network-for-victims-or-intruders-find-open-ports/
@@ -70,7 +71,7 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/vulnerability-analysis/lynis
 
 		- nikto: This small and simple tool examines a website and reports back to you the potential vulnerabilities that it found that you could use to exploit or hack the site. In addition, it's one of the most widely used website vulnerabilities tools in the industry and in many circles considered the industry standard.
-		Although this tool is extremely useful and effective, it is NOT stealthy. Any website with an IDS or other security measures in place will detect that you are scanning it. Originally designed for security testing, it was never meant to be stealthy.
+		Although this tool is extremely useful and effective, it is not stealthy. Any website with an IDS or other security measures in place will detect that you are scanning it. Originally designed for security testing, it was never meant to be stealthy.
 		Palabras clave: escaner aplicaciones, auditoria seguridad, analisis de vulnerabilidades.
 
 		Fuente: http://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/
@@ -85,13 +86,13 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/vulnerability-analysis/unix-privesc-check
 
 	- Web application analysis:
-		- burpsuite: Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application’s attack surface, through to finding and exploiting security vulnerabilities.
+		- Burp Suite: Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application’s attack surface, through to finding and exploiting security vulnerabilities.
 		Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun.
 		Palabras clave: analisis de aplicaciones web, escaneo de aplicaciones, busqueda de vulnerabilidades.
 
 		Fuente: http://tools.kali.org/web-applications/burpsuite
 
-		- commix: Commix (short for [comm]and [i]njection e[x]ploiter) has a simple environment and it can be used, from web developers, penetration testers or even security researchers to test web applications with the view to find bugs, errors or vulnerabilities related to command injection attacks. By using this tool, it is very easy to find and exploit a command injection vulnerability in a certain vulnerable parameter or string. Commix is written in Python programming language
+		- commix: Commix (short for [comm]and [i]njection e[x]ploiter) has a simple environment and it can be used, from web developers, penetration testers or even security researchers to test web applications with the view to find bugs, errors or vulnerabilities related to command injection attacks. By using this tool, it is very easy to find and exploit a command injection vulnerability in a certain vulnerable parameter or string. Commix is written in Python programming language.
 
 		Palabras clave: python, analisis de vulnerabilidades, analisis de aplicaciones web, escaner de aplicaciones.
 
@@ -112,12 +113,12 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/web-applications/paros
 
-		- skipfish: Skipfish is an active web application security reconnaissance tool. It prepares an interactive sitemap for the targeted site by carrying out a recursive crawl and dictionary-based probes. The resulting map is then annotated with the output from a number of active (but hopefully non-disruptive) security checks. The final report generated by the tool is meant to serve as a foundation for professional web application security assessments.
+		- skipfish: Skipfish is an active web application security reconnaissance tool. It prepares an interactive sitemap for the targeted site by carrying out a recursive crawl and dictionary-based probes. The resulting map is then annotated with the output from a number of active (but hopefully non-disruptive) security checks. The final report generated by the tool is meant to serve as a foundation for professional web application security assessments. Key features: High speed (pure C code, highly optimized HTTP handling, minimal CPU footprint); ease of use (heuristics to support a variety of quirky web frameworks and mixed-technology sites, with automatic learning capabilities, on-the-fly wordlist creation, and form autocompletion).
 		Palabras clave: C, herramienta de reconocimiento, análisis de aplicaciones web.
 
 		Fuente: http://tools.kali.org/web-applications/skipfish
 
-		- sqlmap: sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features for the ultimate penetration tester and a broad range of switches lasting from database fingerprinting, over data fetching from the database, to accessing the underlying file system and executing commands on the operating system via out-of-band connections.
+		- sqlmap: sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a powerful detection engine, many niche features for the ultimate penetration tester and a broad range of switches lasting from database fingerprinting, over data fetching from the database, to accessing the underlying file system and executing commands on the operating system via out-of-band connections. Features: Full support for MySQL, Oracle, PostgreSQL, Microsoft SQL Server, Microsoft Access, IBM DB2, SQLite, Firebird, Sybase and SAP MaxDB database management systems; full support for six SQL injection techniques: boolean-based blind, time-based blind, error-based, UNION query, stacked queries and out-of-band; support to directly connect to the database without passing via a SQL injection, by providing DBMS credentials, IP address, port and database name; support to enumerate users, password hashes, privileges, roles, databases, tables and columns; automatic recognition of password hash formats and support for cracking them using a dictionary-based attack.
 		Palabras clave: sqlinjection, análisis de vulnerabilidades, analisis de aplicaciones web, objetivo servidor de bbdd.
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/sqlmap
@@ -138,7 +139,7 @@ ATAQUES KALI
 		Fuente: http://kali4hackers.blogspot.com.es/2013/05/wpscan-in-kali-linux-wpscan-is.html
 
 	- Database assessment:
-		- bbqsql: BBQSQL is a blind SQL injection framework written in Python. It is extremely useful when attacking tricky SQL injection vulnerabilities. BBQSQL is also a semi-automatic tool, allowing quite a bit of customization for those hard to trigger SQL injection findings. The tool is built to be database agnostic and is extremely versatile. It also has an intuitive UI to make setting up attacks much easier. Python gevent is also implemented, making BBQSQL extremely fast.
+		- bbqsql: BBQSQL is a blind SQL injection framework written in Python. It is extremely useful when attacking tricky SQL injection vulnerabilities. BBQSQL is also a semi-automatic tool, allowing quite a bit of customization for those hard to trigger SQL injection findings. The tool is built to be database agnostic and is extremely versatile. It also has an intuitive UI to make setting up attacks much easier. Python gevent is also implemented, making BBQSQL extremely fast. Similar to other SQL injection tools you provide certain request information. Must provide the usual information: URL, HTTP Method, Headers, Cookies, Encoding methods, Redirect behavior, Files, HTTP Auth, Proxies. Then specify where the injection is going and what syntax we are injecting.
 		Palabras clave: bases de datos, sqlinjection, blind sqlinjection, python.
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/bbqsql
@@ -153,8 +154,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/jsql
 
-		- mdb-sql: mdb-sql is a utility program distributed with MDB Tools.
-		mdb-sql allows querying of an MDB database using a limited SQL subset language.
+		- mdb-sql: mdb-sql is a utility program distributed with MDB Tools. Allows querying of an MDB database using a limited SQL subset language.
 
 		Palabras clave: bases de datos, MDB.
 
@@ -183,14 +183,14 @@ ATAQUES KALI
 
 		- sqlmap: Ya realizada.
 
-		- sqlninja: Sqlninja is a tool targeted to exploit SQL Injection vulnerabilities on a web application that uses Microsoft SQL Server as its back-end.
+		- sqlninja: Fancy going from a SQL Injection on Microsoft SQL Server to a full GUI access on the DB? Take a few new SQL Injection tricks, add a couple of remote shots in the registry to disable Data Execution Prevention, mix with a little Perl that automatically generates a debug script, put all this in a shaker with a Metasploit wrapper, shake well and you have just one of the attack modules of sqlninja! Sqlninja is a tool targeted to exploit SQL Injection vulnerabilities on a web application that uses Microsoft SQL Server as its back-end.
 		Its main goal is to provide a remote access on the vulnerable DB server, even in a very hostile environment. It should be used by penetration testers to help and automate the process of taking over a DB Server when a SQL Injection vulnerability has been discovered.
 		Palabras clave: sqlinjection, microsoft sql server, bases de datos. 
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/sqlninja
 
 		- sqlsus: sqlsus is an open source MySQL injection and takeover tool, written in perl.
-		Via a command line interface, you can retrieve the database(s) structure, inject your own SQL queries (even complex ones), download files from the web server, crawl the website for writable directories, upload and control a backdoor, clone the database(s), and much more…
+		Via a command line interface, you can retrieve the database(s) structure, inject your own SQL queries (even complex ones), download files from the web server, crawl the website for writable directories, upload and control a backdoor, clone the database(s), and much more… Sqlsus focuses on speed and efficiency, optimizing the available injection space, making the best use (I can think of) of MySQL functions. It uses stacked subqueries and an powerful blind injection algorithm to maximize the data gathered per web server hit. Using multi-threading on top of that, sqlsus is an extremely fast database dumper, be it for inband or blind injection.
 		Palabras clave: perl, bases de datos, sqlinjection. 
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/sqlsus
@@ -211,7 +211,7 @@ ATAQUES KALI
 		- hashcat: Hashcat is the self-proclaimed world’s fastest CPU-based password recovery tool. It is available free of charge, although it has a proprietary codebase. Versions are available for Linux, OSX, and Windows and can come in CPU-based or GPU-based variants. Hashcat currently supports a large range of hashing algorithms, including: Microsoft LM Hashes, MD4, MD5, SHA-family, Unix Crypt formats, MySQL, Cisco PIX, and many others.
 		Palabras clave: obtencion de contraseñas, multiplataforma.
 
-		- john: John the Ripper is designed to be both feature-rich and fast. It combines several cracking modes in one program and is fully configurable for your particular needs (you can even define a custom cracking mode using the built-in compiler supporting a subset of C). Also, John is available for several different platforms which enables you to use the same cracker everywhere (you can even continue a cracking session which you started on another platform).
+		- john: John the Ripper is designed to be both feature-rich and fast. It combines several cracking modes in one program and is fully configurable for your particular needs (you can even define a custom cracking mode using the built-in compiler supporting a subset of C). Also, John is available for several different platforms which enables you to use the same cracker everywhere (you can even continue a cracking session which you started on another platform). Out of the box, John supports (and autodetects) the following Unix crypt(3) hash types: traditional DES-based, “bigcrypt”, BSDI extended DES-based, FreeBSD MD5-based (also used on Linux and in Cisco IOS), and OpenBSD Blowfish-based (now also used on some Linux distributions and supported by recent versions of Solaris). Also supported out of the box are Kerberos/AFS and Windows LM (DES-based) hashes, as well as DES-based tripcodes. When running on Linux distributions with glibc 2.7+, John 1.7.6+ additionally supports (and autodetects) SHA-crypt hashes (which are actually used by recent versions of Fedora and Ubuntu), with optional OpenMP parallelization (requires GCC 4.2+, needs to be explicitly enabled at compile-time by uncommenting the proper OMPFLAGS line near the beginning of the Makefile).
 		Palabras clave: obtencion de contraseñas, ataque fuerza bruta.
 
 		Fuente: http://tools.kali.org/password-attacks/john
@@ -221,12 +221,12 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/password-attacks/johnny
 
-		- medusa: an open source software password auditing tool for Linux that will put all of your organization's passwords to the test.
+		- medusa: Medusa is a network authentication brute-forcing tool. It supports a wide array of protocols including FTP, HTTP, SSH, SMB, VNC, POP3, IMAP, MySQL, Telnet and many more. The factor differentiating Medusa is its capability of testing multiple systems in parallel. Medusa achieves this feat through the multithreading directive called ‘pthreads’. Users can specify a list of hosts that are to be tested and Medusa will create a child process for every host and test multiple systems at once leveraging preemptive multitasking to the fullest.
 		Palabras clave: obtencion de contraseñas, ataque fuerza bruta, ataque diccionario.
 
 		Fuente: http://www.serverwatch.com/tutorials/article.php/3886791/Medusa-Open-Source-Software-Login-BruteForcer-for-Password-Auditing.htm
 
-		- ncrack: Ncrack is a high-speed network authentication cracking tool. It was built to help companies secure their networks by proactively testing all their hosts and networking devices for poor passwords. Security professionals also rely on Ncrack when auditing their clients. Ncrack was designed using a modular approach, a command-line syntax similar to Nmap and a dynamic engine that can adapt its behaviour based on network feedback. It allows for rapid, yet reliable large-scale auditing of multiple hosts. 
+		- ncrack: Ncrack is a high-speed network authentication cracking tool. It was built to help companies secure their networks by proactively testing all their hosts and networking devices for poor passwords. Security professionals also rely on Ncrack when auditing their clients. Ncrack was designed using a modular approach, a command-line syntax similar to Nmap and a dynamic engine that can adapt its behaviour based on network feedback. It allows for rapid, yet reliable large-scale auditing of multiple hosts. Ncrack’s features include a very flexible interface granting the user full control of network operations, allowing for very sophisticated bruteforcing attacks, timing templates for ease of use, runtime interaction similar to Nmap’s and many more. Protocols supported include RDP, SSH, http(s), SMB, pop3(s), VNC, FTP, and telnet.
 		Palabras clave: obtencion de contraseñas, ataque fuerza bruta, ataque diccionario.
 
 		Fuente: http://tools.kali.org/password-attacks/ncrack
@@ -271,12 +271,12 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/wireless-attacks/cowpatty
 
-		- fern wifi crack: Fern Wifi Cracker is a Wireless security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to crack and recover WEP/WPA/WPS keys and also run other network based attacks on wireless or ethernet based networks.
+		- fern wifi crack: Fern Wifi Cracker is a Wireless security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to crack and recover WEP/WPA/WPS keys and also run other network based attacks on wireless or ethernet based networks. Fern Wifi Cracker currently supports the following features: WEP Cracking with Fragmentation,Chop-Chop, Caffe-Latte, Hirte, ARP Request Replay or WPS attack; WPA/WPA2 Cracking with Dictionary or WPS based attacks; Automatic saving of key in database on successful crack; Automatic Access Point Attack System; Session Hijacking (Passive and Ethernet Modes); Access Point MAC Address Geo Location Tracking; Internal MITM Engine; Bruteforce Attacks (HTTP,HTTPS,TELNET,FTP).
 		Palabras clave: obtencion de contraseñas, wifi, wep, wpa, wps, python.
 
 		Fuente: http://tools.kali.org/wireless-attacks/fern-wifi-cracker
 
-		- ghost phisher: Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy.
+		- ghost phisher: Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy. Ghost Phisher currently supports the following features: HTTP Server; Inbuilt RFC 1035 DNS Server; Inbuilt RFC 2131 DHCP Server; Webpage Hosting and Credential Logger (Phishing); Wifi Access point Emulator; Session Hijacking (Passive and Ethernet Modes); ARP Cache Poisoning (MITM and DOS Attacks); Penetration using Metasploit Bindings; Automatic credential logging using SQlite Database. 
 		Palabras clave: wifi, emular puntos de acceso, python.
 
 		Fuente: http://tools.kali.org/information-gathering/ghost-phisher
@@ -322,24 +322,20 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/wireless-attacks/reaver
 
-		- wifite: To attack multiple WEP, WPA, and WPS encrypted networks in a row. This tool is customizable to be automated with only a few arguments. Wifite aims to be the “set it and forget it” wireless auditing tool. 
+		- wifite: To attack multiple WEP, WPA, and WPS encrypted networks in a row. This tool is customizable to be automated with only a few arguments. Wifite aims to be the “set it and forget it” wireless auditing tool. Features: sorts targets by signal strength (in dB) cracks closest access points first; automatically de-authenticates clients of hidden networks to reveal SSIDs; numerous filters to specify exactly what to attack (wep/wpa/both, above certain signal strengths, channels, etc); customizable settings (timeouts, packets/sec, etc); “anonymous” feature: changes MAC to a random address before attacking, then changes back when attacks are complete; all captured WPA handshakes are backed up to wifite.py’s current directory; smart WPA de-authentication: cycles between all clients and broadcast deauths; stop any attack with Ctrl+C, with options to continue, move onto next target, skip to cracking, or exit; displays session summary at exit: shows any cracked keys; all passwords saved to cracked.txt
 		Palabras clave: obtencion de contraseñas, wifi, wep, wpa, wps. 
 
 		Fuente: http://tools.kali.org/wireless-attacks/wifite
 
 	- Reverse engineering:
-		- apktool: It is a tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some modifications; it makes possible to debug small code step by step. Also it makes working with app easier because of project-like files structure and automation of some repetitive tasks like building apk, etc. 
+		- apktool: It is a tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some modifications; it makes possible to debug small code step by step. Also it makes working with app easier because of project-like files structure and automation of some repetitive tasks like building apk, etc.
 		Palabras clave: ingenieria inversa, android
 
 		Fuente: http://tools.kali.org/reverse-engineering/apktool
 
 		- clang: 
 		- clang++
-		- dex2jar: dex2jar contains following compments:
-		dex-reader is designed to read the Dalvik Executable (.dex/.odex) format. 
-    	dex-translator is designed to do the convert job. It reads the dex instruction to dex-ir format, after some optimize, convert to ASM format.
-    	dex-ir used by dex-translator, is designed to represent the dex instruction.
-    	dex-tools tools to work with .class files. 
+		- dex2jar: dex2jar contains following components: dex-reader is designed to read the Dalvik Executable (.dex/.odex) format; dex-translator is designed to do the convert job. It reads the dex instruction to dex-ir format, after some optimize, convert to ASM format; dex-ir used by dex-translator, is designed to represent the dex instruction; dex-tools tools to work with .class files. 
     	Palabras clave: ingenieria inversa
 
     	Fuente: http://tools.kali.org/reverse-engineering/dex2jar
@@ -379,26 +375,26 @@ ATAQUES KALI
 		Fuente: http://null-byte.wonderhowto.com/how-to/reverse-engineering-with-radare2-a-quick-introduction-0165996/
 
 	- Exploitation tools:
-		- armitage: Armitage is a scriptable red team collaboration tool for Metasploit that visualizes targets, recommends exploits, and exposes the advanced post-exploitation features in the framework.
+		- armitage: Armitage is a scriptable red team collaboration tool for Metasploit that visualizes targets, recommends exploits, and exposes the advanced post-exploitation features in the framework. Through one Metasploit instance, your team will: use the same sessions; Share hosts, captured data, and downloaded files; Communicate through a shared event log; Run bots to automate red team tasks.
 		Palabras clave: exploit, metasploit.
 
 		Fuente: tools.kali.org/exploitation-tools/armitage
 
-		- beef xss frame: BeEF is short for The Browser Exploitation Framework. it’s a testing tool designed to enable penetration testers to launch client-side attacks against target browsers. By using techniques similar to common drive-by malware, testers can assess the security of a target’s internal environment, bypassing the hardened perimeter.
+		- beef xss frame: BeEF is short for The Browser Exploitation Framework. it’s a testing tool designed to enable penetration testers to launch client-side attacks against target browsers. By using techniques similar to common drive-by malware, testers can assess the security of a target’s internal environment, bypassing the hardened perimeter. Unlike other security frameworks, BeEF looks past the hardened network perimeter and client system, and examines exploitability within the context of the one open door: the web browser. BeEF will hook one or more web browsers and use them as beachheads for launching directed command modules and further attacks against the system from within the browser context.
 		Palabras clave: exploit, browsers. 
 
 		Fuente: https://sathisharthars.wordpress.com/2014/07/22/getting-started-with-browser-exploitation-framework-beef-in-kali-linux/
 
 		- ginguma
-		- inguma: Inguma is a penetration testing toolkit entirely written in python. The framework includes modules to discover hosts, gather information about, fuzz targets, brute force user names and passwords and, of course, exploits.
+		- inguma: Inguma is a penetration testing toolkit entirely written in python. The framework includes modules to discover hosts, gather information about, fuzz targets, brute force user names and passwords and, of course, exploits. While the current exploitation capabilities in Inguma may be limited, this program provides numerous tools for information gathering and target auditing.
 		Palabras clave: exploit, obtencion de contraseñas, ataque fuerza bruta, python.
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/inguma
 
-		- metasploit: Metasploit is one of the most popular open source penetration testing frameworks available today. It offers tons of tools that range from scanning utilities to easy to launch exploits that include encoders used to bypass common security defenses.
+		- metasploit: The Metasploit Framework (MSF) is far more than just a collection of exploits. It’s an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel. I consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins, the Metasploit Framework provides a truly impressive work environment.
 		Palabras clave: metasploit, exploit. 
 
-		Fuente: http://www.thesecurityblogger.com/metasploit-101-a-introduction-to-using-metasploit/
+		Fuente: https://www.offensive-security.com/metasploit-unleashed/introduction/
 
 		- msf payload: msfpayload is a command line instance of Metasploit that is used to generate and output all of the various types of shellcode that are available in Metasploit. The most common use of this tool is for the generation of shellcode for an exploit that is not currently in the Metasploit Framework or for testing different types of shellcode and options before finalizing an Exploit Module.
 		Palabras clave: exploit, terminal, metasploit. 
@@ -410,7 +406,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/information-gathering/exploitdb
 
-		- social engineering: The Social Engineering Toolkit includes a website tool that turns your Kali box into a webserver with a bunch of exploits that can compromise almost any browser.  The idea is that we would send our target a link which routes them through to our website which automatically downloads and executes the exploit on the target system.  You can even clone a valid website so the target is less suspicious.  This becomes even more effective if you study your victims browser habits and clone one of their most frequently accessed sites.
+		- social engineering: The Social Engineering Toolkit includes a website tool that turns your Kali box into a webserver with a bunch of exploits that can compromise almost any browser. The idea is that we would send our target a link which routes them through to our website which automatically downloads and executes the exploit on the target system. You can even clone a valid website so the target is less suspicious. This becomes even more effective if you study your victims browser habits and clone one of their most frequently accessed sites.
 		Palabras clave: ingenieria social, exploit, phising, obtencion de contraseñas.
 
 		Fuente: http://www.fixedbyvonnie.com/2015/06/using-the-social-engineering-toolkit-in-kali-linux/#.Vsn17kIy08o
@@ -444,7 +440,7 @@ ATAQUES KALI
 
 		Fuente: http://www.hackingtutorials.org/general-tutorials/mac-address-spoofing-with-macchanger/
 
-		- mitmproxy: mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console interface that allows traffic flows to be inspected and edited on the fly. Also shipped is mitmdump, the command-line version of mitmproxy, with the same functionality but without the frills. Think tcpdump for HTTP.
+		- mitmproxy: mitmproxy is an SSL-capable man-in-the-middle HTTP proxy. It provides a console interface that allows traffic flows to be inspected and edited on the fly. Also shipped is mitmdump, the command-line version of mitmproxy, with the same functionality but without the frills. Think tcpdump for HTTP. Features: intercept and modify HTTP traffic on the fly; save HTTP conversations for later replay and analysis; replay both HTTP clients and servers; make scripted changes to HTTP traffic using Python; SSL interception certs generated on the fly.
 		Palabras clave: mitm, http, terminal, spoofing, sniffing. 
 
 		Fuente: http://tools.kali.org/sniffingspoofing/mitmproxy
@@ -470,7 +466,7 @@ ATAQUES KALI
 
 		Fuente: http://security-sh3ll.blogspot.com.es/2012/02/intersect-v20-automated-post.html
 
-		- mimikatz: Mimikatz is a great post-exploitation tool written by Benjamin Delpy. A lot of times after the initial exploitation phase attackers may want to get a firmer foothold on the computer/network. Doing so often requires a set of complementary tools. Mimikatz is an attempt to bundle together some of the most useful tasks that attackers will want to perform.
+		- mimikatz: Mimikatz is a great post-exploitation tool written by Benjamin Delpy. A lot of times after the initial exploitation phase attackers may want to get a firmer foothold on the computer/network. Doing so often requires a set of complementary tools. Mimikatz is an attempt to bundle together some of the most useful tasks that attackers will want to perform. Fortunately, Metasploit has decided to include Mimikatz as a meterpreter script to allow for easy access to it’s full set of features without needing to upload any files to the disk of the compromised host.
 		Palabras clave: post exploit. 
 
 		Fuente: https://www.offensive-security.com/metasploit-unleashed/mimikatz/
@@ -497,7 +493,7 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/maintaining-access/weevely
 
 	- Forensics:
-		- Autopsy: Autopsy is a digital forensics platform and graphical interface to The Sleuth Kit and other digital forensics tools. It is used by law enforcement, military, and corporate examiners to investigate what happened on a computer. You can even use it to recover photos from your camera's memory card.
+		- Autopsy: Autopsy is a digital forensics platform and graphical interface to The Sleuth Kit and other digital forensics tools. It is used by law enforcement, military, and corporate examiners to investigate what happened on a computer. You can even use it to recover photos from your camera's memory card. Autopsy was designed to be an end-to-end platform with modules that come with it out of the box and others that are available from third-parties. Some of the modules provide: Timeline Analysis - Advanced graphical event viewing interface (video tutorial included); Hash Filtering - Flag known bad files and ignore known good; Keyword Search - Indexed keyword search to find files that mention relevant terms; Web Artifacts - Extract history, bookmarks, and cookies from Firefox, Chrome, and IE; Data Carving - Recover deleted files from unallocated space using PhotoRec; Multimedia - Extract EXIF from pictures and watch videos; Indicators of Compromise - Scan a computer using STIX.
 		Palabras clave: recuperación de archivos, forense.
 
 		Fuente: http://www.sleuthkit.org/autopsy/
@@ -507,7 +503,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/forensics/binwalk
 
-		- bulk_extractor: bulk_extractor is a program that extracts features such as email addresses, credit card numbers, URLs, and other types of information from digital evidence files. It is a useful forensic investigation tool for many tasks such as malware and intrusion investigations, identity investigations and cyber investigations, as well as analyzing imagery and pass-word cracking.
+		- bulk_extractor: bulk_extractor is a program that extracts features such as email addresses, credit card numbers, URLs, and other types of information from digital evidence files. It is a useful forensic investigation tool for many tasks such as malware and intrusion investigations, identity investigations and cyber investigations, as well as analyzing imagery and pass-word cracking.  The program provides several unusual capabilities including: It finds email addresses, URLs and credit card numbers that other tools miss because it can process compressed data (like ZIP, PDF and GZIP ﬁles) and incomplete or partially corrupted data. It can carve JPEGs, office documents and other kinds of files out of fragments of compressed data. It will detect and carve encrypted RAR files. It builds word lists based on all of the words found within the data, even those in compressed files that are in unallocated space. Those word lists can be useful for password cracking. It is multi-threaded; running bulk_extractor on a computer with twice the number of cores typically makes it complete a run in half the time. It creates histograms showing the most common email addresses, URLs, domains, search terms and other kinds of information on the drive.
 		Palabras clave: recuperacion de archivos, forense, obtencion de contraseñas. 
 
 		Fuente: http://tools.kali.org/forensics/bulk-extractor
@@ -591,7 +587,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/reporting-tools/pipal
 
-		- recordmydesktop: recordMyDesktop is a free and open source desktop screencasting software application written for GNU/Linux. The program is separated into two parts; a command line tool that performs the tasks of capturing and encoding, and an interface that exposes the program functionality graphically.
+		- recordmydesktop: recordMyDesktop is a free and open source desktop screencasting software application written for GNU/Linux. The program is separated into two parts; a command line tool that performs the tasks of capturing and encoding, and an interface that exposes the program functionality graphically. There are two front-ends written in python with pyGtk (gtk-recordMyDesktop) and pyQt4 (qt-recordMyDesktop). RecordMyDesktop also offers the ability to record audio through ALSA, OSS or the JACK audio server. RecordMyDesktop only outputs to Ogg using Theora for video and Vorbis for audio.
 		Palabras clave: recopilacion de informacion
 
 		Fuente: http://www.k4linux.com/2013/12/how-to-record-your-desktop-in-kali-linux.html#
@@ -599,15 +595,14 @@ ATAQUES KALI
 	- Social engineering tools:
 		- backdoor-framework???
 		- beef xss framework: Ya hecha
-		- ghost phiser: Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy.
+		- ghost phiser: Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy. Ghost Phisher currently supports the following features: HTTP Server; Inbuilt RFC 1035 DNS Server; Inbuilt RFC 2131 DHCP Server; Webpage Hosting and Credential Logger (Phishing); Wifi Access point Emulator; Session Hijacking (Passive and Ethernet Modes); ARP Cache Poisoning (MITM and DOS Attacks); Penetration using Metasploit Bindings; Automatic credential logging using SQlite Database; Update Support. 
 		Palabras clave: ingenieria social, phising
 
 		Fuente: http://www.ehacking.net/2012/07/ghost-phisher-phishing-penetration.html
 
 		- maltego: Ya hecha
 		- msf payload: Ya hecho
-		- social engineering: The Social-Engineer Toolkit is an open-source penetration testing framework designed for Social-Engineering. SET has a number of custom attack vectors that allow you to make a believable attack in a fraction of the time.
-		Palabras clave: ingenieria social
+		- social engineering: Ya hecha
 
 		Fuente: http://tools.kali.org/information-gathering/set
 
@@ -617,7 +612,7 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/maintaining-access/u3-pwn
 
 	- Ataques que añado al final porque deben estar (en teoría no están en mi distribución de Kali):
-		- hping3: hping is a command-line oriented TCP/IP packet assembler/analyzer. The interface is inspired to the ping(8) unix command, but hping isn’t only able to send ICMP echo requests. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features.
+		- hping3: hping is a command-line oriented TCP/IP packet assembler/analyzer. The interface is inspired to the ping(8) unix command, but hping isn’t only able to send ICMP echo requests. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features. While hping was mainly used as a security tool in the past, it can be used in many ways by people that don’t care about security to test networks and hosts. A subset of the stuff you can do using hping: Firewall testing; Advanced port scanning; Network testing, using different protocols, TOS, fragmentation; Manual path MTU discovery; Advanced traceroute, under all the supported protocols; Remote OS fingerprinting; Remote uptime guessing; TCP/IP stacks auditing; hping can also be useful to students that are learning TCP/IP.
 		Palabras clave: sniffer, TCP, UDP, ICMP, IP, DoS. 
 
 		Fuente: http://tools.kali.org/information-gathering/hping3
@@ -625,3 +620,5 @@ ATAQUES KALI
 		- slowhttptest: SlowHTTPTest is a highly configurable tool that simulates some Application Layer Denial of Service attacks. It works on majority of Linux platforms, OSX and Cygwin – a Unix-like environment and command-line interface for Microsoft Windows.
 		It implements most common low-bandwidth Application Layer DoS attacks, such as slowloris, Slow HTTP POST, Slow Read attack (based on TCP persist timer exploit) by draining concurrent connections pool, as well as Apache Range Header attack by causing very significant memory and CPU usage on the server.
 		Palabras clave: DoS, TCP, HTTP. 
+
+		Fuente: http://www.blackmoreops.com/2015/06/07/attack-website-using-slowhttptest-in-kali-linux/
