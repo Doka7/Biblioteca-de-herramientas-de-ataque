@@ -37,8 +37,8 @@
   <div class="container">
 
     <div class="page-header">
-      <h1>Insertar ataques en la BBDD (root)</h1>
-      <p>Realice búsquedas y encuentre la herramienta más adecuada para sus fines.</p>      
+      <h1>Insertar herramientas en la BBDD (root)</h1>
+      <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
     </div>
 
     <form id="insertar" class="form-horizontal" method="post" action="">
@@ -46,11 +46,11 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Insertar ataque</legend>
+        <legend>Insertar herramienta</legend>
 
         <!-- Name input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="searchinput">Nombre ataque:</label>
+          <label class="col-md-4 control-label" for="searchinput">Nombre herramienta:</label>
           <div class="col-md-4">
             <input id="searchinput" name="searchinput" type="search" placeholder="Ej: nmap" class="form-control input-md" required>
           </div>
@@ -58,7 +58,7 @@
 
         <!-- Description input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="searchinput">Descripción ataque:</label>
+          <label class="col-md-4 control-label" for="description">Descripción herramienta:</label>
           <div class="col-md-4">
             <textarea id="description" name="description" placeholder="Introduzca aquí la descripción del ataque." class="form-control" rows="3" required></textarea>
           </div>
@@ -66,85 +66,96 @@
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_lenguaje">Lenguaje:</label> 
+          <label class="col-md-4 control-label" for="Enum_recopilacion">Herramienta de recopilacion de informacion:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_lenguaje[]" value="2">Python<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="3">Perl<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="4">C<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="5">Ruby<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="6">Java<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="7">PowerShell<br>
-            <input type="checkbox" name="Enum_lenguaje[]" value="8">PHP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="1">Análisis de DNS<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="2">Análisis de DNS<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="3">Análisis de tráfico<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="4">Análisis de OSINT<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="5">Análisis de routeo<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="6">Análisis de SMB<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="7">Análisis de SMTP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="8">Análisis de SNMP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="9">Análisis de SSL<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="10">Análisis de VoIP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="11">Análisis de VPN<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="12">Detección de servicio<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="13">Detección de SO<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="14">Ídentificación de hosts en línea<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_protocolo">Protocolo:</label> 
+          <label class="col-md-4 control-label" for="Enum_vulnera">Herramienta de análisis de vulnerabilidades:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_protocolo[]" value="2">WEP<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="3">WPA<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="4">WPA2<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="5">WPS<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="6">TCP<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="7">IP<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="8">IPSEC<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="9">IKE<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="10">ARP<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="11">HTTP<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="12">HTTPS<br>
-            <input type="checkbox" name="Enum_protocolo[]" value="13">ICMP<br>
+            <input type="checkbox" name="Enum_vulnera[]" value="1">Herramientas Cisco<br>
+            <input type="checkbox" name="Enum_vulnera[]" value="2">Evaluación de BBDD<br>
+            <input type="checkbox" name="Enum_vulnera[]" value="3">Fuzzing<br>
+            <input type="checkbox" name="Enum_vulnera[]" value="4">Evaluación de software<br>
+            <input type="checkbox" name="Enum_vulnera[]" value="5">Escaner de vulnerabilidades<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_reco">Ataque de reconocimiento de redes:</label> 
+          <label class="col-md-4 control-label" for="Enum_contrasenas">Herramienta para romper contraseñas:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_reco[]" value="2">Ingeniería inversa<br>
-            <input type="checkbox" name="Enum_reco[]" value="3">Escáner de redes<br>
+            <input type="checkbox" name="Enum_contrasenas[]" value="1">Herramientas para GPU<br>
+            <input type="checkbox" name="Enum_contrasenas[]" value="2">Ataques sin conexión<br>
+            <input type="checkbox" name="Enum_contrasenas[]" value="3">Ataques con conexión<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_vulnera">Ataque de análisis de vulnerabilidades:</label> 
+          <label class="col-md-4 control-label" for="Enum_wireless">Herramienta wireless:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_vulnera[]" value="2">Escáner de programas<br>
-            <input type="checkbox" name="Enum_vulnera[]" value="3">Configuraciones por defecto<br>
-            <input type="checkbox" name="Enum_vulnera[]" value="4">Exploit<br>
+            <input type="checkbox" name="Enum_wireless[]" value="1">Herramienta Bluetooth<br>
+            <input type="checkbox" name="Enum_wireless[]" value="2">Herramienta RFID/NFC<br>
+            <input type="checkbox" name="Enum_wireless[]" value="3">Herramienta wireless<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_contrasenas">Ataque para romper contraseñas:</label> 
+          <label class="col-md-4 control-label" for="Enum_exploit">Herramienta para exploit:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_contrasenas[]" value="2">Ataque wireless<br>
-            <input type="checkbox" name="Enum_contrasenas[]" value="3">Ataque de fuerza bruta<br>
-            <input type="checkbox" name="Enum_contrasenas[]" value="4">Ataque de diccionario<br>
-            <input type="checkbox" name="Enum_contrasenas[]" value="5">Rainbow tables<br>
+            <input type="checkbox" name="Enum_exploit[]" value="1">Metasploit<br>
+            <input type="checkbox" name="Enum_exploit[]" value="2">Explotación de redes<br>
+            <input type="checkbox" name="Enum_exploit[]" value="3">Ingeniería social<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_suplantacion">Herramientas de soporte de suplantación:</label> 
+          <label class="col-md-4 control-label" for="Enum_SSF">Sniffing/Spoofing/Forensics:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_suplantacion[]" value="2">Phising<br>
-            <input type="checkbox" name="Enum_suplantacion[]" value="3">Spoofing<br>
-            <input type="checkbox" name="Enum_suplantacion[]" value="4">Ingeniería social<br>
+            <input type="checkbox" name="Enum_SSF[]" value="1">Network sniffer<br>
+            <input type="checkbox" name="Enum_SSF[]" value="2">Network Spoofing<br>
+            <input type="checkbox" name="Enum_SSF[]" value="3">Herramientas VoIP<br>
+            <input type="checkbox" name="Enum_SSF[]" value="4">Web sniffer<br>
+            <input type="checkbox" name="Enum_SSF[]" value="5">Herramientas forense<br>
           </div>
         </div>
 
         <!-- Checkbox -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Enum_info">Herramientas de obtención de información:</label> 
+          <label class="col-md-4 control-label" for="Enum_access">Maintaining access:</label> 
           <div class="col-md-4">
-            <input type="checkbox" name="Enum_info[]" value="2">SQLinjection<br>
-            <input type="checkbox" name="Enum_info[]" value="3">MiTM<br>
-            <input type="checkbox" name="Enum_info[]" value="4">Post exploit<br>
-            <input type="checkbox" name="Enum_info[]" value="4">Forense<br>
+            <input type="checkbox" name="Enum_access[]" value="1">SO backdoor<br>
+            <input type="checkbox" name="Enum_access[]" value="2">Web backdoor<br>
+            <input type="checkbox" name="Enum_access[]" value="3">Herramientas para túneles<br>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_inversa">Ingeniería inversa:</label> 
+          <div class="col-md-4">
+            <input type="checkbox" name="Enum_inversa[]" value="1">Depurador<br>
+            <input type="checkbox" name="Enum_inversa[]" value="2">Desensamblador<br>
+            <input type="checkbox" name="Enum_inversa[]" value="3">Otras herramientas<br>
           </div>
         </div>
 
@@ -181,38 +192,22 @@
     $stmt->execute();
 
     //Recupero el ID del ultimo ataque que se ha insertado en la bbdd.
-    $ID_ATAQUE = $con->lastInsertId();
+    if ($ID_ATAQUE = null) {
+      $ID_ATAQUE = 1;
+    } else {
+      $ID_ATAQUE = $con->lastInsertId();
+    }
     echo "Este es el ID del ultimo ataque: " . $ID_ATAQUE . '<br/>';
 
     //Insertar datos de la BBDD con prepare()
 
-    $ID_LENGUAJE = $_POST['Enum_lenguaje'];
-    $count = count($ID_LENGUAJE);
+    $ID_RECOPILACION = $_POST['Enum_recopilacion'];
+    $count = count($ID_RECOPILACION);
     for ($i = 0; $i < $count; $i++) {
-      echo 'ID del lenguaje: ' . $ID_LENGUAJE[$i] . '<br/>';
-      $stmt = $con->prepare("INSERT INTO Lenguajes (ID_ATAQUE, ID_LENGUAJE) VALUES (:id_ataque, :id_lenguaje)"); 
+      echo 'ID de ataque de recopilacion de información: ' . $ID_RECOPILACION[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Recopilacion_info (ID_ATAQUE, ID_RECOPILACION) VALUES (:id_ataque, :id_recopilacion)"); 
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
-      $stmt->bindParam(':id_lenguaje', $ID_LENGUAJE[$i]);
-      $stmt->execute();
-    }
-
-    $ID_PROTOCOLO = $_POST['Enum_protocolo'];
-    $count = count($ID_PROTOCOLO);
-    for ($i = 0; $i < $count; $i++) {
-      echo 'ID del protocolo: ' . $ID_PROTOCOLO[$i] . '<br/>';
-      $stmt = $con->prepare("INSERT INTO Protocolos (ID_ATAQUE, ID_PROTOCOLO) VALUES (:id_ataque, :id_protocolo)"); 
-      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
-      $stmt->bindParam(':id_protocolo', $ID_PROTOCOLO[$i]);
-      $stmt->execute(); 
-    }
-
-    $ID_RECONOCIMIENTO = $_POST['Enum_reco'];
-    $count = count($ID_RECONOCIMIENTO);
-    for ($i = 0; $i < $count; $i++) {
-      echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO[$i] . '<br/>';
-      $stmt = $con->prepare("INSERT INTO Reco (ID_ATAQUE, ID_RECONOCIMIENTO) VALUES (:id_ataque, :id_reconocimiento)"); 
-      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
-      $stmt->bindParam(':id_reconocimiento', $ID_RECONOCIMIENTO[$i]);
+      $stmt->bindParam(':id_recopilacion', $ID_RECOPILACION[$i]);
       $stmt->execute();
     }
     
@@ -221,7 +216,7 @@
     $count = count($ID_VULNERABILIDAD);
     for ($i = 0; $i < $count; $i++) {
       echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD[$i] . '<br/>'; 
-      $stmt = $con->prepare("INSERT INTO Analisis_vulnera (ID_ataque, ID_vulnerabilidad) VALUES (:id_ataque, :id_vulnerabilidad)"); 
+      $stmt = $con->prepare("INSERT INTO Analisis_vulnera (ID_ATAQUE, ID_VULNERABILIDAD) VALUES (:id_ataque, :id_vulnerabilidad)"); 
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
       $stmt->bindParam(':id_vulnerabilidad', $ID_VULNERABILIDAD[$i]);
       $stmt->execute();
@@ -237,26 +232,55 @@
       $stmt->execute();    
     }
 
-    $ID_SUPLANTACION = $_POST['Enum_suplantacion'];
-    $count = count($ID_SUPLANTACION);
+    $ID_WIRELESS = $_POST['Enum_wireless'];
+    $count = count($ID_WIRELESS);
     for ($i = 0; $i < $count; $i++) {
-      echo 'ID de ataque de soporte de suplantación: ' . $ID_SUPLANTACION[$i] . '<br/>';
-      $stmt = $con->prepare("INSERT INTO Suplantacion (ID_ATAQUE, ID_SUPLANTACION) VALUES (:id_ataque, :id_suplantacion)"); 
+      echo 'ID de herramienta wireless: ' . $ID_WIRELESS[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Wireless (ID_ATAQUE, ID_WIRELESS) VALUES (:id_ataque, :id_wireless)"); 
       $stmt->bindParam(':id_ataque', $ID_ATAQUE);
-      $stmt->bindParam(':id_suplantacion', $ID_SUPLANTACION[$i]);
-      $stmt->execute();  
-    }
-
-    $ID_TIPO = $_POST['Enum_info'];
-    $count = count($ID_TIPO);
-    for ($i = 0; $i < $count; $i++) {
-      echo 'ID de ataque de obtencion de información: ' . $ID_TIPO[$i] . '<br/>';
-      $stmt = $con->prepare("INSERT INTO Obtener_info (ID_ATAQUE, ID_TIPO) VALUES (:id_ataque, :id_tipo)"); 
-      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
-      $stmt->bindParam(':id_tipo', $ID_TIPO[$i]);
+      $stmt->bindParam(':id_wireless', $ID_WIRELESS[$i]);
       $stmt->execute();    
     }
 
+    $ID_EXPLOIT = $_POST['Enum_exploit'];
+    $count = count($ID_EXPLOIT);
+    for ($i = 0; $i < $count; $i++) {
+      echo 'ID de herramienta exploit: ' . $ID_EXPLOIT[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Exploit (ID_ATAQUE, ID_EXPLOIT) VALUES (:id_ataque, :id_exploit)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_exploit', $ID_EXPLOIT[$i]);
+      $stmt->execute();    
+    }
+
+    $ID_SSF = $_POST['Enum_SSF'];
+    $count = count($ID_SSF);
+    for ($i = 0; $i < $count; $i++) {
+      echo 'ID de herramienta Sniffer/Spoofing/Forensics: ' . $ID_SSF[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Sniff_Spoof_Foren (ID_ATAQUE, ID_SSF) VALUES (:id_ataque, :id_SSF)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_SSF', $ID_SSF[$i]);
+      $stmt->execute();    
+    }
+
+    $ID_ACCESS = $_POST['Enum_access'];
+    $count = count($ID_ACCESS);
+    for ($i = 0; $i < $count; $i++) {
+      echo 'ID de herramienta de Maintaining Access: ' . $ID_ACCESS[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Maintaining_access (ID_ATAQUE, ID_ACCESS) VALUES (:id_ataque, :id_access)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_access', $ID_ACCESS[$i]);
+      $stmt->execute();    
+    }
+
+    $ID_INVERSA = $_POST['Enum_inversa'];
+    $count = count($ID_INVERSA);
+    for ($i = 0; $i < $count; $i++) {
+      echo 'ID de herramienta de Ingeniería inversa: ' . $ID_INVERSA[$i] . '<br/>';
+      $stmt = $con->prepare("INSERT INTO Ingenieria_inversa (ID_ATAQUE, ID_INVERSA) VALUES (:id_ataque, :id_inversa)"); 
+      $stmt->bindParam(':id_ataque', $ID_ATAQUE);
+      $stmt->bindParam(':id_inversa', $ID_INVERSA[$i]);
+      $stmt->execute();    
+    }
   }
 
   catch(PDOException $e) {
