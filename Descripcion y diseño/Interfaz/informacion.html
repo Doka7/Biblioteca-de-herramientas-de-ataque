@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Informacion</title>
+  <title>Información</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,12 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
 
+  <!-- js -->
+  <script src="formulario.js"></script>
+
+  <!-- Jquery -->
+  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
+
 </head>
 <body>
 
@@ -30,22 +36,169 @@
       <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
     </div>
 
-    <p>Si no selecciona ningún campo, se mostrarán todos los ataques de la base de datos. A partir de ahí, cada parámetro que incluya refinará cada vez más la búsqueda.</p>
-    <p>Los ataques han sido divididos en las siguientes categorías:</p>
-    <p class="enumeracion justificado">1. <b>Reconocimiento de redes:</b> Herramientas basadas en ingeniería inversa o escáner de redes.</p>
-    <p class="enumeracion justificado">2. <b>Análisis de vulnerabilidades:</b> Herramientas basadas en escanear programas, analizar configuraciones por defecto o exploits.</p>
-    <p class="enumeracion justificado">3. <b>Romper contraseñas:</b> Herramientas que permiten realizar ataques de diccionario, fuerza bruta y aquellos especializados en atacar sistemas WiFi.</p>
-    <p class="enumeracion justificado">4. <b>Soporte para suplantación:</b> Herramientas que permiten realizar ataques de phising, spoofing o ingeniería social.</p>
-    <p class="enumeracion justificado">5. <b>Obtener otro tipo de información:</b> Herramientas que permiten realizar ataques de SQLinjection, Man in The Middle, post exploit o herramientas forenses.</p><br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Sistema operativo objetivo</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas que permiten atacar un sistema operativo concreto.</dd>
+          <dt>Tipos</dt>
+          <dd>Android</dd>
+          <dd>iOS</dd>
+          <dd>OS-X</dd>
+          <dd>Ubunto</dd>
+          <dd>Windows</dd>
+        </dl>
+
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Recopilación de información:</div>
+
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas basadas en análisis que recogen información de todo tipo.</dd>
+          <dt>Tipos</dt>
+          <dd>Análisis de DNS: Nos puede servir para enumerar dominios con sus entradas DNS, o buscar información en la caché DNS de un servidor, desvelando en por qué páginas ha navegado. </dd>
+          <dd>Análisis de tráfico: Permite que veamos el tráfico de nuestra red local, para lo cual nuestra tarjeta de red deberá configurarse en modo promiscuo.</dd>
+          <dd>Análisis de OSINT: Inteligencia de fuentes abiertas u «Open Source Intelligence» (OSINT) hace referencia al conocimiento recopilado a partir de fuentes de acceso público. El proceso incluye la búsqueda, selección y adquisición de la información, así como un posterior procesado y análisis de la misma con el fin de obtener conocimiento útil y aplicable en distintos ámbitos.</dd>
+          <dd>Análisis de routeo: Permite que obtengamos información sobre máscaras de red ICMP, o sobre la trayectoria que siguen los paquetes que circulan por nuestra red.</dd>
+          <dd>Análisis de SMB: Server Message Block (SMB) es un protocolo de red que permite compartir archivos,impresoras, etc, entre nodos de una red de computadoras que usan el sistema operativo Microsoft Windows. Este protocolo pertenece a la capa de aplicación en el modelo OSI.</dd>
+          <dd>Análisis de SMTP: El Simple Mail Transfer Protocol (SMTP) o “protocolo para transferencia simple de correo”, es un protocolo de red utilizado para el intercambio de mensajes de correo electrónico entre computadoras u otros dispositivos (PDA, teléfonos móviles, impresoras, etc). Fue definido en el RFC 2821 y es un estándar oficial de Internet.</dd>
+          <dd>Análisis de SNMP: El Protocolo simple de administración de redes (SNMP) es un protocolo que se usa para administrar redes TCP/IP complejas. Con SNMP, los administradores pueden administrar y configurar equipos en red desde un equipo centralmente ubicado, en lugar de tener que ejecutar software de administración de red.</dd>
+          <dd>Análisis de SSL: SSL (Secure Socket Layer) es un proceso que administra la seguridad de las transacciones que se realizan a través de Internet. Se basa en un proceso de cifrado de clave pública que garantiza la seguridad de los datos que se envían a través de Internet. Su principio consiste en el establecimiento de un canal de comunicación seguro (cifrado) entre dos equipos (el cliente y el servidor) después de una fase de autenticación. </dd>
+          <dd>Análisis de VoIP: VoIP (Voice over IP), es un conjunto de recursos que hacen posible que la señal de voz viaje a través de Internet empleando el protocolo IP. </dd>
+          <dd>Análisis de VPN: Un VPN (Virtual Private Network) te permite crear una conexión segura a otra red a través del Internet.  Cuando conectas cualquier dispositivo a un VPN, este actúa como si estuviese en la misma red que la que tiene el VPN y todo el tráfico de datos se envía de forma segura a través del VPN.</dd>
+          <dd>Detección de servicio: Nos permite obtener los servicios que dispone nuestra víctima, así como los puertos en los que se localizan.</dd>
+          <dd>Detección de SO: Permite que obtengamos el nombre y la versión del sistema operativo que nuestra víctima está utilizando.</dd>
+          <dd>Identificación de hosts en línea: Nos sirve para recopilar información sobre los distintos dispositivos o hosts conectados a nuestra red.</dd>
+          <dd>Identificación de IDS: Permite descubrir la presencia de sistemas de detección de intrusos en nuestra red.</dd>
+        </dl>
+
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">Análisis de vulnerabilidades:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas basadas en escanear programas y bases de datos, o analizar configuraciones por defecto.</dd>
+          <dt>Tipos</dt>
+          <dd>Herramientas Cisco: Nos permite recopilar información sobre routers Cisco, para poder evaluar sus vulnerabilidades, además de disponer de herramientas para explotar estos dispositivos. </dd>
+          <dd>Evaluación de BBDD: Nos permite recopilar información sobre bases de datos para evaluar vulnerabilidades y realizar ataques de SQLinjection.</dd>
+          <dd>Fuzzing: Se llama fuzzing a las diferentes técnicas de testeo de software capaces de generar y enviar datos secuenciales o aleatorios a una o varias áreas o puntos de una aplicación, con el objeto de detectar defectos o vulnerabilidades existentes en el software auditado. Es utilizado como complemento a las prácticas habituales de chequeo de software, ya que proporcionan cobertura a fallos de datos y regiones de código no testados, gracias a la combinación del poder de la aleatoriedad y ataques heurísticos, entre otros. </dd>
+          <dd>Evaluación de software: Realización de determinadas pruebas para comprobar el nivel de seguridad de un determinado software. </dd>
+          <dd>Otros escáneres: Recogen otro tipo de escáneres para complementar al resto ya comentados. </dd>
+        </dl>
+
+
+      </div>
+    </div>
+
+    <div class="panel panel-warning">
+      <div class="panel-heading">Herramientas de contraseñas:</div>
+      <div class="panel-body">
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas que permiten realizar ataques de diccionario, fuerza bruta o rainbow tables.</dd>
+          <dt>Tipos</dt>
+          <dd>Herramientas para GPU: Unidad de procesamiento gráfico o GPU (Graphics Processor Unit) es un coprocesador dedicado al procesamiento de gráficos u operaciones de coma flotante, para aligerar la carga de trabajo del procesador central en aplicaciones como los videojuegos o aplicaciones 3D interactivas.</dd>
+          <dd>Ataques sin conexión: Permite que realicemos ataques de contraseñas aún sin disponer de conexión a Internet, mediante ataques de diccionario o de fuerza bruta.</dd>
+          <dd>Ataques con conexión: Realiza ataques de contraseña apoyándose en búsquedas a través de Internet sobre información acerca de la víctima para aumentar la eficiencia del ataque.</dd>
+        </dl>
+
+
+      </div>
+    </div>
+
+    <div class="panel panel-danger">
+      <div class="panel-heading">Herramientas wireless:</div>
+      <div class="panel-body">
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas orientadas a sistemas Bluetooth, NFC o RFID, entre otros.</dd>
+          <dt>Tipos</dt>
+          <dd>Herramientas Bluetooth: Nos permite localizar y atacar a dispositivos Bluetooth </dd>
+          <dd>Herramientas RFID/NFC: RFID, o Identificación por Radiofrecuencia se utiliza para identificar un elemento, seguir su ruta de movimiento y calcular distancias gracias a una etiqueta especial que emite ondas de radio, la cual se adjunta o se encuentra incorporada al objeto. La tecnología RFID permite la lectura de etiquetas incluso cuando éstas no se encuentran en una línea visual directa y puede además penetrar finas capas de materiales (pintura, nieve, etc.). Por su parte, NFC, (comunicación de campo cercano en español) es una tecnología de comunicación inalámbrica, de corto alcance y alta frecuencia que permite el intercambio de datos entre dispositivos.</dd>
+          <dd>Herramientas wireless: Sirven para identificar y lanzar ataques contra sistemas WiFi y Zigbee. </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Herramientas para exploit:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas relacionadas con Metasploit y técnicas de ingeniería social.</dd>
+          <dt>Tipos</dt>
+          <dd>Metasploit: ESTA HAY QUE QUITARLA</dd>
+          <dd>Explotación de redes: HerramientaS de penetración que pueden ser usadas para detectar las vulnerabilidades de nuestros sistemas para protegerlos o usar esas vulnerabilidades para obtener acceso a sistemas remotos.</dd>
+          <dd>Ingeniería social: Herramientas que nos permiten recopilar información sobre nuestras víctimas para realizar un posterior ataque especialmente dirigido.</dd>
+        </dl>
+
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">Herramientas de Sniffing/Spoofing/Forensics:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas que permiten capturar paquetes, envenenamiento de redes o recuperación de archivos.</dd>
+          <dt>Tipos</dt>
+          <dd>Network sniffer: Permite capturar y analizar paquetes que circulan por nuestra red, o redirigirlos a otro destino.</dd>
+          <dd>Network spoofing: Permiten suplantar la identidad de usuarios o servidores.</dd>
+          <dd>Herramientas VoIP</dd>
+          <dd>Web sniffer: LA DIFERENCIA CON NETWORK SNIFFER SE DEJA PARA CUANDO LAS HERRAMIENTAS SE HAYAN METIDO.</dd>
+          <dd>Herramientas forense: Permite recuperar archivos perdidos o eliminados de nuestro ordenador. </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Herramientas de maintaining access:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas que permiten realizar túneles, o encontrar backdoors de SO y aplicaciones.</dd>
+          <dt>Tipos</dt>
+          <dd>SO backdoor: Un backdoor es un tipo de troyano que permite el acceso al sistema infectado y su control remoto. El atacante puede entonces eliminar o modificar archivos, ejecutar programas, enviar correos masivamente o instalar herramientas maliciosas.</dd>
+          <dd>Web backdoor: DIFERENCIA SE DEJA PARA EL FINAL</dd>
+          <dd>Herramientas para túneles</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Herramientas de ingeniería inversa:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd>Herramientas que permiten desensamblar y reconstruir aplicaciones.</dd>
+          <dt>Tipos</dt>
+          <dd>Depurador: Herramienta que permite al usuario ejecutar un programa paso a paso, y examinar varios valores y acciones.</dd>
+          <dd>Desensamblador: Esencialmente, un desensamblador es exáctamente lo contrario de un ensamblador. Tal como un ensamblador convierte código escrito en ensamblador en código máquina binario, un desensamblador invierte el proceso e intenta recrear el código en ensamblador partiendo del código máquina binario.</dd>
+          <dd>Otras herramientas: Herramientas complementarias con las ya descritas. </dd>
+        </dl>
+      </div>
+    </div>
 
     <div class="boton">
-      <a class="btn btn-default" href="formulario.php" role="button">Volver</a>
+      <a class="btn btn-primary navbar-btn" href="formulario.php" role="button">Atrás</a>
     </div><br>
 
   </div>
-
-
-  
 
 </body>
 </html>

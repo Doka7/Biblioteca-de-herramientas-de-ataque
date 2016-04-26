@@ -3,6 +3,10 @@ body {
 	text-indent:15px;
 }
 
+/*.page_header {
+		background-image: url("header1.png");
+}*/
+
 .table-hover tbody tr:hover,
             .table-hover tbody tr:hover td,
             .table-hover tbody tr:hover th{

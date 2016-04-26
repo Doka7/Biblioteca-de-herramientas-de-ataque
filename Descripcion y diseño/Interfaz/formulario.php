@@ -32,6 +32,9 @@
   <!-- js -->
   <script src="formulario.js"></script>
 
+  <!-- Jquery -->
+  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
+
 </head>
 
 <body>
@@ -58,6 +61,22 @@
           </div>
         </div>
 
+        <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Enum_SO">Sistema operativo objetivo:</label>
+        <div class="col-md-4">
+          <select id="Enum_SO" name="Enum_SO" class="form-control" onchange="checkAndSubmit()">
+            <option value="0" <?php if($_POST['Enum_SO']==0) echo 'selected="selected" ';?>>Seleccionar</option>          
+            <option value="1" <?php if($_POST['Enum_SO']==1) echo 'selected="selected" ';?>>Android</option>
+            <option value="2" <?php if($_POST['Enum_SO']==2) echo 'selected="selected" ';?>>iOS</option>
+            <option value="3" <?php if($_POST['Enum_SO']==3) echo 'selected="selected" ';?>>OS-X</option>
+            <option value="4" <?php if($_POST['Enum_SO']==4) echo 'selected="selected" ';?>>Ubuntu</option>
+            <option value="5" <?php if($_POST['Enum_SO']==5) echo 'selected="selected" ';?>>Windows</option>
+            <option value="6" <?php if($_POST['Enum_SO']==6) echo 'selected="selected" ';?>>Todos</option>
+          </select>
+        </div>
+      </div>
+
       <!-- Select Basic -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="Enum_recopilacion" >Recopilación de información:</label>
@@ -78,6 +97,8 @@
             <option value="12" <?php if($_POST['Enum_recopilacion']==12) echo 'selected="selected" ';?>>Detección de SO</option>
             <option value="13" <?php if($_POST['Enum_recopilacion']==13) echo 'selected="selected" ';?>>Identificación de hosts en línea</option>
             <option value="14" <?php if($_POST['Enum_recopilacion']==14) echo 'selected="selected" ';?>>Identificación de IDS</option>
+            <option value="15" <?php if($_POST['Enum_recopilacion']==15) echo 'selected="selected" ';?>>Todos</option>
+
           </select>
         </div>
       </div>
@@ -92,7 +113,8 @@
             <option value="2" <?php if($_POST['Enum_vulnera']==2) echo 'selected="selected" ';?>>Evaluación de BBDD</option>
             <option value="3" <?php if($_POST['Enum_vulnera']==3) echo 'selected="selected" ';?>>Fuzzing</option>
             <option value="4" <?php if($_POST['Enum_vulnera']==4) echo 'selected="selected" ';?>>Evaluación de software</option>
-            <option value="5" <?php if($_POST['Enum_vulnera']==5) echo 'selected="selected" ';?>>Escaner de vulnerabilidades</option>
+            <option value="5" <?php if($_POST['Enum_vulnera']==5) echo 'selected="selected" ';?>>Otros escáneres</option>
+            <option value="6" <?php if($_POST['Enum_vulnera']==6) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -106,6 +128,8 @@
             <option value="1" <?php if($_POST['Enum_contrasenas']==1) echo 'selected="selected" ';?>>Herramientas para GPU</option>
             <option value="2" <?php if($_POST['Enum_contrasenas']==2) echo 'selected="selected" ';?>>Ataques sin conexión</option>
             <option value="3" <?php if($_POST['Enum_contrasenas']==3) echo 'selected="selected" ';?>>Ataques con conexión</option>
+            <option value="4" <?php if($_POST['Enum_contrasenas']==4) echo 'selected="selected" ';?>>Phising</option>
+            <option value="5" <?php if($_POST['Enum_contrasenas']==5) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -119,6 +143,7 @@
             <option value="1" <?php if($_POST['Enum_wireless']==1) echo 'selected="selected" ';?>>Herramientas Bluetooth</option>
             <option value="2" <?php if($_POST['Enum_wireless']==2) echo 'selected="selected" ';?>>Herramientas RFID/NFC</option>
             <option value="3" <?php if($_POST['Enum_wireless']==3) echo 'selected="selected" ';?>>Herramientas wireless</option>
+            <option value="4" <?php if($_POST['Enum_wireless']==4) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -129,9 +154,10 @@
         <div class="col-md-4">
           <select id="Enum_exploit" name="Enum_exploit" class="form-control" onchange="checkAndSubmit()">
             <option value="0" <?php if($_POST['Enum_exploit']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_exploit']==1) echo 'selected="selected" ';?>>Metasploit</option>
-            <option value="2" <?php if($_POST['Enum_exploit']==2) echo 'selected="selected" ';?>>Explotación de redes</option>
-            <option value="3" <?php if($_POST['Enum_exploit']==3) echo 'selected="selected" ';?>>Ingeniería social</option>
+            <option value="1" <?php if($_POST['Enum_exploit']==1) echo 'selected="selected" ';?>>Explotación de redes</option>
+            <option value="2" <?php if($_POST['Enum_exploit']==2) echo 'selected="selected" ';?>>Ingeniería social</option>
+            <option value="3" <?php if($_POST['Enum_exploit']==3) echo 'selected="selected" ';?>>Denegación de servicio</option>
+            <option value="4" <?php if($_POST['Enum_exploit']==4) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -147,19 +173,21 @@
             <option value="3" <?php if($_POST['Enum_SSF']==3) echo 'selected="selected" ';?>>Herramientas VoIP</option>
             <option value="4" <?php if($_POST['Enum_SSF']==4) echo 'selected="selected" ';?>>Web sniffer</option>
             <option value="5" <?php if($_POST['Enum_SSF']==5) echo 'selected="selected" ';?>>Herramientas forense</option>
+            <option value="6" <?php if($_POST['Enum_SSF']==6) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
 
       <!-- Select Basic -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_access">Maintaining access:</label>
+        <label class="col-md-4 control-label" for="Enum_access">Post exploit:</label>
         <div class="col-md-4">
           <select id="Enum_access" name="Enum_access" class="form-control" onchange="checkAndSubmit()">
             <option value="0" <?php if($_POST['Enum_access']==0) echo 'selected="selected" ';?>>Seleccionar</option>
             <option value="1" <?php if($_POST['Enum_access']==1) echo 'selected="selected" ';?>>SO backdoor</option>
             <option value="2" <?php if($_POST['Enum_access']==2) echo 'selected="selected" ';?>>Web backdoor</option>
             <option value="3" <?php if($_POST['Enum_access']==3) echo 'selected="selected" ';?>>Herramientas para túneles</option>
+            <option value="4" <?php if($_POST['Enum_access']==4) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -173,6 +201,20 @@
             <option value="1" <?php if($_POST['Enum_inversa']==1) echo 'selected="selected" ';?>>Depurador</option>
             <option value="2" <?php if($_POST['Enum_inversa']==2) echo 'selected="selected" ';?>>Desensamblador</option>
             <option value="3" <?php if($_POST['Enum_inversa']==3) echo 'selected="selected" ';?>>Otras herramientas</option>
+            <option value="4" <?php if($_POST['Enum_inversa']==4) echo 'selected="selected" ';?>>Todos</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Enum_informes">Presentación de informes:</label>
+        <div class="col-md-4">
+          <select id="Enum_informes" name="Enum_informes" class="form-control" onchange="checkAndSubmit()">
+            <option value="0" <?php if($_POST['Enum_informes']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+            <option value="1" <?php if($_POST['Enum_informes']==1) echo 'selected="selected" ';?>>Gestión de evidencia</option>
+            <option value="2" <?php if($_POST['Enum_informes']==2) echo 'selected="selected" ';?>>Capturador de medios</option>
+            <option value="3" <?php if($_POST['Enum_informes']==3) echo 'selected="selected" ';?>>Todos</option>
           </select>
         </div>
       </div>
@@ -200,6 +242,9 @@
     $BUSQUEDA_RAPIDA = $_POST['searchinput'];
     //echo "Búsqueda rápida: " . $BUSQUEDA_RAPIDA . '<br/>';
 
+    $ID_SO = $_POST['Enum_SO'];
+    //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
+
     $ID_RECOPILACION = $_POST['Enum_recopilacion'];
     //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
@@ -224,6 +269,9 @@
     $ID_INVERSA = $_POST['Enum_inversa'];
     //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
 
+    $ID_INFORME = $_POST['Enum_informes'];
+    //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
+
   //Recuperar datos de la BBDD con prepare().
 
     //Si el usuario utiliza la búsqueda rápida, el resto de campos se desestiman. 
@@ -240,65 +288,80 @@
       /*Esto solo sirve de guía para construir una sentencia compleja.
       $sentencia_mas_compleja = "SELECT * FROM Ataques INNER JOIN Reco ON Reco.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Obtener_info ON Obtener_info.ID_ATAQUE = Ataques.ID_ATAQUE WHERE Reco.ID_RECONOCIMIENTO = $ID_RECONOCIMIENTO AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD AND Obtener_info.ID_TIPO = $ID_TIPO";*/
 
-      if ($ID_RECOPILACION != 0 && $ID_RECOPILACION != null) {
-        $sentencia_01 = " INNER JOIN Recopilacion_info ON Recopilacion_info.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_09 = " WHERE Recopilacion_info.ID_RECOPILACION = $ID_RECOPILACION";
+      if ($ID_SO != 0 && $ID_SO != null) {
+        $sentencia_01 = " INNER JOIN Sistemas_operativos ON Sistemas_operativos.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_11 = " WHERE Sistemas_operativos.ID_SO = $ID_SO";
       } else {
         $sentencia_01 = null;
-        $sentencia_09 = null;
-      }
-      if ($ID_VULNERABILIDAD != 0 && $ID_VULNERABILIDAD != null) {
-        $sentencia_02 = " INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_10 = " AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD";
-      } else {
-        $sentencia_02 = null;
-        $sentencia_10 = null;
-      }
-      if ($ID_CONTRASENA != 0 && $ID_CONTRASENA != null) {
-        $sentencia_03 = " INNER JOIN Contrasenas ON Contrasenas.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_11 = " AND Contrasenas.ID_CONTRASENA = $ID_CONTRASENA";
-      } else {
-        $sentencia_03 = null;
         $sentencia_11 = null;
       }
-      if ($ID_WIRELESS != 0 && $ID_WIRELESS != null) {
-        $sentencia_04 = " INNER JOIN Wireless ON Wireless.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_12 = " AND Wireless.ID_WIRELESS = $ID_WIRELESS";
+
+      if ($ID_RECOPILACION != 0 && $ID_RECOPILACION != null) {
+        $sentencia_02 = " INNER JOIN Recopilacion_info ON Recopilacion_info.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_12 = " AND Recopilacion_info.ID_RECOPILACION = $ID_RECOPILACION";
       } else {
-        $sentencia_04 = null;
+        $sentencia_02 = null;
         $sentencia_12 = null;
       }
-      if ($ID_EXPLOIT != 0 && $ID_EXPLOIT != null) {
-        $sentencia_05 = " INNER JOIN Exploit ON Exploit.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_13 = " AND Exploit.ID_EXPLOIT = $ID_EXPLOIT";
+      if ($ID_VULNERABILIDAD != 0 && $ID_VULNERABILIDAD != null) {
+        $sentencia_03 = " INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_13 = " AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD";
       } else {
-        $sentencia_05 = null;
+        $sentencia_03 = null;
         $sentencia_13 = null;
       }
-      if ($ID_SSF != 0 && $ID_SSF != null) {
-        $sentencia_06 = " INNER JOIN Sniff_Spoof_Foren ON Sniff_Spoof_Foren.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_14 = " AND Sniff_Spoof_Foren.ID_SSF = $ID_SSF";
+      if ($ID_CONTRASENA != 0 && $ID_CONTRASENA != null) {
+        $sentencia_04 = " INNER JOIN Contrasenas ON Contrasenas.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_14 = " AND Contrasenas.ID_CONTRASENA = $ID_CONTRASENA";
       } else {
-        $sentencia_06 = null;
+        $sentencia_04 = null;
         $sentencia_14 = null;
       }
-      if ($ID_ACCESS != 0 && $ID_ACCESS != null) {
-        $sentencia_07 = " INNER JOIN Maintaining_access ON Maintaining_access.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_15 = " AND Maintaining_access.ID_ACCESS = $ID_ACCESS";
+      if ($ID_WIRELESS != 0 && $ID_WIRELESS != null) {
+        $sentencia_05 = " INNER JOIN Wireless ON Wireless.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_15 = " AND Wireless.ID_WIRELESS = $ID_WIRELESS";
       } else {
-        $sentencia_07 = null;
+        $sentencia_05 = null;
         $sentencia_15 = null;
       }
-      if ($ID_INVERSA != 0 && $ID_INVERSA != null) {
-        $sentencia_08 = " INNER JOIN Ingenieria_inversa ON Ingenieria_inversa.ID_ATAQUE = Ataques.ID_ATAQUE";
-        $sentencia_16 = " AND Ingenieria_inversa.ID_INVERSA = $ID_INVERSA";
+      if ($ID_EXPLOIT != 0 && $ID_EXPLOIT != null) {
+        $sentencia_06 = " INNER JOIN Exploit ON Exploit.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_16 = " AND Exploit.ID_EXPLOIT = $ID_EXPLOIT";
+      } else {
+        $sentencia_06 = null;
+        $sentencia_16 = null;
+      }
+      if ($ID_SSF != 0 && $ID_SSF != null) {
+        $sentencia_07 = " INNER JOIN Sniff_Spoof_Foren ON Sniff_Spoof_Foren.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_17 = " AND Sniff_Spoof_Foren.ID_SSF = $ID_SSF";
+      } else {
+        $sentencia_07 = null;
+        $sentencia_17 = null;
+      }
+      if ($ID_ACCESS != 0 && $ID_ACCESS != null) {
+        $sentencia_08 = " INNER JOIN Maintaining_access ON Maintaining_access.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_18 = " AND Maintaining_access.ID_ACCESS = $ID_ACCESS";
       } else {
         $sentencia_08 = null;
-        $sentencia_16 = null;
+        $sentencia_18 = null;
+      }
+      if ($ID_INVERSA != 0 && $ID_INVERSA != null) {
+        $sentencia_09 = " INNER JOIN Ingenieria_inversa ON Ingenieria_inversa.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_19 = " AND Ingenieria_inversa.ID_INVERSA = $ID_INVERSA";
+      } else {
+        $sentencia_09 = null;
+        $sentencia_19 = null;
+      }
+      if ($ID_INFORME != 0 && $ID_INFORME != null) {
+        $sentencia_10 = " INNER JOIN Informes ON Informes.ID_ATAQUE = Ataques.ID_ATAQUE";
+        $sentencia_20 = " AND Informes.ID_INFORME = $ID_INFORME";
+      } else {
+        $sentencia_10 = null;
+        $sentencia_20 = null;
       }
     
       //La sentencia se crea en función de lo que el usuario haya buscado.
-      $sentencia = $sentencia . $sentencia_01 . $sentencia_02 . $sentencia_03 . $sentencia_04 . $sentencia_05 . $sentencia_06 . $sentencia_07 . $sentencia_08 . $sentencia_09 . $sentencia_10 . $sentencia_11 . $sentencia_12 . $sentencia_13 . $sentencia_14 . $sentencia_15 . $sentencia_16; 
+      $sentencia = $sentencia . $sentencia_01 . $sentencia_02 . $sentencia_03 . $sentencia_04 . $sentencia_05 . $sentencia_06 . $sentencia_07 . $sentencia_08 . $sentencia_09 . $sentencia_10 . $sentencia_11 . $sentencia_12 . $sentencia_13 . $sentencia_14 . $sentencia_15 . $sentencia_16 . $sentencia_17 . $sentencia_18 . $sentencia_19 . $sentencia_20; 
 
       //Ejecución de la sentencia.
       $stmt = $con->prepare($sentencia); 
