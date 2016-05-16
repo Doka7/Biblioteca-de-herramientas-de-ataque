@@ -8,7 +8,7 @@
   <meta name="description" content="Formulario de ataques">
   <meta name="author" content="Alejandro Docasar Moreno">
 
-  <title>Formulario de insercción</title>
+  <title>Formulario de inserción</title>
 
   <!-- Favicon -->
   <link rel="icon" 
@@ -27,9 +27,6 @@
   <!-- Latest compiled JavaScript -->
   <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-  <!-- js -->
-  <script src="formulario.js"></script>
-
   <!-- Jquery -->
   <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
 
@@ -40,7 +37,7 @@
   <div class="container">
 
     <div class="page-header">
-      <h1>Insertar herramientas en la BBDD (root)</h1>
+      <h1>Insertar herramientas en la BBDD</h1>
       <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
     </div>
 
@@ -86,19 +83,19 @@
           <label class="col-md-4 control-label" for="Enum_recopilacion">Herramienta de recopilacion de informacion:</label> 
           <div class="col-md-4">
             <input type="checkbox" name="Enum_recopilacion[]" value="1">Análisis de DNS<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="2">Análisis de DNS<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="3">Análisis de tráfico<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="4">Análisis de OSINT<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="5">Análisis de routeo<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="6">Análisis de SMB<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="7">Análisis de SMTP<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="8">Análisis de SNMP<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="9">Análisis de SSL<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="10">Análisis de VoIP<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="11">Análisis de VPN<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="12">Detección de servicio<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="13">Detección de SO<br>
-            <input type="checkbox" name="Enum_recopilacion[]" value="14">Identificación de hosts en línea<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="2">Análisis de tráfico<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="3">Análisis de OSINT<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="4">Análisis de routeo<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="5">Análisis de SMB<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="6">Análisis de SMTP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="7">Análisis de SNMP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="8">Análisis de SSL<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="9">Análisis de VoIP<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="10">Análisis de VPN<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="11">Detección de servicio<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="12">Detección de SO<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="13">Identificación de hosts en línea<br>
+            <input type="checkbox" name="Enum_recopilacion[]" value="14">Identificación de IDS<br>
             <input type="checkbox" name="Enum_recopilacion[]" value="15">Todos<br>
 
           </div>
@@ -198,7 +195,7 @@
         </div>
 
         <div class="boton">
-          <input class="btn btn-default" type="submit" value="Enviar">
+          <input class="btn btn-default" name="enviar" type="submit" value="Enviar">
         </div><br>
 
       </fieldset>
@@ -215,14 +212,18 @@
     $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  //Para recuperar los datos da las consultas
+  //Para recuperar los datos de las consultas
     echo 'Estás insertando según estos criterios: ' . '<br/>';
+
+    $ENVIAR = $_POST['enviar'];
 
     $NOMBRE = $_POST['searchinput'];
     echo 'Nombre del ataque: ' . $NOMBRE . '<br/>';
 
     $DESCRIPTION = $_POST['description'];
     echo 'Descripción del ataque: ' . $DESCRIPTION . '<br/>';
+
+    if($ENVIAR != null){
 
     $stmt = $con->prepare("INSERT INTO Ataques (Nombre, Descripcion) VALUES (:nombre, :descripcion)"); 
     $stmt->bindParam(':nombre', $NOMBRE);
@@ -339,6 +340,8 @@
       $stmt->bindParam(':id_informe', $ID_INFORME[$i]);
       $stmt->execute();    
     }
+  }
+
   }
 
   catch(PDOException $e) {

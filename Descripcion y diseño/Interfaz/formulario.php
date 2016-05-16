@@ -23,18 +23,6 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css"> 
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-
-  <!-- js -->
-  <script src="formulario.js"></script>
-
-  <!-- Jquery -->
-  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
-
 </head>
 
 <body>
@@ -57,7 +45,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="searchinput">Búsqueda rápida:</label>
           <div class="col-md-4">
-            <input id="searchinput" name="searchinput" type="search" placeholder="Ej: Python" class="form-control input-md">
+            <input id="searchinput" name="searchinput" type="search" placeholder="Ejs: Nmap, Wifi, Python..." class="form-control input-md">
           </div>
         </div>
 
@@ -219,7 +207,9 @@
         </div>
       </div>
 
-      <!-- <input class="btn btn-default" type="submit" value="Enviar"> -->
+      <div class="volver">
+        <input class="btn btn-default" type="submit" value="Enviar">
+      </div>
 
     </fieldset>
 
@@ -367,6 +357,8 @@
       $stmt = $con->prepare($sentencia); 
       $stmt->execute();
 
+    }
+
       //Imprimir resultados en una tabla.
       echo '<div class="table-responsive">
       <table class="table table-hover">
@@ -386,9 +378,11 @@
           }
 
           echo '</tbody></table></div>';
+          if ($num_filas>1) {
           echo "Se han encontrado " . $num_filas . " coincidencias en la base de datos.";
-
-        }
+          } else{
+            echo "Se ha encontrado " . $num_filas . " coincidencia en la base de datos.";
+          }
 
       }catch(PDOException $e) {
         echo 'Error: ' . $e->getMessage();
@@ -401,6 +395,43 @@
       ?>
 
     </div>  <!-- div container -->
+
+  <a href="#" class="back-to-top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+  <!-- js -->
+  <script src="formulario.js"></script>
+
+  <!-- Jquery -->
+  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
+
+  <script>
+    jQuery(document).ready(function() {
+      $('.back-to-top').css({"display": "none"});
+      var offset = 2000;
+      var duration = 300;
+      jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+          jQuery('.back-to-top').fadeIn(duration);
+        } else {
+          jQuery('.back-to-top').fadeOut(duration);
+        }
+      });
+      jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+      })
+    });
+  </script>
 
   </body>
 

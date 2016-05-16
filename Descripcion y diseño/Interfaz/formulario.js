@@ -1,5 +1,5 @@
 
-function checkAndSubmit()
+/*function checkAndSubmit()
 {
   if (document.getElementById('Enum_recopilacion').selectedIndex >= 0
      || document.getElementById('Enum_vulnera').selectedIndex >= 0
@@ -14,7 +14,7 @@ function checkAndSubmit()
       document.getElementById('consulta').submit();
       //alert('La consulta se ha actualizado');
   }
-}
+}*/
 
 
 /*

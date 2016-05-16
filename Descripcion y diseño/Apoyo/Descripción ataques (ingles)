@@ -75,7 +75,7 @@ ATAQUES KALI
 		Fuente: https://www.safaribooksonline.com/library/view/kali-linux-network/9781783982141/ch04s12.html
 
 		- nikto: This small and simple tool examines a website and reports back to you the potential vulnerabilities that it found that you could use to exploit or hack the site. In addition, it's one of the most widely used website vulnerabilities tools in the industry and in many circles considered the industry standard.
-		Although this tool is extremely useful and effective, it is not stealthy. Any website with an IDS or other security measures in place will detect that you are scanning it. Originally designed for security testing, it was never meant to be stealthy.
+		Although Nikto is extremely useful and effective, it is not stealthy. Any website with an IDS or other security measures in place will detect that you are scanning it. Originally designed for security testing, it was never meant to be stealthy.
 		Palabras clave: escaner aplicaciones, auditoria seguridad, analisis de vulnerabilidades.
 
 		Fuente: http://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/
@@ -412,7 +412,6 @@ ATAQUES KALI
 
 		Fuente: https://sathisharthars.wordpress.com/2014/07/22/getting-started-with-browser-exploitation-framework-beef-in-kali-linux/
 
-		- ginguma
 		- inguma: Inguma is a penetration testing toolkit entirely written in python. The framework includes modules to discover hosts, gather information about, fuzz targets, brute force user names and passwords and, of course, exploits. While the current exploitation capabilities in Inguma may be limited, this program provides numerous tools for information gathering and target auditing.
 		Palabras clave: exploit, obtencion de contraseñas, ataque fuerza bruta, python.
 
@@ -486,10 +485,26 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/sniffingspoofing/responder
 
-		- wireshark: Ya hecha
+		- wireshark: Wireshark is the world's foremost network protocol analyzer. It lets you see what's happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions.
+		Wireshark development thrives thanks to the contributions of networking experts across the globe. It is the continuation of a project that started in 1998. 
+		Wireshark has a rich feature set which includes the following:
+		    Deep inspection of hundreds of protocols, with more being added all the time;
+		    Live capture and offline analysis;
+		    Standard three-pane packet browser;
+		    Multi-platform: Runs on Windows, Linux, OS X, Solaris, FreeBSD, NetBSD, and many others;
+		    Captured network data can be browsed via a GUI, or via the TTY-mode TShark utility;
+		    The most powerful display filters in the industry;
+		    Rich VoIP analysis;
+		    Read/write many different capture file formats: tcpdump (libpcap), Pcap NG, Catapult DCT2000, Cisco Secure IDS iplog, Microsoft Network Monitor, Network General Sniffer® (compressed and uncompressed), Sniffer® Pro, and NetXray®, Network Instruments Observer, NetScreen snoop, Novell LANalyzer, RADCOM WAN/LAN Analyzer, Shomiti/Finisar Surveyor, Tektronix K12xx, Visual Networks Visual UpTime, WildPackets EtherPeek/TokenPeek/AiroPeek, and many others;
+		    Capture files compressed with gzip can be decompressed on the fly;
+		    Live data can be read from Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, and others (depending on your platform);
+		    Decryption support for many protocols, including IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2;
+		    Coloring rules can be applied to the packet list for quick, intuitive analysis;
+		    Output can be exported to XML, PostScript®, CSV, or plain text;
+
+		Fuente: https://www.wireshark.org/
 
 	- Post exploitation:
-		- backdoor-framework????
 		- bdfproxy: Ya hecha
 		- intersect: Intersect 2.0 is a Python script written to perform automated Post-Exploitation information gathering and reporting. The general idea is that after you have exploited a target, you run this script and it performs a variety of tasks that you would normally need to perform manually. Intersect will collect password files, copy SSH keys, enumerate processes and installed applications, gather detailed network information, map the hosts internal network (for pivoting),locate and identify common anti-virus and firewall applications and much more. 
 		Palabras clave: exploit, post exploit, python, recopilacion de informacion, obtencion de contraseñas.
@@ -561,7 +576,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/forensics/galleta
 
-		- hashdepp: Hashdeep is a program for recursively computing hashes with multiple algorithms simultaneously. It can also perform matching operations like the md5deep family of programs, but in a more powerful way. Hashdeep can perform an audit of hashes against a set of known hashess. With traditional matching, programs report if an input file matched one in a set of knows or if the input file did not match. It's hard to get a complete sense of the state of the input files compared to the set of knowns. It's possible to have matched files, missing files, files that have moved in the set, and to find new files not in the set. Hashdeep can report all of these conditions.
+		- hashdeep: Hashdeep is a program for recursively computing hashes with multiple algorithms simultaneously. It can also perform matching operations like the md5deep family of programs, but in a more powerful way. Hashdeep can perform an audit of hashes against a set of known hashess. With traditional matching, programs report if an input file matched one in a set of knows or if the input file did not match. It's hard to get a complete sense of the state of the input files compared to the set of knowns. It's possible to have matched files, missing files, files that have moved in the set, and to find new files not in the set. Hashdeep can report all of these conditions.
 		Palabras clave: hash, forense
 
 		Fuente: http://md5deep.sourceforge.net/start-hashdeep.html
@@ -623,13 +638,8 @@ ATAQUES KALI
 		Fuente: http://www.k4linux.com/2013/12/how-to-record-your-desktop-in-kali-linux.html#
 
 	- Social engineering tools:
-		- backdoor-framework???
 		- beef xss framework: Ya hecha
-		- ghost phiser: Ghost Phisher is a Wireless and Ethernet security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to emulate access points and deploy. Ghost Phisher currently supports the following features: HTTP Server; Inbuilt RFC 1035 DNS Server; Inbuilt RFC 2131 DHCP Server; Webpage Hosting and Credential Logger (Phishing); Wifi Access point Emulator; Session Hijacking (Passive and Ethernet Modes); ARP Cache Poisoning (MITM and DOS Attacks); Penetration using Metasploit Bindings; Automatic credential logging using SQlite Database; Update Support. 
-		Palabras clave: ingenieria social, phising
-
-		Fuente: http://www.ehacking.net/2012/07/ghost-phisher-phishing-penetration.html
-
+		- ghost phiser: Ya hecha
 		- maltego: Ya hecha
 		- msf payload: Ya hecho
 		- social engineering: Ya hecha
@@ -641,7 +651,8 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/maintaining-access/u3-pwn
 
-	- Ataques que añado al final porque deben estar (en teoría no están en mi distribución de Kali):
+- ATAQUES QUE AÑADO AL FINAL QUE NO ESTÁN EN KALI:
+
 		- hping3: hping is a command-line oriented TCP/IP packet assembler/analyzer. The interface is inspired to the ping(8) unix command, but hping isn’t only able to send ICMP echo requests. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features. While hping was mainly used as a security tool in the past, it can be used in many ways by people that don’t care about security to test networks and hosts. A subset of the stuff you can do using hping: Firewall testing; Advanced port scanning; Network testing, using different protocols, TOS, fragmentation; Manual path MTU discovery; Advanced traceroute, under all the supported protocols; Remote OS fingerprinting; Remote uptime guessing; TCP/IP stacks auditing; hping can also be useful to students that are learning TCP/IP.
 		Palabras clave: sniffer, TCP, UDP, ICMP, IP, DoS. 
 
@@ -776,7 +787,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/information-gathering/tlssled
 
-	    - nbtscan:  'nbtscan' is a quick tool which gives instant results relating to which hosts are alive on your network and replying to netbios queries.
+	    - nbtscan:  nbtscan is a quick tool which gives instant results relating to which hosts are alive on your network and replying to netbios queries.
 
 	    Fuente: http://knoxd3.blogspot.com.es/2013/08/how-to-use-nbtscan-in-kali-linux.html#
 
@@ -873,11 +884,9 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/information-gathering/thc-ipv6
 
-		- netcat: Netcat—like so many hacker tools—was created to be a network analysis tool. As such, you can use it to open up TCP and UDP connections between two machines over any port your heart desires. It can also be used as a port scanning tool, similar to nmap. In addition, it can be used for port forwarding, proxying, simple web server, and leaving an open backdoor for the hacker.
+		- netcat: Netcat, like so many hacker tools was created to be a network analysis tool. As such, you can use it to open up TCP and UDP connections between two machines over any port your heart desires. It can also be used as a port scanning tool, similar to nmap. In addition, it can be used for port forwarding, proxying, simple web server, and leaving an open backdoor for the hacker.
 
 		Fuente: http://null-byte.wonderhowto.com/how-to/hack-like-pro-use-netcat-swiss-army-knife-hacking-tools-0148657/
-
-		Fuente: http://sparta.secforce.com/
 
 		- smtp-user-enum: smtp-user-enum is a tool for enumerating OS-level user accounts on Solaris via the SMTP service (sendmail). Enumeration is performed by inspecting the responses to VRFY, EXPN and RCPT TO commands. It could be adapted to work against other vulnerable SMTP daemons, but this hasn’t been done as of v1.0.
 
@@ -1008,38 +1017,39 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/vulnerability-analysis/bed
 
 		ohrwurm: ohrwurm is a small and simple RTP fuzzer that has been successfully tested on a small number of SIP phones. Features:
-		    reads SIP messages to get information of the RTP port numbers
-		    reading SIP can be omitted by providing the RTP port numbers, sothat any RTP traffic can be fuzzed
-		    RTCP traffic can be suppressed to avoid that codecs
-		    learn about the “noisy line”
-		    special care is taken to break RTP handling itself
-		    the RTP payload is fuzzed with a constant BER
-		    the BER is configurable
-		    requires arpspoof from dsniff to do the MITM attack
-		    requires both phones to be in a switched LAN (GW operation only works partially)
+		    reads SIP messages to get information of the RTP port numbers;
+		    reading SIP can be omitted by providing the RTP port numbers, sothat any RTP traffic can be fuzzed;
+		    RTCP traffic can be suppressed to avoid that codecs;
+		    learn about the “noisy line”;
+		    special care is taken to break RTP handling itself;
+		    the RTP payload is fuzzed with a constant BER;
+		    the BER is configurable;
+		    requires arpspoof from dsniff to do the MITM attack;
+		    requires both phones to be in a switched LAN (GW operation only works partially).
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/ohrwurm
 
 		powerfuzzer: Powerfuzzer is a highly automated and fully customizable web fuzzer (HTTP protocol based application fuzzer) based on many other Open Source fuzzers available and information gathered from numerous security resources and websites. It was designed to be user friendly, modern, effective and working.
-		Currently, it is capable of identifying these problems:
-		    Cross Site Scripting (XSS)
-		    Injections (SQL, LDAP, code, commands, and XPATH)
-		    CRLF
-		    HTTP 500 statuses (usually indicative of a possible misconfiguration/security flaw incl. buffer overflow)
 		Designed and coded to be modular and extendable. Adding new checks should simply entail adding new methods.
+		Currently, it is capable of identifying these problems:
+		    Cross Site Scripting (XSS),
+		    Injections (SQL, LDAP, code, commands, and XPATH),
+		    CRLF,
+		    HTTP 500 statuses (usually indicative of a possible misconfiguration/security flaw incl. buffer overflow).
+		
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/powerfuzzer
 
-		sfuzz: simple fuzz is exactly what it sounds like – a simple fuzzer. don’t mistake simple with a lack of fuzz capability. this fuzzer has two network modes of operation, an output mode for developing command line fuzzing scripts, as well as taking fuzzing strings from literals and building strings from sequences.
+		sfuzz: Simple fuzz is exactly what it sounds like – a simple fuzzer. don’t mistake simple with a lack of fuzz capability. this fuzzer has two network modes of operation, an output mode for developing command line fuzzing scripts, as well as taking fuzzing strings from literals and building strings from sequences.
 		simple fuzz is built to fill a need – the need for a quickly configurable black box testing utility that doesn’t require intimate knowledge of the inner workings of C or require specialized software rigs. the aim is to just provide a simple interface, clear inputs/outputs, and reusability.
 		Features:
-		    simple script language for creating test cases
-		    support for repeating strings as well as fixed strings (‘sequences’ vs. ‘literals’)
-		    variables within test cases (ex: strings to be replaced with different strings)
-		    tcp and udp payload transport (icmp support tbd)
+		    simple script language for creating test cases,
+		    support for repeating strings as well as fixed strings (‘sequences’ vs. ‘literals’),
+		    variables within test cases (ex: strings to be replaced with different strings),
+		    tcp and udp payload transport (icmp support tbd),
 		    binary substitution support (see basic.a11 for more information)
-		    plugin support (NEW!) see plugin.txt for more information.
-		    previous packet contents inclusion
+		    plugin support,
+		    previous packet contents inclusion.
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/sfuzz
 
@@ -1058,28 +1068,27 @@ ATAQUES KALI
 
 		- oclhashcat: 
 			Features:
-				Worlds fastest password cracker
-				Worlds first and only GPGPU based rule engine
-				Free
-				Open-Source
-				Multi-GPU (up to 128 gpus)
-				Multi-Hash (up to 100 million hashes)
-				Multi-OS (Linux & Windows native binaries)
-				Multi-Platform (OpenCL & CUDA support)
-				Multi-Algo (see below)
-				Low resource utilization, you can still watch movies or play games while cracking
-				Focuses highly iterated modern hashes
-				Focuses dictionary based attacks
-				Supports distributed cracking
-				Supports pause / resume while cracking
-				Supports sessions
-				Supports restore
-				Supports reading words from file
-				Supports reading words from stdin
-				Supports hex-salt
-				Supports hex-charset
-				Built-in benchmarking system
-				Integrated thermal watchdog
+				Worlds fastest password cracker,
+				Worlds first and only GPGPU based rule engine,
+				Free,
+				Open-Source,
+				Multi-GPU (up to 128 gpus),
+				Multi-Hash (up to 100 million hashes),
+				Multi-OS (Linux & Windows native binaries),
+				Multi-Platform (OpenCL & CUDA support),
+				Low resource utilization, you can still watch movies or play games while cracking,
+				Focuses highly iterated modern hashes,
+				Focuses dictionary based attacks,
+				Supports distributed cracking,
+				Supports pause / resume while cracking,
+				Supports sessions,
+				Supports restore,
+				Supports reading words from file,
+				Supports reading words from stdin,
+				Supports hex-salt,
+				Supports hex-charset,
+				Built-in benchmarking system,
+				Integrated thermal watchdog.
 
 		Fuente: http://hashcat.net/oclhashcat/
 
@@ -1131,34 +1140,34 @@ ATAQUES KALI
 		Fuente: http://www.leidecker.info/projects/sucrack.shtml
 
 		truecrack: TrueCrack is a brute-force password cracker for TrueCrypt volumes. It works on Linux and it is optimized for Nvidia Cuda technology. It supports:
-	    PBKDF2 (defined in PKCS5 v2.0) based on key derivation functions: Ripemd160, Sha512 and Whirlpool.
-	    XTS block cipher mode for hard disk encryption based on encryption algorithms: AES, SERPENT, TWOFISH.
-	    File-hosted (container) and Partition/device-hosted.
+	    PBKDF2 (defined in PKCS5 v2.0) based on key derivation functions: Ripemd160, Sha512 and Whirlpool;
+	    XTS block cipher mode for hard disk encryption based on encryption algorithms: AES, SERPENT, TWOFISH;
+	    File-hosted (container) and Partition/device-hosted;
 	    Hidden volumes and Backup headers.
 	    TrueCrack is able to perform a brute-force attack based on:
-	    	Dictionary: read the passwords from a file of words.
-    		Alphabet: generate all passwords of given length from given alphabet.
-		TrueCrack works on gpu and cpu.
+	    	Dictionary: read the passwords from a file of words;
+    		Alphabet: generate all passwords of given length from given alphabet;
+		Works on gpu and cpu.
 
 		Fuente: http://tools.kali.org/password-attacks/truecrack
 
 		findmyhash: Accepted algorithms are:
-		    MD4 – RFC 1320
-		    MD5 – RFC 1321
-		    SHA1 – RFC 3174 (FIPS 180-3)
-		    SHA224 – RFC 3874 (FIPS 180-3)
-		    SHA256 – FIPS 180-3
-		    SHA384 – FIPS 180-3
-		    SHA512 – FIPS 180-3
-		    RMD160 – RFC 2857
-		    GOST – RFC 583
-		    WHIRLPOOL – ISO/IEC 10118-3:2004
-		    LM – Microsoft Windows hash NTLM – Microsoft Windows hash
-		    MYSQL – MySQL 3, 4, 5 hash
-		    CISCO7 – Cisco IOS type 7 encrypted passwords
-		    JUNIPER – Juniper Networks $9$ encrypted passwords
-		    LDAP_MD5 – MD5 Base64 encoded
-		    LDAP_SHA1 – SHA1 Base64 encoded
+		    MD4 – RFC 1320,
+		    MD5 – RFC 1321,
+		    SHA1 – RFC 3174 (FIPS 180-3),
+		    SHA224 – RFC 3874 (FIPS 180-3),
+		    SHA256 – FIPS 180-3,
+		    SHA384 – FIPS 180-3,
+		    SHA512 – FIPS 180-3,
+		    RMD160 – RFC 2857,
+		    GOST – RFC 583,
+		    WHIRLPOOL – ISO/IEC 10118-3:2004,
+		    LM – Microsoft Windows hash NTLM – Microsoft Windows hash,
+		    MYSQL – MySQL 3, 4, 5 hash,
+		    CISCO7 – Cisco IOS type 7 encrypted passwords,
+		    JUNIPER – Juniper Networks $9$ encrypted passwords,
+		    LDAP_MD5 – MD5 Base64 encoded,
+		    LDAP_SHA1 – SHA1 Base64 encoded.
 
 		Fuente: http://tools.kali.org/password-attacks/findmyhash
 
@@ -1167,39 +1176,39 @@ ATAQUES KALI
 		Fuente: http://tools.kali.org/password-attacks/hydra
 
 		patator: Patator is a multi-purpose brute-forcer, with a modular design and a flexible usage. Currently it supports the following modules:
-		    ftp_login : Brute-force FTP
-		    ssh_login : Brute-force SSH
-		    telnet_login : Brute-force Telnet
-		    smtp_login : Brute-force SMTP
-		    smtp_vrfy : Enumerate valid users using the SMTP ‘VRFY’ command
-		    smtp_rcpt : Enumerate valid users using the SMTP ‘RCPT TO’ command
-		    finger_lookup : Enumerate valid users using Finger
-		    http_fuzz : Brute-force HTTP
-		    pop_login : Brute-force POP3
-		    pop_passd : Brute-force poppassd (http://netwinsite.com/poppassd/)
-		    imap_login : Brute-force IMAP4 – ldap_login : Brute-force LDAP
-		    smb_login : Brute-force SMB
-		    smb_lookupsid : Brute-force SMB SID-lookup
-		    vmauthd_login : Brute-force VMware Authentication Daemon
-		    mssql_login : Brute-force MSSQL
-		    oracle_login : Brute-force Oracle
-		    mysql_login : Brute-force MySQL
-		    pgsql_login : Brute-force PostgreSQL
-		    vnc_login : Brute-force VNC
-		    dns_forward : Brute-force DNS
-		    dns_reverse : Brute-force DNS (reverse lookup subnets)
-		    snmp_login : Brute-force SNMPv1/2 and SNMPv3
-		    unzip_pass : Brute-force the password of encrypted ZIP files
-		    keystore_pass : Brute-force the password of Java keystore files
+		    ftp_login : Brute-force FTP,
+		    ssh_login : Brute-force SSH,
+		    telnet_login : Brute-force Telnet,
+		    smtp_login : Brute-force SMTP,
+		    smtp_vrfy : Enumerate valid users using the SMTP ‘VRFY’ command,
+		    smtp_rcpt : Enumerate valid users using the SMTP ‘RCPT TO’ command,
+		    finger_lookup : Enumerate valid users using Finger,
+		    http_fuzz : Brute-force HTTP,
+		    pop_login : Brute-force POP3,
+		    pop_passd : Brute-force poppassd (http://netwinsite.com/poppassd/),
+		    imap_login : Brute-force IMAP4 – ldap_login : Brute-force LDAP,
+		    smb_login : Brute-force SMB,
+		    smb_lookupsid : Brute-force SMB SID-lookup,
+		    vmauthd_login : Brute-force VMware Authentication Daemon,
+		    mssql_login : Brute-force MSSQL,
+		    oracle_login : Brute-force Oracle,
+		    mysql_login : Brute-force MySQL,
+		    pgsql_login : Brute-force PostgreSQL,
+		    vnc_login : Brute-force VNC,
+		    dns_forward : Brute-force DNS,
+		    dns_reverse : Brute-force DNS (reverse lookup subnets),
+		    snmp_login : Brute-force SNMPv1/2 and SNMPv3,
+		    unzip_pass : Brute-force the password of encrypted ZIP files,
+		    keystore_pass : Brute-force the password of Java keystore files.
 
 		Fuente: http://tools.kali.org/password-attacks/patator
 
 		phrasendrescher: phrasen|drescher (p|d) is a modular and multi processing pass phrase cracking tool. It comes with a number of plugins but a simple plugin API allows an easy development of new plugins. The main features of p|d are:
-		    Modular with the use of plugins
-		    Multi processing
-		    Dictionary attack with or without permutations (uppercase, lowercase, l33t, etc.)
-		    Incremental brute force attack with custom character maps
-		    Runs on FreeBSD, NetBSD, OpenBSD, MacOS and Linux
+		    Modular with the use of plugins,
+		    Multi processing,
+		    Dictionary attack with or without permutations (uppercase, lowercase, l33t, etc.),
+		    Incremental brute force attack with custom character maps,
+		    Runs on FreeBSD, NetBSD, OpenBSD, MacOS and Linux.
 
 		Fuente: http://tools.kali.org/password-attacks/phrasendrescher
 
@@ -1214,9 +1223,9 @@ ATAQUES KALI
 
 		jboss-autopwn: This JBoss script deploys a JSP shell on the target JBoss AS server. Once deployed, the script uses its upload and command execution capability to provide an interactive session.
 		Features include:
-		    Multiplatform support – tested on Windows, Linux and Mac targets
-		    Support for bind and reverse bind shells
-		    Meterpreter shells and VNC support for Windows targets
+		    Multiplatform support – tested on Windows, Linux and Mac targets,
+		    Support for bind and reverse bind shells,
+		    Meterpreter shells and VNC support for Windows targets.
 
 		Fuente: http://tools.kali.org/web-applications/jboss-autopwn
 
@@ -1224,12 +1233,12 @@ ATAQUES KALI
 		Effectively, it's a packet sniffer which runs as a background process on a
 		cable/DSL router, gathers all sorts of useless but interesting statistics,
 		and serves them over HTTP.
-		Darkstat Features
-			Traffic graphs.
-			Tracks traffic per host.
-			Tracks traffic per TCP and UDP port for each host.
-			Embedded web-server with deflate compression.
-			Asynchronous reverse DNS resolution using a child process.
+		Darkstat Features:
+			Traffic graphs,
+			Tracks traffic per host,
+			Tracks traffic per TCP and UDP port for each host,
+			Embedded web-server with deflate compression,
+			Asynchronous reverse DNS resolution using a child process,
 			Small. Portable. Single-threaded. Efficient. 
 
 		Fuente: http://www.debianhelp.co.uk/darkstat.htm
@@ -1252,18 +1261,7 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/sniffingspoofing/hexinject
 
-		netsniff-ng:  netsniff-ng is a free Linux networking toolkit, a Swiss army knife for your daily Linux network plumbing if you will.
-		Its gain of performance is reached by zero-copy mechanisms, so that on packet reception and transmission the kernel does not need to copy packets from kernel space to user space and vice versa.
-		Our toolkit can be used for network development and analysis, debugging, auditing or network reconnaissance.
-		The netsniff-ng toolkit consists of the following utilities:
-		    netsniff-ng, a fast zero-copy analyzer, pcap capturing and replaying tool
-		    trafgen, a multithreaded low-level zero-copy network packet generator
-		    mausezahn, high-level packet generator for HW/SW appliances with Cisco-CLI*
-		    bpfc, a Berkeley Packet Filter compiler, Linux BPF JIT disassembler
-		    ifpps, a top-like kernel networking statistics tool
-		    flowtop, a top-like netfilter connection tracking tool
-		    curvetun, a lightweight curve25519-based IP tunnel
-		    astraceroute, an autonomous system (AS) trace route utility
+		netsniff-ng:  Ya hecha
 
 		Fuente: http://netsniff-ng.org/
 
@@ -1311,14 +1309,14 @@ ATAQUES KALI
 
 		Fuente: http://tools.kali.org/sniffingspoofing/protos-sip
 
-		rtpbreak: With rtpbreak you can detect, reconstruct and analyze any RTP session. It doesn’t require the presence of RTCP packets and works independently form the used signaling protocol (SIP, H.323, SCCP, …). The input is a sequence of packets, the output is a set of files you can use as input for other tools (wireshark/tshark, sox, grep/awk/cut/ cat/sed, …). It supports also wireless (AP_DLT_IEEE802_11) networks.
-		    reconstruct any RTP stream with an unknown or unsupported signaling protocol
-		    reconstruct any RTP stream in wireless networks, while doing channel hopping (VoIP activity detector)
-		    reconstruct and decode any RTP stream in batch mode (with sox, asterisk, …)
-		    reconstruct any already existing RTP stream
-		    reorder the packets of any RTP stream for later analysis (with tshark, wireshark, …)
-		    build a tiny wireless VoIP tapping system in a single chip Linux unit
-		    build a complete VoIP tapping system (rtpbreak would be just the RTP dissector module!)
+		rtpbreak: With rtpbreak you can detect, reconstruct and analyze any RTP session. It doesn’t require the presence of RTCP packets and works independently form the used signaling protocol (SIP, H.323, SCCP, …). The input is a sequence of packets, the output is a set of files you can use as input for other tools (wireshark/tshark, sox, grep/awk/cut/ cat/sed, …). It supports also wireless (AP_DLT_IEEE802_11) networks. Features:
+		    reconstruct any RTP stream with an unknown or unsupported signaling protocol,
+		    reconstruct any RTP stream in wireless networks, while doing channel hopping (VoIP activity detector),
+		    reconstruct and decode any RTP stream in batch mode (with sox, asterisk, …),
+		    reconstruct any already existing RTP stream,
+		    reorder the packets of any RTP stream for later analysis (with tshark, wireshark, …),
+		    build a tiny wireless VoIP tapping system in a single chip Linux unit,
+		    build a complete VoIP tapping system (rtpbreak would be just the RTP dissector module!).
 
 		Fuente: http://tools.kali.org/sniffingspoofing/rtpbreak
 
@@ -1378,7 +1376,7 @@ ATAQUES KALI
 
 		Fuente: https://worldhack3r.wordpress.com/2013/04/24/webacoo-web-backdoor-on-kali-linux/
 
-		crypcat: CryptCat is a simple Unix utility which reads and writes data across network connections, using TCP or UDP protocol while encrypting the data being transmitted. It is designed to be a reliable “back-end” tool that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and exploration tool, since it can create almost any kind of connection you would need and has several interesting built-in capabilities.
+		cryptcat: CryptCat is a simple Unix utility which reads and writes data across network connections, using TCP or UDP protocol while encrypting the data being transmitted. It is designed to be a reliable “back-end” tool that can be used directly or easily driven by other programs and scripts. At the same time, it is a feature-rich network debugging and exploration tool, since it can create almost any kind of connection you would need and has several interesting built-in capabilities.
 
 		Fuente: http://tools.kali.org/maintaining-access/cryptcat
 
@@ -1405,11 +1403,11 @@ ATAQUES KALI
 		Fuente: http://linux.die.net/man/1/proxytunnel
 
 		ptunnel: Ptunnel is not a feature-rich tool by any means, but it does what it advertises. So here is what it can do:
-		Tunnel TCP using ICMP echo request and reply packets
-		Connections are reliable (lost packets are resent as necessary)
-		Handles multiple connections
-		Acceptable bandwidth (150 kb/s downstream and about 50 kb/s upstream are the currently measured maximas for one tunnel, but with tweaking this can be improved further)
-		Authentication, to prevent just anyone from using your proxy
+		Tunnel TCP using ICMP echo request and reply packets,
+		Connections are reliable (lost packets are resent as necessary),
+		Handles multiple connections,
+		Acceptable bandwidth (150 kb/s downstream and about 50 kb/s upstream are the currently measured maximas for one tunnel, but with tweaking this can be improved further),
+		Authentication, to prevent just anyone from using your proxy.
 
 		Fuente: http://www.debianadmin.com/access-network-when-everything-else-is-blocked-using-ptunnel.html
 
@@ -1446,8 +1444,451 @@ ATAQUES KALI
 	     Fuente: https://github.com/radare/radare2/wiki/Rahash2
 
 	     rarun2: Rarun2 is used as a launcher for running programs with different environment, arguments, permissions, directories and overridden default file descriptors. It can be useful for :
-		    Crackme
-		    Fuzzing
-		    Test suite
+		    Crackme,
+		    Fuzzing,
+		    Test suite.
 
 		Fuente: https://github.com/radare/radare2/wiki/Rarun2
+
+
+
+//HERRAMIENTAS PÁGINA NIRSOFT (FUENTE http://www.nirsoft.net/utils/index.html)
+
+	//PASSWORD RECOVERY UTILITIES
+
+MessenPass v1.43 
+MessenPass is a password recovery tool that reveals the passwords of the following instant messenger applications: MSN Messenger, Windows Messenger (In Windows XP), Windows Live Messenger (In Windows XP And Vista), Yahoo Messenger (Version 5.x/6.x), ICQ Lite 4.x/5.x/2003, AOL Instant Messenger, AIM 6.x, AIM Pro, Trillian, Miranda, and GAIM.
+Info and download here: http://www.nirsoft.net/utils/mspass.html
+
+IE PassView v1.32
+IE PassView is a small utility that reveals the passwords stored by Internet Explorer browser. It supports the new Internet Explorer 7.0/8.0, as well as older versions of Internet explorer, v4.0 - v6.0
+Info and download here: http://www.nirsoft.net/utils/internet_explorer_password.html
+
+PasswordFox v1.56
+PasswordFox is a small password recovery tool that allows you to view the user names and passwords stored by Mozilla Firefox Web browser. By default, PasswordFox displays the passwords stored in your current profile, but you can easily select to watch the passwords of any other Firefox profile. For each password entry, the following information is displayed: Record Index, Web Site, User Name, Password, User Name Field, Password Field, and the Signons filename.
+Info and download here: http://www.nirsoft.net/utils/passwordfox.html
+
+ChromePass v1.37
+ChromePass is a small password recovery tool that allows you to view the user names and passwords stored by Google Chrome Web browser. For each password entry, the following information is displayed: Origin URL, Action URL, User Name Field, Password Field, User Name, Password, and Created Time. You can select one or more items and then save them into text/html/xml file or copy them to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/chromepass.html
+
+OperaPassView v1.10
+OperaPassView is a small password recovery tool that decrypts the content of the Opera Web browser password file (wand.dat) and displays the list of all Web site passwords stored in this file. You can easily select one or more passwords in the OperaPassView window, and then copy the passwords list to the clipboard and save it into text/html/csv/xml file. 
+Info and download here: http://www.nirsoft.net/utils/opera_password_recovery.html
+
+Network Password Recovery v1.40
+When you connect to a network share on your LAN or to your .NET Passport/Messenger account, Windows XP/Vista allows you to save your password in order to use it in each time that you connect the remote server. This utility recovers all network passwords stored on your system for the current logged-on user.
+Info and download here: http://www.nirsoft.net/utils/network_password_recovery.html
+
+BulletsPassView v1.32
+BulletsPassView is a password recovery tool that reveals the passwords stored behind the bullets in the standard password text-box of Windows operating system and Internet Explorer Web browser. After revealing the passwords, you can easily copy them to the clipboard or save them into text/html/csv/xml file.
+Info and download here: http://www.nirsoft.net/utils/bullets_password_view.html
+
+Mail PassView v1.85 - Email Password Recovery
+Recovers the passwords and other email accounts information of the following email applications: Outlook Express, Microsoft Outlook 2000 (POP3/SMTP Accounts only), Microsoft Outlook 2002/2003/2007/2010/2013/2016, Windows Mail, IncrediMail, Eudora, Netscape Mail, Mozilla Thunderbird.
+Info and download here: http://www.nirsoft.net/utils/mailpv.html
+
+PstPassword v1.17
+PstPassword is a small utility that recover lost password of Outlook .PST (Personal Folders) file.
+Info and download here: http://www.nirsoft.net/utils/pst_password.html
+
+WirelessKeyView v1.76
+WirelessKeyView recovers all wireless network keys (WEP/WPA) stored in your computer by the 'Wireless Zero Configuration' service of Windows XP and by the 'WLAN AutoConfig' service of Windows Vista. It allows you to easily save all keys to text/html/xml file, or copy a single key to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/wireless_key.HtmlDocEdit
+
+RouterPassView v1.65
+Most modern routers allow you to backup the configuration of the router into a file, and then restore the configuration from the file when it's needed.
+The backup file of the router usually contains important data like your ISP user name/password, the login password of the router, and wireless network keys. If you lost one of these password/keys, but you still have a backup file of your router configuration, RouterPassView might help you to recover your lost password from your router file. 
+Info and download here: http://www.nirsoft.net/utils/router_password_recovery.html
+
+WebBrowserPassView v1.70
+WebBrowserPassView is a password recovery tool that reveals the passwords stored by the following Web browsers: Internet Explorer (Version 4.0 - 8.0), Mozilla Firefox (All Versions), Google Chrome, and Opera. This tool can be used to recover your lost/forgotten password of any Website, including popular Web sites, like Facebook, Yahoo, Google, and GMail, as long as the password is stored by your Web Browser. After retrieving your lost passwords, you can save them into text/html/csv/xml file, by using the 'Save Selected Items' option (Ctrl+S).
+Info and download here: http://www.nirsoft.net/utils/web_browser_password.html
+
+Remote Desktop PassView v1.02
+Remote Desktop PassView is a small utility that reveals the password stored by Microsoft Remote Desktop Connection utility inside .rdp files.
+Info and download here: http://www.nirsoft.net/utils/remote_desktop_password.html
+
+LSASecretsView v1.21
+LSASecretsView is a small utility that displays the list of all LSA secrets stored in the Registry on your computer. The LSA secrets key is located under HKEY_LOCAL_MACHINE\Security\Policy\Secrets and may contain your RAS/VPN passwords, Autologon password, and other system passwords/keys.
+Info and download here: http://www.nirsoft.net/utils/lsa_secrets_view.html
+
+LSASecretsDump v1.21
+LSASecretsDump is a small console application that extract the LSA secrets from the Registry, decrypt them, and dump them into the console window. The LSA secrets key is located under HKEY_LOCAL_MACHINE\Security\Policy\Secrets and may contain your RAS/VPN passwords, Autologon password, and other system passwords/keys.
+This utility is the console version of LSASecretsView.
+Info and download here: http://www.nirsoft.net/utils/lsa_secrets_dump.html
+
+PCAnywhere PassView v1.11
+Reveals the passwords stored in PCAnywhere items. Both login information and the protection passwords are revealed instantly.
+Info and download here: http://www.nirsoft.net/utils/pcanypass.html
+
+Access PassView v1.12
+This utility reveals the database password of every password-protected mdb file that created with Microsoft Access 95/97/2000/XP or with Jet Database Engine 3.0/4.0
+It can be very useful if you forgot your Access Database password and you want to recover it. 
+Info and download here: http://www.nirsoft.net/utils/accesspv.html
+
+Win9x PassView v1.1
+The Win9x PassView utility reveals the passwords stored on your computer by Windows 95/98 operating system.
+Info and download here: http://www.nirsoft.net/utils/win9xpv.html
+
+Content Advisor Password Remover v1.01
+Removes the Content Advisor password in Internet Explorer (versions 4.x and above).
+Visual C++ Source code is included.
+Info and download here: http://www.nirsoft.net/utils/conadvpass.html
+
+Enterprise Manager PassView v1.00
+Reveals the passwords that SQL Server Enterprise Manager stores on your computer.
+Info and download here: http://www.nirsoft.net/utils/empv.html
+
+VNCPassView v1.05
+VNCPassView is a small utility that recover the passwords stored by the VNC tool. It can recover 2 of passwords: password stored for the current logged-on user (HKEY_CURRENT_USER in the Registry), and password stored for the all users.
+Info and download here: http://www.nirsoft.net/utils/vnc_password.html
+
+Protected Storage PassView v1.63
+This utility reveals the passwords stored on your computer by Internet Explorer, Outlook Express and POP3 accounts of MS-Outlook. The passwords are revealed by reading the information from the Protected Storage.
+Info and download here: http://www.nirsoft.net/utils/pspv.html
+
+Dialupass v3.21 - Dialup Password Recovery
+This utility enumerates all dialup/VPN entries on your computers, and displays their logon details: User Name, Password, and Domain. You can use it to recover a lost password of your Internet connection or VPN.
+Dialupass also allows you to save the dialup/VPN list into text/html/csv/xml file, or copy it to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/dialupass.html
+
+AsterWin IE v1.03
+This utility reveals the passwords stored behind the asterisks in the web pages of Internet Explorer 5.0 and above. You can use it for recovering a lost web site password, if it's stored on your computer.
+It was developed in Visual Basic environment and requires the Visual Basic Runtime library.
+Info and download here: http://www.nirsoft.net/utils/asterie.html
+
+	//NETWORK MONITORING TOOLS
+
+SmartSniff v2.25
+SmartSniff allows you to capture TCP/IP packets that pass through your network adapter, and view the captured data as sequence of conversations between clients and servers. You can view the TCP/IP conversations in Ascii mode (for text-based protocols, like HTTP, SMTP, POP3 and FTP.) or as hex dump. (for non-text base protocols, like DNS)
+Info and download here: http://www.nirsoft.net/utils/smsniff.html
+
+WifiChannelMonitor v1.42
+WifiChannelMonitor captures wifi traffic on the channel you choose, using Microsoft Network Monitor capture driver in monitor mode, and displays extensive information about access points and the wifi clients connected to them. WifiChannelMonitor also allows you to view the information about wifi clients that are not connected to any access points, including the list of SSIDs (network names) that they are trying to connect. For every access point, the following information is displayed: SSID, MAC Address, Device Manufacturer , PHY Type, Channel, RSSI, Security, Beacons Count, Probe Responses Count, Data Bytes, Retransmitted Data Bytes, and more... For every client, the following information is displayed: MAC Address, Device Manufacturer, SSID list that the client tries to connect, Sent Data Bytes, Received Data Bytes, Probe Requests Count, and more...
+Info and download here: http://www.nirsoft.net/utils/wifi_channel_monitor.html
+
+NetworkTrafficView v2.02
+NetworkTrafficView is a network monitoring tool that captures the packets pass through your network adapter, and displays general statistics about your network traffic. The packets statistics is grouped by the Ethernet Type, IP Protocol, Source/Destination Addresses, and Source/Destination ports. For every statistics line, the following information is displayed: Ethernet Type (IPv4, IPv6, ARP), IP Protocol (TCP, UDP, ICMP), Source Address, Destination Address, Source Port, Destination Port, Service Name (http, ftp, and so on), Packets Count, Total Packets Size, Total Data Size, Data Speed, Maximum Data Speed, Average Packet Size, First/Last Packet Time, Duration, and process ID/Name (For TCP connections).
+Info and download here: http://www.nirsoft.net/utils/network_traffic_view.html
+
+HTTPNetworkSniffer v1.51
+HTTPNetworkSniffer is a packet sniffer tool that captures all HTTP requests/responses sent between the Web browser and the Web server and displays them in a simple table. For every HTTP request, the following information is displayed: Host Name, HTTP method (GET, POST, HEAD), URL Path, User Agent, Response Code, Response String, Content Type, Referer, Content Encoding, Transfer Encoding, Server Name, Content Length, Cookie String, and more... You can easily select one or more HTTP information lines, and then export them to text/html/xml/csv file or copy them to the clipboard and then paste them into Excel. 
+Info and download here: http://www.nirsoft.net/utils/http_network_sniffer.html
+
+SniffPass v1.13 - Password Sniffer
+SniffPass is small utility that listens to your network, capture the passwords that pass through your network adapter, and display them on the screen instantly. SniffPass can capture the passwords of the following Protocols: POP3, IMAP4, SMTP, FTP, and HTTP (basic authentication passwords).
+You can use this utility to recover lost Web/FTP/Email passwords.
+Info and download here: http://www.nirsoft.net/utils/password_sniffer.html
+
+SocketSniff v1.11
+SocketSniff allows you to watch the Windows Sockets (WinSock) activity of the selected process.
+For each created socket, the following information is displayed: socket handle, socket type, local and remote addresses, local and remote ports, total number of send/receive bytes, and more. You can also watch the content of each send or receive call, in Ascii mode or as Hex Dump.
+Info and download here: http://www.nirsoft.net/utils/socket_sniffer.html
+
+CurrPorts v2.22
+CurrPorts is a network monitoring software that displays the list of all currently opened TCP/IP and UDP ports on your local computer. For each port in the list, information about the process that opened the port is also displayed, including the process name, full path of the process, version information of the process (product name, file description, and so on), the time that the process was created, and the user that created it.
+In addition, CurrPorts allows you to close unwanted TCP connections, kill the process that opened the ports, and save the TCP/UDP ports information to HTML file , XML file, or to tab-delimited text file.
+CurrPorts also automatically mark with pink color suspicious TCP/UDP ports owned by unidentified applications (Applications without version information and icons).
+Info and download here: http://www.nirsoft.net/utils/cports.html
+
+TcpLogView v1.25
+TcpLogView is a simple utility that monitors the opened TCP connections on your system, and adds a new log line every time that a TCP connection is opened or closed. For every log line, the following information is displayed: Even Time, Event Type (Open, Close, Listen), Local Address, Remote Address, Remote Host Name, Local Port, Remote Port, Process ID, Process Name, and the country information of the Remote IP (Requires to download IP to country file separately).
+Info and download here: http://www.nirsoft.net/utils/tcp_log_view.html
+
+NetworkConnectLog v1.06
+NetworkConnectLog is a simple utility that repeatedly scans your local area network (Using ARP and Netbios protocols) and add a new log line every time that a new computer or device connects to your network, and when a computer or device disconnects from your network. After the connect/disconnect log lines are accumulated, you can easily export the log lines to comma-delimited/tab-delimited/html/xml file. 
+Info and download here: http://www.nirsoft.net/utils/network_connect_log.html
+
+NetworkLatencyView v1.45
+NetworkLatencyView is a simple tool for Windows that listens to the TCP connections on your system and calculates the network latency (in milliseconds) for every new TCP connection detected on your system. For every IP address, NetworkLatencyView displays up to 10 network latency values, and their average. The latency value calculated by NetworkLatencyView is very similar to the result you get from pinging to the same IP address. NetworkLatencyView also allows you to easily export the latency information to text/csv/tab-delimited/html/xml file, or copy the information to the clipboard and then paste it to Excel or other application.
+Info and download here: http://www.nirsoft.net/utils/network_latency_view.html
+
+DNSQuerySniffer v1.51
+DNSQuerySniffer is a network sniffer utility that shows the DNS queries sent on your system. For every DNS query, the following information is displayed: Host Name, Port Number, Query ID, Request Type (A, AAAA, NS, MX, and so on), Request Time, Response Time, Duration, Response Code, Number of records, and the content of the returned DNS records. You can easily export the DNS queries information to csv/tab-delimited/xml/html file, or copy the DNS queries to the clipboard, and then paste them into Excel or other spreadsheet application.
+Info and download here: http://www.nirsoft.net/utils/dns_query_sniffer.html
+
+WhoIsConnectedSniffer v1.12
+WhoIsConnectedSniffer is a network discovery tool that listens to network packets on your network adapter using a capture driver (WinpCap or MS network monitor) and accumulates a list of computer and devices currently connected to your network. WhoIsConnectedSniffer uses various protocols to detect the computers connected to your network, including ARP, UDP, DHCP, mDNS, and BROWSER. For every detected computer or device, the following information is displayed: (Some of the fields might be empty if the information cannot be found inside the packets) IP Address, MAC Address, name of the device/computer, description, Operating System, Network Adapter Company, IPv6 Address.
+After collecting the connected computers/devices information, you can easily export the list to tab-delimited/comma-delimited/xml/html file.
+Info and download here: http://www.nirsoft.net/utils/who_is_connected_sniffer.html
+
+Wireless Network Watcher v1.97
+Wireless Network Watcher is a small utility that scans your wireless network and displays the list of all computers and devices that are currently connected to your network. For every computer or device that is connected to your network, the following information is displayed: IP address, MAC address, the company that manufactured the network card, and optionally the computer name. You can also export the connected devices list into html/xml/csv/text file, or copy the list to the clipboard and then paste into Excel or other spreadsheet application. 
+Info and download here: http://www.nirsoft.net/utils/wireless_network_watcher.html
+
+WakeMeOnLan v1.76
+This utility allows you to easily turn on one or more computers remotely by sending Wake-on-LAN (WOL) packet to the remote computers. When your computers are turned on, WakeMeOnLan allows you to scan your network, and collect the MAC addresses of all your computers, and save the computers list info a file. Later, when your computers are turned off or in standby mode, you can use the stored computers list to easily choose the computer you want to turn on, and then turn on all these computers with a single click.
+WakeMeOnLan also allows you to turn on a computer from command-line, by specifying the computer name, IP address, or the MAC address of the remote network card.
+Info and download here: http://www.nirsoft.net/utils/wake_on_lan.html
+
+WifiHistoryView v1.06
+WifiHistoryView is a simple tool for Windows 10/8/7/Vista that displays the history of connections to wireless networks on your computer. For every event that the computer connected to a wireless network or disconnected from it, the following information is displayed: The date/time that the event occurred, network name (SSID), profile name, network adapter name, BSSID of the router/Access Point, and more... WifiHistoryView can read the wifi history information from a running system or from external event log file of another computer.
+Info and download here: http://www.nirsoft.net/utils/wifi_history_view.html
+
+NetworkOpenedFiles v1.06
+NetworkOpenedFiles is a simple tool for Windows that displays the list of all files that are currently opened by other computers on your network. For every opened filename, the following information is displayed: Filename, user name, computer name (On Windows 7/2008 or later), Permissions information (Read/Write/Create), locks count, file owner, file size, file attributes, and more...
+Info and download here: http://www.nirsoft.net/utils/network_opened_files.html
+
+NetBScanner v1.08
+NetBScanner is a network scanner tool that scans all computers in the IP addresses range you choose, using NetBIOS protocol. For every computer located by this NetBIOS scanner, the following information is displayed: IP Address, Computer Name, Workgroup or Domain, MAC Address, and the company that manufactured the network adapter (determined according to the MAC address). NetBScanner also shows whether a computer is a Master Browser. You can easily select one or more computers found by NetBScanner, and then export the list into csv/tab-delimited/xml/html file.
+Info and download here: http://www.nirsoft.net/utils/netbios_scanner.html
+
+WirelessNetView v1.70
+WirelessNetView is a small utility that runs in the background, and monitor the activity of wireless networks around you. For each detected network, it displays the following information: SSID, Last Signal Quality, Average Signal Quality, Detection Counter, Authentication Algorithm, Cipher Algorithm, and more.
+Info and download here: http://www.nirsoft.net/utils/wireless_network_view.html
+
+WifiInfoView v2.00
+WifiInfoView scans the wireless networks in your area and displays extensive information about them, including: Network Name (SSID), MAC Address, PHY Type (802.11g or 802.11n), RSSI, Signal Quality, Frequency, Channel Number, Maximum Speed, Company Name, Router Model and Router Name (Only for routers that provides this information), and more... When you select a wireless network in the upper pane of this tool, the lower pane displays the Wi-Fi information elements received from this device, in hexadecimal format. WifiInfoView also has a summary mode, which displays a summary of all detected wireless networks, grouped by channel number, company that manufactured the router, PHY type, or the maximum speed.
+Info and download here: http://www.nirsoft.net/utils/wifi_information_view.html
+
+WirelessConnectionInfo v1.11
+WirelessConnectionInfo is a simple tool for Windows Vista/7/8/2008 that displays general information and statistics about the active wifi connection, including the SSID, BSSID, PHY Type, Signal Quality, Receiving rate, Transmission Rate, Authentication Algorithm, Channel Number, Total number of transmitted/received frames, and more...
+Info and download here: http://www.nirsoft.net/utils/wireless_connection_information.html
+
+AdapterWatch v1.05
+AdapterWatch displays useful information about your network adapters: IP addresses, Hardware address, WINS servers, DNS servers, MTU value, Number of bytes received or sent, The current transfer speed, and more. In addition, it displays general TCP/IP/UDP/ICMP statistics for your local computer.  
+Info and download here: http://www.nirsoft.net/utils/awatch.html
+
+NetResView v1.27
+NetResView is a small utility that displays the list of all network resources (computers, disk shares, and printer shares) on your LAN. As opposed to "My Network Places" module of Windows, NetResView display all network resources from all domains/workgroups in one screen, and including admin/hidden shares.
+Info and download here: http://www.nirsoft.net/utils/netresview.html
+
+NetRouteView v1.30
+NetRouteView is a GUI alternative to the standard route utility (Route.exe) of Windows operating system. It displays the list of all routes on your current network, including the destination, mask, gateway, interface IP address, metric value, type, protocol, age (in seconds), interface name, and the MAC address. NetRouteView also allows you to easily add new routes, as well as to remove or modify existing static routes.
+Info and download here: http://www.nirsoft.net/utils/network_route_view.html
+
+CountryTraceRoute v1.26
+CountryTraceRoute is a Traceroute utility, similar to the tracert tool of Windows, but with graphical user interface, and it's also much faster than tracert of Windows. CountryTraceRoute also displays the country of the owner of every IP address found in the Traceroute. After the Traceroute is completed, you can select all items (Ctrl+A) and then save them into csv/tab-delimited/html/xml file with 'Save Selected Items' option (Ctrl+S) or copy them to the clipboard (Ctrl+C) and then paste the result into Excel or other spreadsheet application.
+Info and download here: http://www.nirsoft.net/utils/country_traceroute.html
+
+PingInfoView v1.51
+PingInfoView is a small utility that allows you to easily ping multiple host names and IP addresses, and watch the result in one table. It automatically ping to all hosts every number of seconds that you specify, and displays the number of succeed and failed pings, as well as the average ping time. You can also save the ping result into text/html/xml file, or copy it to the clipboard. 
+Info and download here: http://www.nirsoft.net/utils/multiple_ping_tool.html
+
+	//WEB BROWSER TOOLS (se va a usar sobre todo para ataques de ingenieria social y phising)
+
+	BrowsingHistoryView v1.86
+BrowsingHistoryView is a utility that reads the history data of 4 different Web browsers (Internet Explorer, Mozilla Firefox, Google Chrome, and Safari) and displays the browsing history of all these Web browsers in one table. The browsing history table includes the following information: Visited URL, Title, Visit Time, Visit Count, Web browser and User Profile. BrowsingHistoryView allows you to watch the browsing history of all user profiles in a running system, as well as to get the browsing history from external hard drive. You can also export the browsing history into csv/tab-delimited/html/xml file from the user interface, or from command-line, without displaying any user interface.
+Info and download here: http://www.nirsoft.net/utils/browsing_history_view.html
+
+WebCacheImageInfo v1.21
+WebCacheImageInfo is a simple tool that searches for JPEG images with EXIF information stored inside the cache of your Web browser (Internet Explorer, Firefox, or Chrome), and then it displays the list of all images found in the cache with the interesting information stored in them, like the software that was used to create the image, the camera model that was used to photograph the image, and the date/time that the image was created.
+Info and download here: http://www.nirsoft.net/utils/web_cache_image_info.html
+
+ImageCacheViewer v1.11
+ImageCacheViewer is a simple tool that scans the cache of your Web browser (Internet Explorer, Firefox, or Chrome), and lists the images displayed in the Web sites that you recently visited. For every cached image file, the following information is displayed: URL of the image, Web browser that was used to visit the page, image type, date/time of the image, browsing time, and file size. When selecting a cache item in the upper pane of ImageCacheViewer, the image is displayed in the lower pane, and you can copy the image to the clipboard by pressing Ctrl+M.
+Info and download here: http://www.nirsoft.net/utils/image_cache_viewer.html
+
+FBCacheView v1.11
+FBCacheView is a simple tool that scans the cache of your Web browser (Internet Explorer, Firefox, or Chrome), and lists all images displayed in Facebook pages that you previously visited, including profile pictures, images uploaded to Facebook, and images taken from other Web sites. For every Facebook image, the following information is displayed: URL of the image, Web browser that was used to visit the page, image type, date/time of the image, visit time, image file size, and external URL (For images taken from another Web site).
+Info and download here: http://www.nirsoft.net/utils/facebook_cache_viewer.html
+
+BrowserAddonsView v1.00
+BrowserAddonsView is a simple tools that displays the details of all Web browser addons/plugins installed in your system. BrowserAddonsView can scan and detect the addons of most popular Web browsers: Chrome, Firefox, and Internet Explorer. For Chrome and Firefox, BrowserAddonsView detects and scans all Web browser profiles if there are multiple profiles. 
+Info and download here: http://www.nirsoft.net/utils/web_browser_addons_view.html
+
+IECacheView v1.57 - Internet Explorer Cache Viewer
+IECacheView is a small utility that reads the cache folder of Internet Explorer, and displays the list of all files currently stored in the cache. For each cache file, the following information is displayed: Filename, Content Type, URL, Last Accessed Time, Last Modified Time, Expiration Time, Number Of Hits, File Size, Folder Name, and full path of the cache filename. You can easily save the cache information into text/html/xml file, or copy the cache table to the clipboard and then paste it to another application, like Excel or OpenOffice Spreadsheet.
+Info and download here: http://www.nirsoft.net/utils/ie_cache_viewer.html
+
+IECookiesView v1.77
+This utility displays the details of all cookies that Internet Explorer stores on your computer. In addition, it allows you to change the content of the cookies, delete unwanted cookies files, save the cookies into a readable text file, find cookies by specifying the domain name, view the cookies of other users and in other computers, and more...
+Info and download here: http://www.nirsoft.net/utils/iecookies.html
+
+WebCookiesSniffer v1.26
+WebCookiesSniffer is a packet sniffer tool that captures all Web site cookies sent between the Web browser and the Web server and displays them in a simple cookies table. The upper pane of WebCookiesSniffer displays the cookie string and the Web site/host name that sent or received this cookie. When selecting a cookie string in the upper pane, WebCookiesSniffer parses the cookie string and displays the cookies as name-value format in the lower pane.
+Info and download here: http://www.nirsoft.net/utils/web_cookies_sniffer.html
+
+IEHistoryView v1.70
+This utility reads all information from the history file on your computer, and displays the list of all URLs that you have visited with Internet Explorer browser in the last few days. It also allows you to select one or more URL addresses, and then remove them from the history file or save them into text, HTML or XML file. In addition, you are allowed to view the visited URL list of other user profiles on your computer, and even access the visited URL list on a remote computer, as long as you have permission to access the history folder.
+Info and download here: http://www.nirsoft.net/utils/iehv.html
+
+MZCookiesView v1.50
+MZCookiesView is an alternative to the standard 'Cookie Manager' provided by Netscape and Mozilla browsers. It displays the details of all cookies stored inside the cookies file (cookies.txt) in one table, and allows you to save the cookies list into text, HTML or XML file, delete unwanted cookies, and backup/restore the cookies file. 
+Info and download here: http://www.nirsoft.net/utils/mzcv.html
+
+MZHistoryView v1.56
+MZHistoryView is a small utility that reads the history data file (history.dat) of Firefox/Mozilla/Netscape Web browsers, and displays the list of all visited Web pages in the last days. For each visited Web page, the following information is displayed: URL, First visit date, Last visit date, Visit counter, Referrer, Title, and Host name.
+You can also easily export the history data to text/HTML/Xml file.
+Info and download here: http://www.nirsoft.net/utils/mozilla_history_view.html
+
+MZCacheView v1.69
+MZCacheView is a small utility that reads the cache folder of Firefox/Mozilla/Netscape Web browsers, and displays the list of all files currently stored in the cache. For each cache file, the following information is displayed: URL, Content type, File size, Last modified time, Last fetched time, Expiration time, Fetch count, Server name, and more.
+You can easily select one or more items from the cache list, and then extract the files to another folder, or copy the URLs list to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/mozilla_cache_viewer.html
+
+FirefoxDownloadsView v1.38
+This utility displays the list of the latest files that you downloaded with Firefox. For every download record, the following information is displayed: Download URL, Download Filename (with full path), Referrer, MIME Type, File Size, Start/End Time, Download Duration, and Average Download Speed. You can easily select one or more downloads, and then save the list into xml/html/text/csv file or copy the downloads information to the clipboard and paste it into Excel or other spreadsheet application.
+Info and download here: http://www.nirsoft.net/utils/firefox_downloads_view.html
+
+ChromeCookiesView v1.20
+ChromeCookiesView is an alternative to the standard internal cookies viewer of Google Chrome Web browser. it displays the list of all cookies stored by Google Chrome Web browser, and allows you to easily delete unwanted cookies. It also allows you export the cookies into text/csv/html/xml file. For every cookie, the following information is displayed: Host Name, Path, Name, Value, Secure (Yes/No), HTTP Only Cookie (Yes/No), Last Accessed Time, Creation Time, Expiration Time.
+Info and download here: http://www.nirsoft.net/utils/chrome_cookies_view.html
+
+ChromeHistoryView v1.22
+ChromeHistoryView is a small utility that reads the history data file of Google Chrome Web browser, and displays the list of all visited Web pages in the last days. For each visited Web page, the following information is displayed: URL, Title, Visit Date/Time, Number of visits, number of times that the user typed this address (Typed Count), Referrer, and Visit ID. You can select one or more history items, and them export them into html/xml/csv/text file, or copy the information to the clipboard and paste it into Excel. 
+Info and download here: http://www.nirsoft.net/utils/chrome_history_view.html
+
+SafariHistoryView v1.01
+SafariHistoryView is a simple utility for Windows that reads and parses the history file of Safari Web browser (history.plist) and displays the browsing history in a simple table. Every browsing history line includes the following information: URL, Web Page Title, Last Visit Time, Visit Count, Redirected To URL, and Record Index. SafariHistoryView allows you to easily export the browsing history data into text/csv/html/xml file, or copy the data to the clipboard and then paste it into Excel.
+Info and download here: http://www.nirsoft.net/utils/safari_history_view.html
+
+SafariCacheView v1.11
+SafariCacheView is a simple utility for Windows that reads and parses the cache file of Safari Web browser (cache.db) and displays the list of all cached files in a simple table. Every cache information line includes the following information: Filename, Content Type, URL, Content Length, Server Name, Server Time, Expiration Time, Last Modified Time, Content Encoding, and Referrer. SafariCacheView also allows you to select one or more cache items and then extract them into the desired folder or save the cache list into html/text/xml/csv file.
+Info and download here: http://www.nirsoft.net/utils/safari_cache_view.html
+
+OperaCacheView v1.40
+OperaCacheView is a small utility that reads the cache folder of Opera Web browser, and displays the list of all files currently stored in the cache. For each cache file, the following information is displayed: URL, Content type, File size, Last accessed time, and last modified time in the server.
+You can easily select one or more items from the cache list, and then extract the files to another folder, or copy the URLs list to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/opera_cache_view.html
+
+ChromeCacheView v1.67
+ChromeCacheView is a small utility that reads the cache folder of Google Chrome Web browser, and displays the list of all files currently stored in the cache. For each cache file, the following information is displayed: URL, Content type, File size, Last accessed time, Expiration time, Server name, Server response, and more. You can easily select one or more items from the cache list, and then extract the files to another folder, or copy the URLs list to the clipboard.
+Info and download here: http://www.nirsoft.net/utils/chrome_cache_view.html
+
+FlashCookiesView v1.15
+FlashCookiesView is a small utility that displays the list of cookie files created by Flash component (Local Shared Object) in your Web browser. For each cookie file, the lower pane of FlashCookiesView displays the content of the file in readable format or as Hex dump.
+You can also select one or more cookie files, and then copy them to the clipboard, save them to text/html/xml file or delete them. 
+Info and download here: http://www.nirsoft.net/utils/flash_cookies_view.html
+
+MyLastSearch v1.64
+MyLastSearch utility scans the cache and history files of your Web browser, and locate all search queries that you made with the most popular search engines (Google, Yahoo and MSN). The search queries that you made are displayed in a table with the following columns: Search Text, Search Engine, Search Time, Web Browser, and the search URL.
+Info and download here: http://www.nirsoft.net/utils/my_last_search.html
+
+URLStringGrabber v1.11
+URLStringGrabber is a small utility that scans all opened windows of Internet Explorer and grab the URLs stored in them, including clickable links, images, script files, CSS files, RSS feeds, and flash (.swf) files.
+The URLs list is displayed in table, and you can easily export some of the URLs or the entire URLs list into text, csv, html, or xml file. You can also copy the URLs list into the clipboard and paste them into Excel or other spreadsheet application.
+Info and download here: http://www.nirsoft.net/utils/url_string_grabber.html
+
+IEDesignMode v1.00
+IEDesignMode Adds a new menu item into the context menu of Internet Explorer that allows you to easily switch the active Internet Explorer window to design mode. When a Web page in in design mode, you can change the location of images and other objects, change the current text, paste a new text into the Web page, and so on. After you made your changes, you can easily switch back to non-design mode and/or save the modified Web page to HTML file.
+Info and download here: http://www.nirsoft.net/utils/ie_design_mode.html
+
+FavoritesView v1.32
+FavoritesView displays the list of all your Favorties (of Internet Explorer browser) and bookmarks (of Netscape/Mozilla browsers) in a single page. Each line in the list specifies the title of the item, the URL address, the created/modified date of the bookmark item, and the folder name. You select one or more of these bookmarks, and then copy them to the clipboard, delete them (Only for Internet Explorer Favorites), export them to tab-delimited text file, HTML file, or XML file. FavoritesView also allows you to locate duplicate URL addresses in your Favorites/Bookmarks or find specific item by specifying the URL or the title.
+Info and download here: http://www.nirsoft.net/utils/faview.html
+
+	//VIDEO/AUDIO RELATED UTILITIES
+
+VideoCacheView v2.96
+After watching a video in a Web site, you may want to save the video file into your local disk for playing it offline in the future. If the video file is stored in your browser's cache, this utility can help you to extract the video file from the cache and save it for watching it in the future.
+It automatically scans the entire cache of Internet Explorer and Mozilla-based Web browsers (Including Firefox) and finds all video files that are currently stored in it. It allows you to easily copy the cached video files into another folder for playing/watching them in the future. If you have a movie player that is configured to play flv files, it also allows you to play the video directly from your browser's cache.
+Info and download here: http://www.nirsoft.net/utils/video_cache_view.html
+
+WebVideoCap v1.41
+While watching a video in a Web site, you may sometimes want to save the video into your local drive, and then play it offline later. This utility allows you to capture .flv (Flash Video) files and RTSP streams while the Web browser download and play them inside a Web page. After the entire video file is downloaded and played by the Web browser, the video file is saved in the folder that you selected, and you can play it offline later with any Video player.
+WebVideoCap can capture the video files of most popular video-sharing sites, including YouTube, Google Video, Yahoo Video, iFilm, Metacafe, Putfile, and more...
+Info and download here: http://www.nirsoft.net/utils/web_video_capture.html
+
+RTMPDumpHelper v1.21
+RTMPDumpHelper is a small utility that can help you to easily download RTMP video/audio streams. By combining this utility and the proxy server of RTMPDump toolkit, you can simply open a Web page containing RTMP video stream in your favorite Web browser, and while watching the video, it'll be saved to your disk automatically as .flv or .mp4 file. RTMP is a streaming protocol used by Hulu, justin.tv, and by many live streaming Web sites.
+Info and download here: http://www.nirsoft.net/utils/rtmp_dump_helper.html
+
+	//INTERNET RELATED UTILITIES
+
+	DomainHostingView v1.72
+DomainHostingView is a utility for Windows that collects extensive information about a domain by using a series of DNS and WHOIS queries, and generates HTML report that can be displayed in any Web browser. The information displayed by the report of DomainHostingView includes: the hosting company or data center that hosts the Web server, mail server, and domain name server (DNS) of the specified domain, the created/changed/expire date of the domain, domain owner, domain registrar that registered the domain, list of all DNS records, and more...
+Info and download here: http://www.nirsoft.net/utils/domain_hosting_view.html
+
+NetConnectChoose v1.07
+NetConnectChoose is a simple tool that allows you to easily choose the default Internet connection that will be used by all Internet applications, when you have more than a single Internet connection on the same time. (Each connection on different network adapter) It also displays extensive information about every active network/Internet connection, including network adapter name, MAC Address, Name Servers, MTU, Interface Speed, current incoming/outgoing data speed, number of received/sent packets, received/sent bytes, and more...
+Info and download here: http://www.nirsoft.net/utils/net_connect_choose.html
+
+IPNetInfo v1.72
+IPNetInfo is a small utility that allows you to easily find all available information about an IP address: The owner of the IP address, the country/state name, IP addresses range, contact information (address, phone, fax, and email), and more.
+This utility can be very useful for finding the origin of unsolicited mail. You can simply copy the message headers from your email software and paste them into IPNetInfo utility. IPNetInfo automatically extracts all IP addresses from the message headers, and displays the information about these IP addresses. 
+Info and download here: http://www.nirsoft.net/utils/ipnetinfo.html
+
+WhoisThisDomain v2.26
+This utility allows you to easily get information about a registered domain. It automatically connects to the right WHOIS server, according to the top-level domain name, and retrieve the WHOIS record of the domain. It supports both generic domains and country code domains.
+Info and download here: http://www.nirsoft.net/utils/whois_this_domain.html
+
+IPInfoOffline v1.43
+IPInfoOffline Allows you to view information about IP addresses, without connecting any external server. It uses a compressed IP addresses database that is stored inside the exe file. For each IP address, the following information is displayed: IP block range, Organization (RIPE, ARIN, APNIC, LACNIC or AFRINIC), Assigned Date, Country Name, and Country Code. After retrieving the information about the desired IP addresses, You can copy the information to the clipboard, or save it into text/html/xml/csv file.
+Info and download here: http://www.nirsoft.net/utils/ip_country_info_offline.html
+
+DNSDataView v1.45
+This utility is a GUI alternative to the NSLookup tool that comes with Windows operating system. It allows you to easily retrieve the DNS records (MX, NS, A, SOA) of the specified domains. You can use the default DNS server of your Internet connection, or use any other DNS server that you specify. After retrieving the DNS records for the desired domains, you can save them into text/xml/html/csv file.
+Info and download here: http://www.nirsoft.net/utils/dns_records_viewer.html
+
+QuickSetDNS v1.15
+QuickSetDNS is a simple tool that allows you to easily change the DNS servers that are used for your Internet connection. You can set the desired DNS servers from the user interface, by choosing from a list of DNS servers that you defined, or from command-line, without displaying any user interface.
+Info and download here: http://www.nirsoft.net/utils/quick_set_dns.html
+
+MACAddressView v1.33
+MACAddressView is a MAC address lookup tool that allows you to easily find the company details (company name, address, and country) according to the MAC address of a product.
+MACAddressView also allows you to find MAC address records according to the company name, company address, or country name. After finding the desired MAC address records, you can save them into text/xml/HTML/csv file or copy them to the clipboard and paste them into Excel or other applications.
+Info and download here: http://www.nirsoft.net/utils/mac_address_lookup_find.html
+
+FastResolver v1.26
+FastResolver is a small utility that resolves multiple host names into IP addresses and vice versa. You can simply type the list of IP addresses or host name that you want to resolve, or alternatively, you can specify IP addresses range that you want to scan. For local network, FastResolver also allows you to get the MAC address of all IP addresses that you scan. FastResolver is a multithreaded application, so it can resolve dozens of addresses within a few seconds. 
+Info and download here: http://www.nirsoft.net/utils/fastresolver.html
+
+WebSiteSniffer v1.45
+WebSiteSniffer is a packet sniffer tool that captures all Web site files downloaded by your Web browser while browsing the Internet, and stores them on your hard drive under the base folder that you choose. WebSiteSniffer allows you to choose which type of Web site files will be captured: HTML Files, Text Files, XML Files, CSS Files, Video/Audio Files, Images, Scripts, and Flash (.swf) files.
+While capturing the Web site files, the main window of WebSiteSniffer displays general statistics about the downloaded files for every Web site / host name, including the total size of all files (compressed and uncompressed) and total number of files for every file type (HTML, Text, Images, and so on).
+Info and download here: http://www.nirsoft.net/utils/web_site_sniffer.html
+
+SiteShoter v1.42 - Capture Website Screenshots
+SiteShoter is a small utility that allows you to save a screenshot of any Web page into a file. It automatically creates hidden window of Internet Explorer, loads the desired Web page, and than save the entire content of the Web page into an image file (.png, .jpg, .tiff, .bmp or .gif). You can use SiteShoter in user interface mode, or alternatively, you can run SiteShoter in command-line mode without displaying any user interface.
+Info and download here: http://www.nirsoft.net/utils/web_site_screenshot.html
+
+SeqDownload v1.26
+This utilities allows you to automatically download live images from the Web for every xxx seconds/minutes and store the files on your local drive. After collecting a fair amount of images, you can easily create nice animation from the downloaded images.
+This utility is especially useful for live cams Web sites, weather radar images, and satellite images.
+Info and download here: http://www.nirsoft.net/utils/seqdownload.html
+
+AddrView v1.01
+AddrView allows you to parse HTML pages and extract most URL addresses stored in them. AddrView extracts URLs of images (<img> tag), links to other files (<a> tag), CSS files, frames, Flash files, and more.
+Info and download here: http://www.nirsoft.net/utils/addrview.html
+
+	//COMMAND LINE UTILITIES
+
+WirelessNetConsole v1.00
+WirelessNetConsole is a small console application that dumps all current detected wireless networks information into the standard output. For each wireless network, the following information is displayed: SSID, Signal Quality in %, PHY types, RSSI, MAC Address, Channel Frequency, and more.
+Info and download here: http://www.nirsoft.net/utils/wireless_net_console.html
+
+BluetoothCL v1.07
+BluetoothCL is a small console application that dumps all current detected bluetooth devices into the standard output. For each Bluetooth device, the following information is displayed: MAC Address, Name, Major Device Type, Minor Device Type, and optionally the company name of the device (if external file of MAC addresses - oui.txt is provided).
+Info and download here: http://www.nirsoft.net/utils/bluetoothcl.html
+
+WhosIP v1.15
+WhosIP is a simple command-line utility that allows you to easily find all available information about an IP address: The owner of the IP address, the country/state name, IP addresses range, contact information (address, phone, fax, and email), and more.
+Info and download here: http://www.nirsoft.net/utils/whosip.html
+
+WhoisCL v1.74
+WhoisCL is a simple command-line utility that allows you to easily get information about a registered domain. It automatically connect to the right WHOIS server, according to the top-level domain name, and retrieve the WHOIS record of the domain. It supports both generic domains and country code domains.
+Info and download here: http://www.nirsoft.net/utils/whoiscl.html
+
+	//PROGRAMMER TOOLS
+
+SimpleProgramDebugger v1.03
+SimpleProgramDebugger is a simple debugging tool that attaches to existing running program or starts a new program in debugging mode, and then displays all major debugging events occurs while the program is running, including Exception, Create Thread, Create Process, Exit Thread, Exit Process, Load DLL, Unload Dll, and Debug String. After the debugging events are accumulated, you can easily export them into comma-delimited/tab-delimited/xml/html file or copy them to the clipboard and then paste them into Excel or any other spreadsheet application. 
+Info and download here: http://www.nirsoft.net/utils/simple_program_debugger.html
+
+	//SYSTEM UTILITIES
+
+BluetoothLogView v1.10
+BluetoothLogView is a small utility that monitors the activity of Bluetooth devices around you, and displays a log of Bluetooth devices on the main window. Every time that a new Bluetooth device arrives to your area and when the device leaves your area, a new log line is added with the following information: Device Name, Device Address, Event Time, Event Type ('Device Arrival' or 'Device Left'), Device Type, and the company that created the device. BluetoothLogView also allows you to specify a description for every device (according to its MAC address) that will appear under the 'Description' column.
+Info and download here: http://www.nirsoft.net/utils/bluetooth_log_view.html
+
+BluetoothView v1.66
+BluetoothView is a small utility that runs in the background, and monitor the activity of Bluetooth devices around you. For each detected Bluetooth device, it displays the following information: Device Name, Bluetooth Address, Major Device Type, Minor Device Type, First Detection Time, Last Detection Time, and more.
+BluetoothView can also notify you when a new Bluetooth device is detected, by displaying a balloon in your taskbar or by playing a small beep sound.  
+Info and download here: http://www.nirsoft.net/utils/bluetooth_viewer.html
+
+	//OTHER UTILITIES
+
+WebCamImageSave v1.11
+WebCamImageSave is simple WebCam capture utility that allows you to easily capture a still image from your camera every number of seconds that you choose, and save it into image file (.jpg, .png, .bmp) on your disk. You can format the saved image filename with the date/time that the image was taken according to your preference, for example: c:\images\img20110725_123256.jpg WebCamImageSave also adds a label with the date/time that the image was captured into the image, by using the font, color, and date/time format that you choose. You can also capture a single camera image from command-line, without displaying any user interface.
+Info and download here: http://www.nirsoft.net/utils/web_cam_image_capture.html
+
+HashMyFiles v2.18
+HashMyFiles is small utility that allows you to calculate the MD5 and SHA1 hashes of one or more files in your system. You can easily copy the MD5/SHA1 hashes list into the clipboard, or save them into text/html/xml file.
+HashMyFiles can also be launched from the context menu of Windows Explorer, and display the MD5/SHA1 hashes of the selected file or folder. 
+Info and download here: http://www.nirsoft.net/utils/hash_my_files.html
+
+pcANYWHERE Hosts Scanner v1.01
+This small utility allows you to scan a TCP/IP network and get the list of all pcANYWHERE hosts within that network.
+Info and download here: http://www.nirsoft.net/utils/pcanyscan.html
