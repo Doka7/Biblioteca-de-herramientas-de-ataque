@@ -34,12 +34,12 @@
       <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
     </div>
 
-    <form id="consulta" class="form-horizontal" method="post" action="">
+    <form id="consulta" class="form-horizontal" method="post" action="#recargar">
 
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Realice su consulta<a href="informacion.html"> (Información) </a> </legend>
+        <legend>Realice su consulta <a href="informacion.html">(Información)</a> </legend>
 
         <!-- Quicksearch input-->
         <div class="form-group">
@@ -50,222 +50,225 @@
         </div>
 
         <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_SO">Sistema operativo objetivo:</label>
-        <div class="col-md-4">
-          <select id="Enum_SO" name="Enum_SO" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_SO']==0) echo 'selected="selected" ';?>>Seleccionar</option>          
-            <option value="1" <?php if($_POST['Enum_SO']==1) echo 'selected="selected" ';?>>Android</option>
-            <option value="2" <?php if($_POST['Enum_SO']==2) echo 'selected="selected" ';?>>iOS</option>
-            <option value="3" <?php if($_POST['Enum_SO']==3) echo 'selected="selected" ';?>>OS-X</option>
-            <option value="4" <?php if($_POST['Enum_SO']==4) echo 'selected="selected" ';?>>Ubuntu</option>
-            <option value="5" <?php if($_POST['Enum_SO']==5) echo 'selected="selected" ';?>>Windows</option>
-            <option value="6" <?php if($_POST['Enum_SO']==6) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_SO">Sistema operativo objetivo:</label>
+          <div class="col-md-4">
+            <select id="Enum_SO" name="Enum_SO" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_SO']==0) echo 'selected="selected" ';?>>Seleccionar</option>          
+              <option value="1" <?php if($_POST['Enum_SO']==1) echo 'selected="selected" ';?>>Android</option>
+              <option value="2" <?php if($_POST['Enum_SO']==2) echo 'selected="selected" ';?>>iOS</option>
+              <option value="3" <?php if($_POST['Enum_SO']==3) echo 'selected="selected" ';?>>OS-X</option>
+              <option value="4" <?php if($_POST['Enum_SO']==4) echo 'selected="selected" ';?>>Ubuntu</option>
+              <option value="5" <?php if($_POST['Enum_SO']==5) echo 'selected="selected" ';?>>Windows</option>
+              <option value="6" <?php if($_POST['Enum_SO']==6) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_recopilacion" >Recopilación de información:</label>
-        <div class="col-md-4">
-          <select id="Enum_recopilacion" name="Enum_recopilacion" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_recopilacion']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_recopilacion']==1) echo 'selected="selected" ';?>>Análisis de DNS</option>
-            <option value="2" <?php if($_POST['Enum_recopilacion']==2) echo 'selected="selected" ';?>>Análisis de tráfico</option>
-            <option value="3" <?php if($_POST['Enum_recopilacion']==3) echo 'selected="selected" ';?>>Análisis de OSINT</option>
-            <option value="4" <?php if($_POST['Enum_recopilacion']==4) echo 'selected="selected" ';?>>Análisis de routeo</option>
-            <option value="5" <?php if($_POST['Enum_recopilacion']==5) echo 'selected="selected" ';?>>Análisis de SMB</option>
-            <option value="6" <?php if($_POST['Enum_recopilacion']==6) echo 'selected="selected" ';?>>Análisis de SMTP</option>
-            <option value="7" <?php if($_POST['Enum_recopilacion']==7) echo 'selected="selected" ';?>>Análisis de SNMP</option>
-            <option value="8" <?php if($_POST['Enum_recopilacion']==8) echo 'selected="selected" ';?>>Análisis de SSL</option>
-            <option value="9" <?php if($_POST['Enum_recopilacion']==9) echo 'selected="selected" ';?>>Análisis de VoIP</option>
-            <option value="10" <?php if($_POST['Enum_recopilacion']==10) echo 'selected="selected" ';?>>Análisis de VPN</option>
-            <option value="11" <?php if($_POST['Enum_recopilacion']==11) echo 'selected="selected" ';?>>Detección de servicio</option>
-            <option value="12" <?php if($_POST['Enum_recopilacion']==12) echo 'selected="selected" ';?>>Detección de SO</option>
-            <option value="13" <?php if($_POST['Enum_recopilacion']==13) echo 'selected="selected" ';?>>Identificación de hosts en línea</option>
-            <option value="14" <?php if($_POST['Enum_recopilacion']==14) echo 'selected="selected" ';?>>Identificación de IDS</option>
-            <option value="15" <?php if($_POST['Enum_recopilacion']==15) echo 'selected="selected" ';?>>Todos</option>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_recopilacion" >Recopilación de información:</label>
+          <div class="col-md-4">
+            <select id="Enum_recopilacion" name="Enum_recopilacion" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_recopilacion']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_recopilacion']==1) echo 'selected="selected" ';?>>Análisis de DNS</option>
+              <option value="2" <?php if($_POST['Enum_recopilacion']==2) echo 'selected="selected" ';?>>Análisis de tráfico</option>
+              <option value="3" <?php if($_POST['Enum_recopilacion']==3) echo 'selected="selected" ';?>>Análisis de OSINT</option>
+              <option value="4" <?php if($_POST['Enum_recopilacion']==4) echo 'selected="selected" ';?>>Análisis de routeo</option>
+              <option value="5" <?php if($_POST['Enum_recopilacion']==5) echo 'selected="selected" ';?>>Análisis de SMB</option>
+              <option value="6" <?php if($_POST['Enum_recopilacion']==6) echo 'selected="selected" ';?>>Análisis de SMTP</option>
+              <option value="7" <?php if($_POST['Enum_recopilacion']==7) echo 'selected="selected" ';?>>Análisis de SNMP</option>
+              <option value="8" <?php if($_POST['Enum_recopilacion']==8) echo 'selected="selected" ';?>>Análisis de SSL</option>
+              <option value="9" <?php if($_POST['Enum_recopilacion']==9) echo 'selected="selected" ';?>>Análisis de VoIP</option>
+              <option value="10" <?php if($_POST['Enum_recopilacion']==10) echo 'selected="selected" ';?>>Análisis de VPN</option>
+              <option value="11" <?php if($_POST['Enum_recopilacion']==11) echo 'selected="selected" ';?>>Detección de servicio</option>
+              <option value="12" <?php if($_POST['Enum_recopilacion']==12) echo 'selected="selected" ';?>>Detección de SO</option>
+              <option value="13" <?php if($_POST['Enum_recopilacion']==13) echo 'selected="selected" ';?>>Identificación de hosts en línea</option>
+              <option value="14" <?php if($_POST['Enum_recopilacion']==14) echo 'selected="selected" ';?>>Identificación de IDS</option>
+              <option value="15" <?php if($_POST['Enum_recopilacion']==15) echo 'selected="selected" ';?>>Todos</option>
 
-          </select>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_vulnera">Análisis de vulnerabilidades:</label>
-        <div class="col-md-4">
-          <select id="Enum_vulnera" name="Enum_vulnera" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_vulnera']==0) echo 'selected="selected" ';?>>Seleccionar</option>          
-            <option value="1" <?php if($_POST['Enum_vulnera']==1) echo 'selected="selected" ';?>>Herramientas Cisco</option>
-            <option value="2" <?php if($_POST['Enum_vulnera']==2) echo 'selected="selected" ';?>>Evaluación de BBDD</option>
-            <option value="3" <?php if($_POST['Enum_vulnera']==3) echo 'selected="selected" ';?>>Fuzzing</option>
-            <option value="4" <?php if($_POST['Enum_vulnera']==4) echo 'selected="selected" ';?>>Evaluación de software</option>
-            <option value="5" <?php if($_POST['Enum_vulnera']==5) echo 'selected="selected" ';?>>Otros escáneres</option>
-            <option value="6" <?php if($_POST['Enum_vulnera']==6) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_vulnera">Análisis de vulnerabilidades:</label>
+          <div class="col-md-4">
+            <select id="Enum_vulnera" name="Enum_vulnera" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_vulnera']==0) echo 'selected="selected" ';?>>Seleccionar</option>          
+              <option value="1" <?php if($_POST['Enum_vulnera']==1) echo 'selected="selected" ';?>>Herramientas Cisco</option>
+              <option value="2" <?php if($_POST['Enum_vulnera']==2) echo 'selected="selected" ';?>>Evaluación de BBDD</option>
+              <option value="3" <?php if($_POST['Enum_vulnera']==3) echo 'selected="selected" ';?>>Fuzzing</option>
+              <option value="4" <?php if($_POST['Enum_vulnera']==4) echo 'selected="selected" ';?>>Evaluación de software</option>
+              <option value="5" <?php if($_POST['Enum_vulnera']==5) echo 'selected="selected" ';?>>Otros escáneres</option>
+              <option value="6" <?php if($_POST['Enum_vulnera']==6) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_contrasenas">Herramientas de contraseñas:</label>
-        <div class="col-md-4">
-          <select id="Enum_contrasenas" name="Enum_contrasenas" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_contrasenas']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_contrasenas']==1) echo 'selected="selected" ';?>>Herramientas para GPU</option>
-            <option value="2" <?php if($_POST['Enum_contrasenas']==2) echo 'selected="selected" ';?>>Ataques sin conexión</option>
-            <option value="3" <?php if($_POST['Enum_contrasenas']==3) echo 'selected="selected" ';?>>Ataques con conexión</option>
-            <option value="4" <?php if($_POST['Enum_contrasenas']==4) echo 'selected="selected" ';?>>Phising</option>
-            <option value="5" <?php if($_POST['Enum_contrasenas']==5) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_contrasenas">Herramientas de contraseñas:</label>
+          <div class="col-md-4">
+            <select id="Enum_contrasenas" name="Enum_contrasenas" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_contrasenas']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_contrasenas']==1) echo 'selected="selected" ';?>>Herramientas para GPU</option>
+              <option value="2" <?php if($_POST['Enum_contrasenas']==2) echo 'selected="selected" ';?>>Ataques sin conexión</option>
+              <option value="3" <?php if($_POST['Enum_contrasenas']==3) echo 'selected="selected" ';?>>Ataques con conexión</option>
+              <option value="4" <?php if($_POST['Enum_contrasenas']==4) echo 'selected="selected" ';?>>Phising</option>
+              <option value="5" <?php if($_POST['Enum_contrasenas']==5) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_wireless">Herramientas wireless:</label>
-        <div class="col-md-4">
-          <select id="Enum_wireless" name="Enum_wireless" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_wireless']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_wireless']==1) echo 'selected="selected" ';?>>Herramientas Bluetooth</option>
-            <option value="2" <?php if($_POST['Enum_wireless']==2) echo 'selected="selected" ';?>>Herramientas RFID/NFC</option>
-            <option value="3" <?php if($_POST['Enum_wireless']==3) echo 'selected="selected" ';?>>Herramientas wireless</option>
-            <option value="4" <?php if($_POST['Enum_wireless']==4) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_wireless">Herramientas wireless:</label>
+          <div class="col-md-4">
+            <select id="Enum_wireless" name="Enum_wireless" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_wireless']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_wireless']==1) echo 'selected="selected" ';?>>Herramientas Bluetooth</option>
+              <option value="2" <?php if($_POST['Enum_wireless']==2) echo 'selected="selected" ';?>>Herramientas RFID/NFC</option>
+              <option value="3" <?php if($_POST['Enum_wireless']==3) echo 'selected="selected" ';?>>Herramientas wireless</option>
+              <option value="4" <?php if($_POST['Enum_wireless']==4) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_exploit">Herramientas para exploit:</label>
-        <div class="col-md-4">
-          <select id="Enum_exploit" name="Enum_exploit" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_exploit']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_exploit']==1) echo 'selected="selected" ';?>>Explotación de redes</option>
-            <option value="2" <?php if($_POST['Enum_exploit']==2) echo 'selected="selected" ';?>>Ingeniería social</option>
-            <option value="3" <?php if($_POST['Enum_exploit']==3) echo 'selected="selected" ';?>>Denegación de servicio</option>
-            <option value="4" <?php if($_POST['Enum_exploit']==4) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_exploit">Herramientas para exploit:</label>
+          <div class="col-md-4">
+            <select id="Enum_exploit" name="Enum_exploit" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_exploit']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_exploit']==1) echo 'selected="selected" ';?>>Explotación de redes</option>
+              <option value="2" <?php if($_POST['Enum_exploit']==2) echo 'selected="selected" ';?>>Ingeniería social</option>
+              <option value="3" <?php if($_POST['Enum_exploit']==3) echo 'selected="selected" ';?>>Denegación de servicio</option>
+              <option value="4" <?php if($_POST['Enum_exploit']==4) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_SSF">Sniffing/Spoofing/Forensics:</label>
-        <div class="col-md-4">
-          <select id="Enum_SSF" name="Enum_SSF" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_SSF']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_SSF']==1) echo 'selected="selected" ';?>>Network sniffer</option>
-            <option value="2" <?php if($_POST['Enum_SSF']==2) echo 'selected="selected" ';?>>Network spoofing</option>
-            <option value="3" <?php if($_POST['Enum_SSF']==3) echo 'selected="selected" ';?>>Herramientas VoIP</option>
-            <option value="4" <?php if($_POST['Enum_SSF']==4) echo 'selected="selected" ';?>>Web sniffer</option>
-            <option value="5" <?php if($_POST['Enum_SSF']==5) echo 'selected="selected" ';?>>Herramientas forense</option>
-            <option value="6" <?php if($_POST['Enum_SSF']==6) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_SSF">Sniffing/Spoofing/Forensics:</label>
+          <div class="col-md-4">
+            <select id="Enum_SSF" name="Enum_SSF" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_SSF']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_SSF']==1) echo 'selected="selected" ';?>>Network sniffer</option>
+              <option value="2" <?php if($_POST['Enum_SSF']==2) echo 'selected="selected" ';?>>Network spoofing</option>
+              <option value="3" <?php if($_POST['Enum_SSF']==3) echo 'selected="selected" ';?>>Herramientas VoIP</option>
+              <option value="4" <?php if($_POST['Enum_SSF']==4) echo 'selected="selected" ';?>>Web sniffer</option>
+              <option value="5" <?php if($_POST['Enum_SSF']==5) echo 'selected="selected" ';?>>Herramientas forense</option>
+              <option value="6" <?php if($_POST['Enum_SSF']==6) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_access">Post exploit:</label>
-        <div class="col-md-4">
-          <select id="Enum_access" name="Enum_access" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_access']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_access']==1) echo 'selected="selected" ';?>>SO backdoor</option>
-            <option value="2" <?php if($_POST['Enum_access']==2) echo 'selected="selected" ';?>>Web backdoor</option>
-            <option value="3" <?php if($_POST['Enum_access']==3) echo 'selected="selected" ';?>>Herramientas para túneles</option>
-            <option value="4" <?php if($_POST['Enum_access']==4) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_access">Post exploit:</label>
+          <div class="col-md-4">
+            <select id="Enum_access" name="Enum_access" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_access']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_access']==1) echo 'selected="selected" ';?>>SO backdoor</option>
+              <option value="2" <?php if($_POST['Enum_access']==2) echo 'selected="selected" ';?>>Web backdoor</option>
+              <option value="3" <?php if($_POST['Enum_access']==3) echo 'selected="selected" ';?>>Herramientas para túneles</option>
+              <option value="4" <?php if($_POST['Enum_access']==4) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_inversa">Ingeniería inversa:</label>
-        <div class="col-md-4">
-          <select id="Enum_inversa" name="Enum_inversa" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_inversa']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_inversa']==1) echo 'selected="selected" ';?>>Depurador</option>
-            <option value="2" <?php if($_POST['Enum_inversa']==2) echo 'selected="selected" ';?>>Desensamblador</option>
-            <option value="3" <?php if($_POST['Enum_inversa']==3) echo 'selected="selected" ';?>>Otras herramientas</option>
-            <option value="4" <?php if($_POST['Enum_inversa']==4) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_inversa">Ingeniería inversa:</label>
+          <div class="col-md-4">
+            <select id="Enum_inversa" name="Enum_inversa" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_inversa']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_inversa']==1) echo 'selected="selected" ';?>>Depurador</option>
+              <option value="2" <?php if($_POST['Enum_inversa']==2) echo 'selected="selected" ';?>>Desensamblador</option>
+              <option value="3" <?php if($_POST['Enum_inversa']==3) echo 'selected="selected" ';?>>Otras herramientas</option>
+              <option value="4" <?php if($_POST['Enum_inversa']==4) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="Enum_informes">Presentación de informes:</label>
-        <div class="col-md-4">
-          <select id="Enum_informes" name="Enum_informes" class="form-control" onchange="checkAndSubmit()">
-            <option value="0" <?php if($_POST['Enum_informes']==0) echo 'selected="selected" ';?>>Seleccionar</option>
-            <option value="1" <?php if($_POST['Enum_informes']==1) echo 'selected="selected" ';?>>Gestión de evidencia</option>
-            <option value="2" <?php if($_POST['Enum_informes']==2) echo 'selected="selected" ';?>>Capturador de medios</option>
-            <option value="3" <?php if($_POST['Enum_informes']==3) echo 'selected="selected" ';?>>Todos</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Enum_informes">Presentación de informes:</label>
+          <div class="col-md-4">
+            <select id="Enum_informes" name="Enum_informes" class="form-control" onchange="checkAndSubmit()">
+              <option value="0" <?php if($_POST['Enum_informes']==0) echo 'selected="selected" ';?>>Seleccionar</option>
+              <option value="1" <?php if($_POST['Enum_informes']==1) echo 'selected="selected" ';?>>Gestión de evidencia</option>
+              <option value="2" <?php if($_POST['Enum_informes']==2) echo 'selected="selected" ';?>>Capturador de medios</option>
+              <option value="3" <?php if($_POST['Enum_informes']==3) echo 'selected="selected" ';?>>Todos</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="volver">
-        <input class="btn btn-default" type="submit" value="Enviar">
-      </div>
+        <div class="volver">
+          <input class="btn btn-default" type="submit" id="enviar" value="Enviar">
+        </div><br>
 
-    </fieldset>
+        <!-- 
+        <div class="volver">
+          <input class="btn btn-default" onclick="restablecer()" type="reset" id="restablecer" value="Restablecer">
+        </div><br> -->
 
-  </form>
+      </fieldset>
 
-  <legend>Resultados de la búsqueda</legend>
+    </form>
 
-  <?php
+    <?php
 
-  try {
+    try {
 
   //Abrir conexión con la BBDD utilizando PDO
-    $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
+      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
   /*Para recuperar los datos da las consultas
-    echo 'Estás buscando según estos criterios: ' . '<br/>'; */
+  echo 'Estás buscando según estos criterios: ' . '<br/>'; */
 
-    $BUSQUEDA_RAPIDA = $_POST['searchinput'];
+  $BUSQUEDA_RAPIDA = $_POST['searchinput'];
     //echo "Búsqueda rápida: " . $BUSQUEDA_RAPIDA . '<br/>';
 
-    $ID_SO = $_POST['Enum_SO'];
+  $ID_SO = $_POST['Enum_SO'];
     //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
-    $ID_RECOPILACION = $_POST['Enum_recopilacion'];
+  $ID_RECOPILACION = $_POST['Enum_recopilacion'];
     //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
-    $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
+  $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
     //echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>';
 
-    $ID_CONTRASENA = $_POST['Enum_contrasenas'];
+  $ID_CONTRASENA = $_POST['Enum_contrasenas'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-    $ID_WIRELESS = $_POST['Enum_wireless'];
+  $ID_WIRELESS = $_POST['Enum_wireless'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-    $ID_EXPLOIT = $_POST['Enum_exploit'];
+  $ID_EXPLOIT = $_POST['Enum_exploit'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-    $ID_SSF = $_POST['Enum_SSF'];
+  $ID_SSF = $_POST['Enum_SSF'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-    $ID_ACCESS = $_POST['Enum_access'];
+  $ID_ACCESS = $_POST['Enum_access'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-    $ID_INVERSA = $_POST['Enum_inversa'];
+  $ID_INVERSA = $_POST['Enum_inversa'];
     //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
 
-    $ID_INFORME = $_POST['Enum_informes'];
+  $ID_INFORME = $_POST['Enum_informes'];
     //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
 
   //Recuperar datos de la BBDD con prepare().
 
     //Si el usuario utiliza la búsqueda rápida, el resto de campos se desestiman. 
-    if ($BUSQUEDA_RAPIDA != null) {
+  if ($BUSQUEDA_RAPIDA != null) {
       $quicksearch = "SELECT * FROM Ataques WHERE Ataques.Descripcion LIKE \"%$BUSQUEDA_RAPIDA%\""; //UNICAMENTE SE BUSCAN COINCIDENCIAS EN LA DESCRIPCION DE LOS ATAQUES.
       //echo $quicksearch;
       $stmt = $con->prepare($quicksearch); 
@@ -274,6 +277,234 @@
 
       //Si se deja todo sin marcar se muestra todo.
       $sentencia = "SELECT * FROM Ataques"; 
+
+      //Mostrar fltros seleccionados para la búsqueda al presentar los resultados
+      $SO = null;
+      $RECOPILACION = null;
+      $VULNERABILIDAD = null;
+      $CONTRASENA = null;
+      $WIRELESS = null;
+      $EXPLOIT = null;
+      $SSF = null;
+      $ACCESS = null;
+      $INVERSA = null;
+      $INFORME = null;
+
+      //Se comprueba la subcategoría buscada para mostrar su nombre en los resultados de la búsqueda. 
+
+        switch ($ID_SO) {
+          case 1:
+            $SO = "Android ";
+            break;
+          case 2:
+            $SO = "iOS ";
+            break;
+          case 3:
+            $SO = "OS-X ";
+            break;
+          case 4:
+            $SO = "Ubuntu ";
+            break;
+          case 5:
+            $SO = "Windows ";
+            break;
+          case 6:
+            $SO = "Todos los SO ";
+            break;
+        }
+        
+        switch ($ID_RECOPILACION) {
+          case 1:
+            $RECOPILACION = "Análisis DNS ";
+            break;
+          case 2:
+            $RECOPILACION = "Análisis de tráfico ";
+            break;
+          case 3:
+            $RECOPILACION = "Análisis de OSINT ";
+            break;
+          case 4:
+            $RECOPILACION = "Análisis de routeo ";
+            break;
+          case 5:
+            $RECOPILACION = "Análisis de SMB ";
+            break;
+          case 6:
+            $RECOPILACION = "Análisis de SMTP ";
+            break;
+          case 7:
+            $RECOPILACION = "Análisis de SNMP ";
+            break;
+          case 8:
+            $RECOPILACION = "Análisis de SSL ";
+            break;
+          case 9:
+            $RECOPILACION = "Análisis de VoIP ";
+            break;
+          case 10:
+            $RECOPILACION = "Análisis de VPN ";
+            break;
+          case 11:
+            $RECOPILACION = "Detección de servicio ";
+            break;
+          case 12:
+            $RECOPILACION = "Detección de SO ";
+            break;
+          case 13:
+            $RECOPILACION = "Identificación de hosts en línea ";
+            break;
+          case 14:
+            $RECOPILACION = "Identificación de IDS ";
+            break;
+          case 15:
+            $RECOPILACION = "Todos los tipos de recopilación de informacion ";
+            break;
+        }
+
+        switch ($ID_VULNERABILIDAD) {
+          case 1:
+            $VULNERABILIDAD = "Herramientas Cisco ";
+            break;
+          case 2:
+            $VULNERABILIDAD = "Evaluación de BBDD ";
+            break;
+          case 3:
+            $VULNERABILIDAD = "Fuzzing ";
+            break;
+          case 4:
+            $VULNERABILIDAD = "Evaluación de software ";
+            break;
+          case 5:
+            $VULNERABILIDAD = "Otros escáneres ";
+            break;
+          case 6:
+            $VULNERABILIDAD = "Todos los análisis de vulnerabilidades ";
+            break;
+        }
+
+        switch ($ID_CONTRASENA) {
+          case 1:
+            $CONTRASENA = "Herramientas para GPU ";
+            break;
+          case 2:
+            $CONTRASENA = "Ataques sin conexión ";
+            break;
+          case 3:
+            $CONTRASENA = "Ataques con conexión ";
+            break;
+          case 4:
+            $CONTRASENA = "Phising ";
+            break;
+          case 5:
+            $CONTRASENA = "Todas las herramientas de contraseñas ";
+            break;
+        }
+
+        switch ($ID_WIRELESS) {
+          case 1:
+            $WIRELESS = "Herramientas Bluetooth ";
+            break;
+          case 2:
+            $WIRELESS = "Herramientas RFID/NFC ";
+            break;
+          case 3:
+            $WIRELESS = "Herramientas wireless ";
+            break;
+          case 4:
+            $WIRELESS = "Todas las herramientas wireless ";
+            break;
+        }
+        
+        switch ($ID_EXPLOIT) {
+          case 1:
+            $EXPLOIT = "Explotación de redes ";
+            break;
+          case 2:
+            $EXPLOIT = "Ingeniería social ";
+            break;
+          case 3:
+            $EXPLOIT = "Denegación de servicio ";
+            break;
+          case 4:
+            $EXPLOIT = "Todas las herramientas de exploit ";
+            break;
+        }
+      
+        switch ($ID_SSF) {
+          case 1:
+            $SSF = "Network sniffer ";
+            break;
+          case 2:
+            $SSF = "Network spoofing ";
+            break;
+          case 3:
+            $SSF = "Herramientas VoIP ";
+            break;
+          case 4:
+            $SSF = "Web sniffer ";
+            break;
+          case 5:
+            $SSF = "Herramientas forense ";
+            break;
+          case 6:
+            $SSF = "Todas las herramientas SSF ";
+            break;
+        }
+
+        switch ($ID_ACCESS) {
+          case 1:
+            $ACCESS = "SO backdoor ";
+            break;
+          case 2:
+            $ACCESS = "Web backdoor ";
+            break;
+          case 3:
+            $ACCESS = "Herramientas para túneles ";
+            break;
+          case 4:
+            $ACCESS = "Todas las herramientas post exploit ";
+            break;
+        }
+        
+        switch ($ID_INVERSA) {
+          case 1:
+            $INVERSA = "Depurador ";
+            break;
+          case 2:
+            $INVERSA = "Desensamblador ";
+            break;
+          case 3:
+            $INVERSA = "Otras herramientas de ingeniería inversa ";
+            break;
+          case 4:
+            $INVERSA = "Todas las herramientas de ingeniería inversa ";
+            break;
+        }
+
+        switch ($ID_INFORME) {
+          case 1:
+            $INFORME = "Gestión de evidencia ";
+            break;
+          case 2:
+            $INFORME = "Capturador de medios ";
+            break;
+          case 3:
+            $INFORME = "Todas las herramientas de informes ";
+            break;
+        }
+
+        //Construcción del string que se mostrará en los resultados de la búsqueda, que nos lleva en cada caso a la página de información. 
+
+        $SOfinal = "<a href=" . "informacion.html#info_so>" . $SO . "</a>";
+        $RECOPILACIONfinal = "<a href=" . "informacion.html#info_reco>" . $RECOPILACION . "</a>";
+        $VULNERABILIDADfinal = "<a href=" . "informacion.html#info_vulnera>" . $VULNERABILIDAD . "</a>";
+        $CONTRASENAfinal = "<a href=" . "informacion.html#info_contrasena>" . $CONTRASENA . "</a>";
+        $WIRELESSfinal = "<a href=" . "informacion.html#info_wireless>" . $WIRELESS . "</a>";
+        $EXPLOITfinal = "<a href=" . "informacion.html#info_exploit>" . $EXPLOIT . "</a>";
+        $SSFfinal = "<a href=" . "informacion.html#info_ssf>" . $SSF . "</a>";
+        $ACCESSfinal = "<a href=" . "informacion.html#info_postexploit>" . $ACCESS . "</a>";
+        $INVERSAfinal = "<a href=" . "informacion.html#info_inversa>" . $INVERSA . "</a>";
+        $INFORMEfinal = "<a href=" . "informacion.html#info_informes>" . $INFORME . "</a>";
 
       /*Esto solo sirve de guía para construir una sentencia compleja.
       $sentencia_mas_compleja = "SELECT * FROM Ataques INNER JOIN Reco ON Reco.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Obtener_info ON Obtener_info.ID_ATAQUE = Ataques.ID_ATAQUE WHERE Reco.ID_RECONOCIMIENTO = $ID_RECONOCIMIENTO AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD AND Obtener_info.ID_TIPO = $ID_TIPO";*/
@@ -349,7 +580,7 @@
         $sentencia_10 = null;
         $sentencia_20 = null;
       }
-    
+
       //La sentencia se crea en función de lo que el usuario haya buscado.
       $sentencia = $sentencia . $sentencia_01 . $sentencia_02 . $sentencia_03 . $sentencia_04 . $sentencia_05 . $sentencia_06 . $sentencia_07 . $sentencia_08 . $sentencia_09 . $sentencia_10 . $sentencia_11 . $sentencia_12 . $sentencia_13 . $sentencia_14 . $sentencia_15 . $sentencia_16 . $sentencia_17 . $sentencia_18 . $sentencia_19 . $sentencia_20; 
 
@@ -359,30 +590,35 @@
 
     }
 
+    echo '<legend id="recargar">Resultados de la búsqueda: ' . '<i>' . $BUSQUEDA_RAPIDA . $SOfinal . $RECOPILACIONfinal . $VULNERABILIDADfinal . $CONTRASENAfinal . $WIRELESSfinal . $EXPLOITfinal . $SSFfinal . $ACCESSfinal . $INVERSAfinal . $INFORMEfinal . '</i>' . '</legend>';
+
+
       //Imprimir resultados en una tabla.
-      echo '<div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th id="nombre">Nombre</th>
-            <th class="header">Descripción</th>
-          </tr>
-        </thead>
-        <tbody>';
+    echo '<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th id="nombre" class="header">Nombre</th>
+          <th class="header">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>';
 
   //Mostrar nombre y descripción de cada ataque.
-          $num_filas = 0;
-          while( $datos = $stmt->fetch() ){
-            echo '<tr> <td class=centrado>' . $datos[1] . '</td> <td class=justificado>' . $datos[2] . '</td> </tr>';
-            $num_filas++;
-          }
+        $num_filas = 0;
+        while( $datos = $stmt->fetch() ){
+          echo '<tr> <td class=centrado>' . $datos[1] . '</td> <td class=justificado>' . $datos[2] . '</td> </tr>';
+          $num_filas++;
+        }
 
-          echo '</tbody></table></div>';
-          if ($num_filas>1) {
+        echo '</tbody></table></div>';
+        if ($num_filas == 0) {
+          echo "Se han encontrado " . $num_filas . " coincidencias en la base de datos. No se recomienda seleccionar más de dos filtros a la hora de realizar una búsqueda.";
+        } else if ($num_filas>1) {
           echo "Se han encontrado " . $num_filas . " coincidencias en la base de datos.";
-          } else{
-            echo "Se ha encontrado " . $num_filas . " coincidencia en la base de datos.";
-          }
+        } else{
+          echo "Se ha encontrado " . $num_filas . " coincidencia en la base de datos.";
+        } 
 
       }catch(PDOException $e) {
         echo 'Error: ' . $e->getMessage();
@@ -396,42 +632,42 @@
 
     </div>  <!-- div container -->
 
-  <a href="#" class="back-to-top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
+    <a href="#" class="back-to-top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
 
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-  <!-- js -->
-  <script src="formulario.js"></script>
+    <!-- js -->
+    <script src="formulario.js"></script>
 
-  <!-- Jquery -->
-  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
+    <!-- Jquery -->
+    <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
 
-  <script>
-    jQuery(document).ready(function() {
-      $('.back-to-top').css({"display": "none"});
-      var offset = 2000;
-      var duration = 300;
-      jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-          jQuery('.back-to-top').fadeIn(duration);
-        } else {
-          jQuery('.back-to-top').fadeOut(duration);
-        }
+    <script>
+      jQuery(document).ready(function() {
+        $('.back-to-top').css({"display": "none"});
+        var offset = 2000;
+        var duration = 300;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+          } else {
+            jQuery('.back-to-top').fadeOut(duration);
+          }
+        });
+        jQuery('.back-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
       });
-      jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-      })
-    });
-  </script>
+    </script>
 
   </body>
 

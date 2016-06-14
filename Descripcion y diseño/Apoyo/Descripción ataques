@@ -195,7 +195,7 @@ HERRAMIENTAS KALI
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/hexorbase
 
-		- jsql: Aplicación ligera multiplataforma utilizada para encontrar información en bases de datos remotamente. Es de código abierto.
+		- jsql: Aplicación ligera multiplataforma utilizada para encontrar información en bases de datos remotamente. Es de código abierto y está disponible para Windows, Linux, OS-X y Solaris.
 		Palabras clave: aplicacion multiplataforma, codigo abierto, bases de datos, busqueda de informacion.
 
 		Fuente: http://tools.kali.org/vulnerability-analysis/jsql

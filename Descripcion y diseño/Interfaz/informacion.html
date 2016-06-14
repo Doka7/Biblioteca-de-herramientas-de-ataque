@@ -32,7 +32,7 @@
       <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
     </div>
 
-    <div class="panel panel-primary">
+    <div class="panel panel-primary" id="info_so">
       <div class="panel-heading">Sistema operativo objetivo:</div>
       <div class="panel-body">
 
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <div class="panel panel-success">
+    <div class="panel panel-success" id="info_reco">
       <div class="panel-heading">Recopilación de información:</div>
 
       <div class="panel-body">
@@ -78,13 +78,13 @@
       </div>
     </div>
 
-    <div class="panel panel-info">
+    <div class="panel panel-info" id="info_vulnera">
       <div class="panel-heading">Análisis de vulnerabilidades:</div>
       <div class="panel-body">
 
         <dl class="dl-horizontal">
           <dt>Descripción</dt>
-          <dd>Herramientas basadas en escanear programas y bases de datos, o analizar configuraciones por defecto.</dd><br>
+          <dd>Herramientas basadas en escanear programas y bases de datos, o analizar configuraciones por defecto que puedan ser vulnerables.</dd><br>
           <dt>Tipos</dt>
           <dd class="justificado"><i><u>Herramientas Cisco:</u></i> Nos permite recopilar información sobre routers Cisco, para poder evaluar sus vulnerabilidades, además de disponer de herramientas para explotar estos dispositivos. </dd><br>
           <dd class="justificado"><i><u>Evaluación de BBDD:</u></i> Nos permite recopilar información sobre bases de datos para evaluar vulnerabilidades y realizar ataques de SQLinjection.</dd><br>
@@ -95,12 +95,12 @@
       </div>
     </div>
 
-    <div class="panel panel-warning">
+    <div class="panel panel-warning" id="info_contrasena">
       <div class="panel-heading">Herramientas de contraseñas:</div>
       <div class="panel-body">
         <dl class="dl-horizontal">
           <dt>Descripción</dt>
-          <dd>Herramientas que permiten realizar ataques de diccionario, fuerza bruta o rainbow tables.</dd><br>
+          <dd>Herramientas que permiten realizar ataques de diccionario, fuerza bruta o rainbow tables para romper contraseñas que no sean muy elaboradas en poco tiempo.</dd><br>
           <dt>Tipos</dt>
           <dd class="justificado"><i><u>Herramientas para GPU:</u></i> Unidad de procesamiento gráfico o GPU (Graphics Processor Unit) es un coprocesador dedicado al procesamiento de gráficos u operaciones de coma flotante, para aligerar la carga de trabajo del procesador central en aplicaciones como los videojuegos o aplicaciones 3D interactivas.</dd><br>
           <dd class="justificado"><i><u>Ataques sin conexión:</u></i> Permite que realicemos ataques de contraseñas aún sin disponer de conexión a Internet, mediante ataques de diccionario o de fuerza bruta.</dd><br>
@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <div class="panel panel-danger">
+    <div class="panel panel-danger" id="info_wireless">
       <div class="panel-heading">Herramientas wireless:</div>
       <div class="panel-body">
         <dl class="dl-horizontal">
@@ -123,52 +123,52 @@
       </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="info_exploit">
       <div class="panel-heading">Herramientas para exploit:</div>
       <div class="panel-body">
         <dl class="dl-horizontal">
           <dt>Descripción</dt>
           <dd>Herramientas relacionadas con Metasploit y técnicas de ingeniería social.</dd><br>
           <dt>Tipos</dt>
-          <dd class="justificado"><i><u>Denegación de servicio:</u></i> POR HACER</dd><br>
-          <dd class="justificado"><i><u>Explotación de redes:</u></i> HerramientaS de penetración que pueden ser usadas para detectar las vulnerabilidades de nuestros sistemas para protegerlos o usar esas vulnerabilidades para obtener acceso a sistemas remotos.</dd><br>
+          <dd class="justificado"><i><u>Denegación de servicio:</u></i> También conocidos como DoS, permiten la sobrecarga de recursos computacionales del objetivo, provocando la caída del servicio de forma indefinida.</dd><br>
+          <dd class="justificado"><i><u>Explotación de redes:</u></i> Herramientas de penetración utilizadas para aprovechar vulnerabilidades o fallos existentes en distintos equipos, de modo que puedan obtener acceso a ellos.</dd><br>
           <dd class="justificado"><i><u>Ingeniería social:</u></i> Herramientas que nos permiten recopilar información sobre nuestras víctimas para realizar un posterior ataque especialmente dirigido.</dd><br>
         </dl>
       </div>
     </div>
 
-    <div class="panel panel-info">
+    <div class="panel panel-info" id="info_ssf">
       <div class="panel-heading">Herramientas de Sniffing/Spoofing/Forensics:</div>
       <div class="panel-body">
         <dl class="dl-horizontal">
           <dt>Descripción</dt>
           <dd>Herramientas que permiten capturar paquetes, envenenamiento de redes o recuperación de archivos.</dd><br>
           <dt>Tipos</dt>
-          <dd class="justificado"><i><u>Network sniffer:</u></i> Permite capturar y analizar paquetes que circulan por nuestra red, o redirigirlos a otro destino.</dd><br>
+          <dd class="justificado"><i><u>Network sniffer:</u></i> Permite capturar y analizar paquetes que circulan por la red, obteniendo todo tipo de información contenida en ellos e incluso permitiendo redirigir los paquetes a otro destino.</dd><br>
           <dd class="justificado"><i><u>Network spoofing:</u></i> Permiten suplantar la identidad de usuarios o servidores.</dd><br>
-          <dd class="justificado"><i><u>Herramientas VoIP:</u></i> POR HACER</dd><br>
-          <dd class="justificado"><i><u>Web sniffer:</u></i> LA DIFERENCIA CON NETWORK SNIFFER SE DEJA PARA CUANDO LAS HERRAMIENTAS SE HAYAN METIDO.</dd><br>
+          <dd class="justificado"><i><u>Herramientas VoIP:</u></i> Herramientas especializadas en capturar e insertar modificaciones en comunicaciones realizadas a través de voz sobre IP.</dd><br>
+          <dd class="justificado"><i><u>Web sniffer:</u></i> Funciona de la misma manera que el sniffer de red pero a un nivel lógico inferior, pues está especializado en capturar paquetes que se envían desde un navegador web al servidor.</dd><br>
           <dd class="justificado"><i><u>Herramientas forense:</u></i> Permite recuperar archivos perdidos o eliminados de nuestro ordenador. </dd><br>
         </dl>
       </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="info_postexploit">
       <div class="panel-heading">Herramientas de maintaining access:</div>
       <div class="panel-body">
 
         <dl class="dl-horizontal">
           <dt>Descripción</dt>
-          <dd>Herramientas que permiten realizar túneles, o encontrar backdoors de SO y aplicaciones.</dd><br>
+          <dd>Conjunto de herramientas útiles tras haber realizado un ataque de explotación en una máquina, por lo que son conocidas como herramientas post-exploit.</dd><br>
           <dt>Tipos</dt>
-          <dd class="justificado"><i><u>SO backdoor:</u></i> Un backdoor es un tipo de troyano que permite el acceso al sistema infectado y su control remoto. El atacante puede entonces eliminar o modificar archivos, ejecutar programas, enviar correos masivamente o instalar herramientas maliciosas.</dd><br>
-          <dd class="justificado"><i><u>Web backdoor:</u></i> DIFERENCIA SE DEJA PARA EL FINAL</dd><br>
-          <dd class="justificado"><i><u>Herramientas para túneles:</u></i> POR HACER</dd><br>
+          <dd class="justificado"><i><u>SO backdoor:</u></i> Un backdoor es un tipo de troyano que permite el acceso al sistema infectado y su control remoto, a pesar de que la víctima cambie sus credenciales tras haber sido atacada. El atacante puede entonces eliminar o modificar archivos, ejecutar programas, enviar correos masivamente o instalar herramientas maliciosas.</dd><br>
+          <dd class="justificado"><i><u>Web backdoor:</u></i> Misma funcionalidad que el backdoor de SO, pero orientado a servidores web.</dd><br>
+          <dd class="justificado"><i><u>Herramientas para túneles:</u></i> Herramientas que facilitan la creación de túneles para conectar a dos equipos cualesquiera.</dd><br>
         </dl>
       </div>
     </div>
 
-    <div class="panel panel-success">
+    <div class="panel panel-success" id="info_inversa">
       <div class="panel-heading">Herramientas de ingeniería inversa:</div>
       <div class="panel-body">
         <dl class="dl-horizontal">
@@ -182,7 +182,20 @@
       </div>
     </div>
 
-    
+    <div class="panel panel-primary" id="info_informes">
+      <div class="panel-heading">Presentación de informes:</div>
+      <div class="panel-body">
+
+        <dl class="dl-horizontal">
+          <dt>Descripción</dt>
+          <dd class="justificado">Herramientas especializadas gestión de evidencias y captura de medios.</dd><br>
+          <dt>Tipos</dt>
+          <dd class="justificado"><i><u>Gestión de evidencia:</u></i> Herramienta que permite la generación de informes para facilitar el análisis de resultados.</dd><br>
+          <dd class="justificado"><i><u>Capturador de medios:</u></i> Herramientas que permiten labores de utilidad como captura de pantalla, descarga de vídeos alojados en servidores, mostrar información sobre la conectividad de tu equipo...etc.</dd><br>
+        </dl>
+
+      </div>
+    </div>
 
       <div class="volver">
         <a href="formulario.php">
