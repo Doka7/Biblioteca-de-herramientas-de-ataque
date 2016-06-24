@@ -7,6 +7,14 @@ body {
 	background-color: #ff3300;
 }*/
 
+.registro {
+	background-image: url("wallpaper.png");
+}
+
+.gestion {
+	float: right;
+}
+
 .volver{
 	text-align: center;
 	vertical-align: center;

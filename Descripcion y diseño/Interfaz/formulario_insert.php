@@ -8,7 +8,7 @@
   <meta name="description" content="Formulario de ataques">
   <meta name="author" content="Alejandro Docasar Moreno">
 
-  <title>Formulario de inserción</title>
+  <title>Insertar nueva herramienta</title>
 
   <!-- Favicon -->
   <link rel="icon" 
@@ -37,8 +37,8 @@
   <div class="container">
 
     <div class="page-header">
-      <h1>Insertar herramientas en la BBDD</h1>
-      <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
+      <h1>Inserción de herramientas en la BBDD</h1>
+      <p>Aquí podrá insertar una nueva herramienta de ataque en la base de datos.</p>      
     </div>
 
     <form id="insertar" class="form-horizontal" method="post" action="">
@@ -46,7 +46,7 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Insertar herramienta</legend>
+        <legend>Por favor, rellene los siguientes campos para insertar una nueva herramienta.</legend>
 
         <!-- Name input-->
         <div class="form-group">

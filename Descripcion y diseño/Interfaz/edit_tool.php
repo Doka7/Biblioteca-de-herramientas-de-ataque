@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario de ataques">
+  <meta name="author" content="Alejandro Docasar Moreno">
+
+  <title>Editar herramienta</title>
+
+  <!-- Favicon -->
+  <link rel="icon" 
+  type="image/png" 
+  href="kali.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="formulario.css" type="text/css" media="all">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css"> 
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+  <!-- Jquery -->
+  <script src="jquery-1.12.3.min.js" type="text/javascript"></script> 
+
+</head>
+
+<body>
+
+  <?php 
+
+  session_start();
+  header("Cache-control: private");
+  header("Cache-control: no-cache, must-revalidate");
+  header("Pragma: no-cache");
+  if(isset($_SESSION['usuario']) ==null) {
+    header("Location: http://localhost/registro.php"); /* Redirección del navegador */
+  }
+
+  //Recuperación de parámetros.
+  $ID_ATAQUE_1 = $_POST['id_tool'];
+  $NOMBRE = $_POST['nombre'];
+  $DESCRIPCION = $_POST['descripcion'];
+
+//Recuperación de atributos de la herramienta que está siendo editada.
+  $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
+  $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  
+  echo '
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Edición de herramientas en la BBDD</h1>
+      <p>Aquí podrá editar cualquier herramienta de ataque que se encuentre en la base de datos.</p>      
+    </div>
+
+    <form id="insertar" class="form-horizontal" method="post" action="successful_edit.php">
+
+      <fieldset>
+
+        <h3>Datos actuales de la herramienta seleccionada.</h3>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading"> Nombre: ' . $NOMBRE . '</div>
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <dt>Descripción</dt>
+              <dd>' . $DESCRIPCION . '</dd><br>
+              <dt>Categorías</dt>
+              <dd class="justificado">';
+
+                $stmt = $con->prepare("SELECT ID_SO FROM Sistemas_operativos WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $SO = "Android ";
+                    break;
+                    case 2:
+                    $SO = "iOS ";
+                    break;
+                    case 3:
+                    $SO = "OS-X ";
+                    break;
+                    case 4:
+                    $SO = "Ubuntu ";
+                    break;
+                    case 5:
+                    $SO = "Windows ";
+                    break;
+                    case 6:
+                    $SO = "Todos los SO ";
+                    break;
+                  }
+                  echo 'Sistema operativo objetivo: ' . $SO . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_RECOPILACION FROM Recopilacion_info WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $RECOPILACION = "Análisis DNS ";
+                    break;
+                    case 2:
+                    $RECOPILACION = "Análisis de tráfico ";
+                    break;
+                    case 3:
+                    $RECOPILACION = "Análisis de OSINT ";
+                    break;
+                    case 4:
+                    $RECOPILACION = "Análisis de routeo ";
+                    break;
+                    case 5:
+                    $RECOPILACION = "Análisis de SMB ";
+                    break;
+                    case 6:
+                    $RECOPILACION = "Análisis de SMTP ";
+                    break;
+                    case 7:
+                    $RECOPILACION = "Análisis de SNMP ";
+                    break;
+                    case 8:
+                    $RECOPILACION = "Análisis de SSL ";
+                    break;
+                    case 9:
+                    $RECOPILACION = "Análisis de VoIP ";
+                    break;
+                    case 10:
+                    $RECOPILACION = "Análisis de VPN ";
+                    break;
+                    case 11:
+                    $RECOPILACION = "Detección de servicio ";
+                    break;
+                    case 12:
+                    $RECOPILACION = "Detección de SO ";
+                    break;
+                    case 13:
+                    $RECOPILACION = "Identificación de hosts en línea ";
+                    break;
+                    case 14:
+                    $RECOPILACION = "Identificación de IDS ";
+                    break;
+                    case 15:
+                    $RECOPILACION = "Todos los tipos de recopilación de informacion ";
+                    break;
+                  }
+                  echo  'Herramienta de recopilación de información: ' . $RECOPILACION . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_VULNERABILIDAD FROM Analisis_vulnera WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $VULNERABILIDAD = "Herramientas Cisco ";
+                    break;
+                    case 2:
+                    $VULNERABILIDAD = "Evaluación de BBDD ";
+                    break;
+                    case 3:
+                    $VULNERABILIDAD = "Fuzzing ";
+                    break;
+                    case 4:
+                    $VULNERABILIDAD = "Evaluación de software ";
+                    break;
+                    case 5:
+                    $VULNERABILIDAD = "Otros escáneres ";
+                    break;
+                    case 6:
+                    $VULNERABILIDAD = "Todos los análisis de vulnerabilidades ";
+                    break;
+                  }
+                  echo 'Herramienta de análisis de vulnerabilidades: ' . $VULNERABILIDAD . '<br/>';
+                } 
+
+                $stmt = $con->prepare("SELECT ID_CONTRASENA FROM Contrasenas WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $CONTRASENA = "Herramientas para GPU ";
+                    break;
+                    case 2:
+                    $CONTRASENA = "Ataques sin conexión ";
+                    break;
+                    case 3:
+                    $CONTRASENA = "Ataques con conexión ";
+                    break;
+                    case 4:
+                    $CONTRASENA = "Phising ";
+                    break;
+                    case 5:
+                    $CONTRASENA = "Todas las herramientas de contraseñas ";
+                    break;
+                  }
+                  echo  'Herramienta para romper contraseñas: ' . $CONTRASENA . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_WIRELESS FROM Wireless WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $WIRELESS = "Herramientas Bluetooth ";
+                    break;
+                    case 2:
+                    $WIRELESS = "Herramientas RFID/NFC ";
+                    break;
+                    case 3:
+                    $WIRELESS = "Herramientas WiFi ";
+                    break;
+                    case 4:
+                    $WIRELESS = "Todas las herramientas wireless ";
+                    break;
+                  }
+                  echo  'Herramienta wireless: ' . $WIRELESS . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_EXPLOIT FROM Exploit WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $EXPLOIT = "Explotación de redes ";
+                    break;
+                    case 2:
+                    $EXPLOIT = "Ingeniería social ";
+                    break;
+                    case 3:
+                    $EXPLOIT = "Denegación de servicio ";
+                    break;
+                    case 4:
+                    $EXPLOIT = "Todas las herramientas de exploit ";
+                    break;
+                  }
+                  echo  'Herramienta para exploit: ' . $EXPLOIT . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_SSF FROM Sniff_Spoof_Foren WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $SSF = "Network sniffer ";
+                    break;
+                    case 2:
+                    $SSF = "Network spoofing ";
+                    break;
+                    case 3:
+                    $SSF = "Herramientas VoIP ";
+                    break;
+                    case 4:
+                    $SSF = "Web sniffer ";
+                    break;
+                    case 5:
+                    $SSF = "Herramientas forense ";
+                    break;
+                    case 6:
+                    $SSF = "Todas las herramientas SSF ";
+                    break;
+                  }
+                  echo  'Sniffing/Spoofing/Forensics: ' . $SSF . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_ACCESS FROM Maintaining_access WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $ACCESS = "SO backdoor ";
+                    break;
+                    case 2:
+                    $ACCESS = "Web backdoor ";
+                    break;
+                    case 3:
+                    $ACCESS = "Herramientas para túneles ";
+                    break;
+                    case 4:
+                    $ACCESS = "Todas las herramientas post exploit ";
+                    break;
+                  }
+                  echo  'Post exploit: ' . $ACCESS . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_INVERSA FROM Ingenieria_inversa WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $INVERSA = "Depurador ";
+                    break;
+                    case 2:
+                    $INVERSA = "Desensamblador ";
+                    break;
+                    case 3:
+                    $INVERSA = "Otras herramientas de ingeniería inversa ";
+                    break;
+                    case 4:
+                    $INVERSA = "Todas las herramientas de ingeniería inversa ";
+                    break;
+                  }
+                  echo  'Ingeniería inversa: ' . $INVERSA . '<br/>';
+                }
+
+                $stmt = $con->prepare("SELECT ID_INFORME FROM Informes WHERE ID_ATAQUE = $ID_ATAQUE_1;"); 
+                $stmt->execute(); 
+
+                while( $datos = $stmt->fetch() ){
+                  switch ($datos[0]) {
+                    case 1:
+                    $INFORME = "Gestión de evidencia ";
+                    break;
+                    case 2:
+                    $INFORME = "Capturador de medios ";
+                    break;
+                    case 3:
+                    $INFORME = "Todas las herramientas de informes ";
+                    break;
+                  }
+                  echo  'Presentación de informes: ' . $INFORME . '<br/>';
+                }
+
+                echo
+
+                '</dd>
+              </dl>
+            </div>
+          </div>';
+
+          ?>
+
+          <h3>Rellene el formulario para editar la herramienta.</h3><br>
+
+          <!-- Name input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="searchinput">Nombre herramienta:</label>
+            <div class="col-md-4">
+              <input id="searchinput" name="searchinput" type="search" placeholder="Ej: nmap" class="form-control input-md" required>
+              <input type="hidden" name="id_tool" value="<?php echo htmlspecialchars($ID_ATAQUE_1); ?>">
+            </div>
+          </div>
+
+          <!-- Description input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="description">Descripción herramienta:</label>
+            <div class="col-md-4">
+              <textarea id="description" name="description" placeholder="Introduzca aquí la descripción del ataque." class="form-control" rows="3" required>
+              </textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_SO">Sistema operativo objetivo:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_SO[]" value="1">Android<br>
+              <input type="checkbox" name="Enum_SO[]" value="2">iOS<br>
+              <input type="checkbox" name="Enum_SO[]" value="3">OS-X<br>
+              <input type="checkbox" name="Enum_SO[]" value="4">Ubuntu<br>
+              <input type="checkbox" name="Enum_SO[]" value="5">Windows<br>
+              <input type="checkbox" name="Enum_SO[]" value="6">Todos<br>
+
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_recopilacion">Herramienta de recopilacion de informacion:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_recopilacion[]" value="1">Análisis de DNS<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="2">Análisis de tráfico<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="3">Análisis de OSINT<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="4">Análisis de routeo<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="5">Análisis de SMB<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="6">Análisis de SMTP<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="7">Análisis de SNMP<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="8">Análisis de SSL<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="9">Análisis de VoIP<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="10">Análisis de VPN<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="11">Detección de servicio<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="12">Detección de SO<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="13">Identificación de hosts en línea<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="14">Identificación de IDS<br>
+              <input type="checkbox" name="Enum_recopilacion[]" value="15">Todos<br>
+
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_vulnera">Herramienta de análisis de vulnerabilidades:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_vulnera[]" value="1">Herramientas Cisco<br>
+              <input type="checkbox" name="Enum_vulnera[]" value="2">Evaluación de BBDD<br>
+              <input type="checkbox" name="Enum_vulnera[]" value="3">Fuzzing<br>
+              <input type="checkbox" name="Enum_vulnera[]" value="4">Evaluación de software<br>
+              <input type="checkbox" name="Enum_vulnera[]" value="5">Otros escáneres<br>
+              <input type="checkbox" name="Enum_vulnera[]" value="6">Todos<br>
+
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_contrasenas">Herramienta para romper contraseñas:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_contrasenas[]" value="1">Herramientas para GPU<br>
+              <input type="checkbox" name="Enum_contrasenas[]" value="2">Ataques sin conexión<br>
+              <input type="checkbox" name="Enum_contrasenas[]" value="3">Ataques con conexión<br>
+              <input type="checkbox" name="Enum_contrasenas[]" value="4">Phising<br>
+              <input type="checkbox" name="Enum_contrasenas[]" value="5">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_wireless">Herramienta wireless:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_wireless[]" value="1">Herramienta Bluetooth<br>
+              <input type="checkbox" name="Enum_wireless[]" value="2">Herramienta RFID/NFC<br>
+              <input type="checkbox" name="Enum_wireless[]" value="3">Herramienta wireless<br>
+              <input type="checkbox" name="Enum_wireless[]" value="4">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_exploit">Herramienta para exploit:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_exploit[]" value="1">Explotación de redes<br>
+              <input type="checkbox" name="Enum_exploit[]" value="2">Ingeniería social<br>
+              <input type="checkbox" name="Enum_exploit[]" value="3">Denegación de servicio<br>
+              <input type="checkbox" name="Enum_exploit[]" value="4">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_SSF">Sniffing/Spoofing/Forensics:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_SSF[]" value="1">Network sniffer<br>
+              <input type="checkbox" name="Enum_SSF[]" value="2">Network Spoofing<br>
+              <input type="checkbox" name="Enum_SSF[]" value="3">Herramientas VoIP<br>
+              <input type="checkbox" name="Enum_SSF[]" value="4">Web sniffer<br>
+              <input type="checkbox" name="Enum_SSF[]" value="5">Herramientas forense<br>
+              <input type="checkbox" name="Enum_SSF[]" value="6">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_access">Post exploit:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_access[]" value="1">SO backdoor<br>
+              <input type="checkbox" name="Enum_access[]" value="2">Web backdoor<br>
+              <input type="checkbox" name="Enum_access[]" value="3">Herramientas para túneles<br>
+              <input type="checkbox" name="Enum_access[]" value="4">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_inversa">Ingeniería inversa:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_inversa[]" value="1">Depurador<br>
+              <input type="checkbox" name="Enum_inversa[]" value="2">Desensamblador<br>
+              <input type="checkbox" name="Enum_inversa[]" value="3">Otras herramientas<br>
+              <input type="checkbox" name="Enum_inversa[]" value="4">Todos<br>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Enum_informes">Presentación de informes:</label> 
+            <div class="col-md-4">
+              <input type="checkbox" name="Enum_informes[]" value="1">Gestión de evidencia<br>
+              <input type="checkbox" name="Enum_informes[]" value="2">Capturador de medios<br>
+              <input type="checkbox" name="Enum_informes[]" value="3">Todos<br>
+            </div>
+          </div>
+
+          <div class="boton">
+            <input class="btn btn-default" name="enviar" type="submit" value="Enviar">
+          </div><br>
+
+        </fieldset>
+
+      </form>
+
+    </div>
+    
+  </body>
+
+
+
+
+
+
+

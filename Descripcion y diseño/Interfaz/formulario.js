@@ -16,31 +16,36 @@
   }
 }*/
 
-/*var options = document.querySelectorAll('#my_select option');
-for (var i = 0, l = options.length; i < l; i++) {
-    options[i].selected = options[i].defaultSelected;
-}*/
-
 function restablecer() {
 
-  document.getElementById('Enum_SO').selectedIndex = 0;
-  document.getElementById('Enum_recopilacion').selectedIndex = 0;
-  document.getElementById('Enum_vulnera').selectedIndex = 0;
-  document.getElementById('Enum_contrasenas').selectedIndex = 0;
-  document.getElementById('Enum_wireless').selectedIndex = 0;
-  document.getElementById('Enum_exploit').selectedIndex = 0;
-  document.getElementById('Enum_SSF').selectedIndex = 0;
-  document.getElementById('Enum_access').selectedIndex = 0;
-  document.getElementById('Enum_inversa').selectedIndex = 0;
-  document.getElementById('Enum_informes').selectedIndex = 0;
+var select = $('#Enum_SO');
+select.val($('option:0', select).val());
 
-  alert('Valores restablecidos');
+var select = $('#Enum_recopilacion');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_vulnera');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_contrasenas');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_wireless');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_exploit');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_SSF');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_access');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_inversa');
+select.val($('option:0', select).val());
+
+var select = $('#Enum_informes');
+select.val($('option:0', select).val());
+  
 }
-
-
-
-//Esto es para mostrar información cuando pones el ratón encima de algo.
-/*
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});*/

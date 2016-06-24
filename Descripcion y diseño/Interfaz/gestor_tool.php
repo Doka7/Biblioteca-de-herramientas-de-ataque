@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 
-<html>
-
 <head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="TFG Formulario de ataques">
+  <meta name="description" content="Formulario de ataques">
   <meta name="author" content="Alejandro Docasar Moreno">
 
-  <title>Formulario de búsqueda</title>
+  <title>Gestor de herramientas</title>
 
   <!-- Favicon -->
   <link rel="icon" 
@@ -27,31 +25,30 @@
 
 <body>
 
+  <?php
+  session_start();
+  header("Cache-control: private");
+  header("Cache-control: no-cache, must-revalidate");
+  header("Pragma: no-cache");
+  if(isset($_SESSION['usuario']) ==null) {
+    header("Location: http://localhost/registro.php"); /* Redirección del navegador */
+  }
+  ?>
+
   <div class="container">
 
     <div class="page-header">
-      <h1>Biblioteca de herramientas de ataque</h1>
-      <p>Busque y encuentre la herramienta más adecuada para sus fines.</p>      
+      <h1>Gestión de herramientas</h1>
+      <p>Desde aquí podrá editar, borrar o insertar nuevas herramientas a la base de datos de la aplicación.</p>      
     </div>
 
     <form id="consulta" class="form-horizontal" method="post" action="#recargar">
 
+
       <fieldset>
 
-
-        <legend>
-          <div class="col-md-4">
-            <a href="registro.php" target="_blank">
-              <button type="button" class="btn btn-link" aria-label="Center Align" id="registro">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Gestión de herramientas
-              </button>
-            </a>
-          </div>
-
-          Realice su consulta <a href="informacion.html">(Información)</a>
-        </legend>
-
-        
+        <!-- Form Name -->
+        <legend>Si desea insertar una nueva herramienta, pinche <a href="formulario_insert.php" target="_blank"> aquí</a> </legend>
 
         <!-- Quicksearch input-->
         <div class="form-group">
@@ -223,11 +220,6 @@
           <input class="btn btn-default" type="submit" id="enviar" value="Enviar">
         </div><br>
 
-        <!--
-        <div class="volver">
-          <input class="btn btn-default" onclick="restablecer()" type="reset" id="restablecer" value="Restablecer">
-        </div><br> -->
-
       </fieldset>
 
     </form>
@@ -240,47 +232,46 @@
       $con = new PDO('mysql:host=localhost;dbname=Biblioteca de ataques', 'root', 'jjrch8mini');
       $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+      /*Para recuperar los datos da las consultas
+      echo 'Estás buscando según estos criterios: ' . '<br/>'; */
 
-  /*Para recuperar los datos da las consultas
-  echo 'Estás buscando según estos criterios: ' . '<br/>'; */
-
-  $BUSQUEDA_RAPIDA = $_POST['searchinput'];
+      $BUSQUEDA_RAPIDA = $_POST['searchinput'];
     //echo "Búsqueda rápida: " . $BUSQUEDA_RAPIDA . '<br/>';
 
-  $ID_SO = $_POST['Enum_SO'];
+      $ID_SO = $_POST['Enum_SO'];
     //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
-  $ID_RECOPILACION = $_POST['Enum_recopilacion'];
+      $ID_RECOPILACION = $_POST['Enum_recopilacion'];
     //echo 'ID de ataque de reconocimiento: ' . $ID_RECONOCIMIENTO . '<br/>'; 
 
-  $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
+      $ID_VULNERABILIDAD = $_POST['Enum_vulnera'];
     //echo 'ID de ataque de analisis de vulnerabilidades: ' . $ID_VULNERABILIDAD . '<br/>';
 
-  $ID_CONTRASENA = $_POST['Enum_contrasenas'];
+      $ID_CONTRASENA = $_POST['Enum_contrasenas'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-  $ID_WIRELESS = $_POST['Enum_wireless'];
+      $ID_WIRELESS = $_POST['Enum_wireless'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-  $ID_EXPLOIT = $_POST['Enum_exploit'];
+      $ID_EXPLOIT = $_POST['Enum_exploit'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-  $ID_SSF = $_POST['Enum_SSF'];
+      $ID_SSF = $_POST['Enum_SSF'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-  $ID_ACCESS = $_POST['Enum_access'];
+      $ID_ACCESS = $_POST['Enum_access'];
     //echo 'ID de ataque de romper contraseñas: ' . $ID_CONTRASENA . '<br/>'; 
 
-  $ID_INVERSA = $_POST['Enum_inversa'];
+      $ID_INVERSA = $_POST['Enum_inversa'];
     //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
 
-  $ID_INFORME = $_POST['Enum_informes'];
+      $ID_INFORME = $_POST['Enum_informes'];
     //echo 'ID de ataque de soporte para suplantación: ' . $ID_SUPLANTACION . '<br/>'; 
 
   //Recuperar datos de la BBDD con prepare().
 
     //Si el usuario utiliza la búsqueda rápida, el resto de campos se desestiman. 
-  if ($BUSQUEDA_RAPIDA != null) {
+      if ($BUSQUEDA_RAPIDA != null) {
       $quicksearch = "SELECT * FROM Ataques WHERE Ataques.Descripcion LIKE \"%$BUSQUEDA_RAPIDA%\""; //UNICAMENTE SE BUSCAN COINCIDENCIAS EN LA DESCRIPCION DE LOS ATAQUES.
       //echo $quicksearch;
       $stmt = $con->prepare($quicksearch); 
@@ -305,219 +296,219 @@
 
       //Se comprueba la subcategoría buscada para mostrar su nombre en los resultados de la búsqueda. 
 
-        switch ($ID_SO) {
-          case 1:
-            $SO = "Android ";
-            break;
-          case 2:
-            $SO = "iOS ";
-            break;
-          case 3:
-            $SO = "OS-X ";
-            break;
-          case 4:
-            $SO = "Ubuntu ";
-            break;
-          case 5:
-            $SO = "Windows ";
-            break;
-          case 6:
-            $SO = "Todos los SO ";
-            break;
-        }
-        
-        switch ($ID_RECOPILACION) {
-          case 1:
-            $RECOPILACION = "Análisis DNS ";
-            break;
-          case 2:
-            $RECOPILACION = "Análisis de tráfico ";
-            break;
-          case 3:
-            $RECOPILACION = "Análisis de OSINT ";
-            break;
-          case 4:
-            $RECOPILACION = "Análisis de routeo ";
-            break;
-          case 5:
-            $RECOPILACION = "Análisis de SMB ";
-            break;
-          case 6:
-            $RECOPILACION = "Análisis de SMTP ";
-            break;
-          case 7:
-            $RECOPILACION = "Análisis de SNMP ";
-            break;
-          case 8:
-            $RECOPILACION = "Análisis de SSL ";
-            break;
-          case 9:
-            $RECOPILACION = "Análisis de VoIP ";
-            break;
-          case 10:
-            $RECOPILACION = "Análisis de VPN ";
-            break;
-          case 11:
-            $RECOPILACION = "Detección de servicio ";
-            break;
-          case 12:
-            $RECOPILACION = "Detección de SO ";
-            break;
-          case 13:
-            $RECOPILACION = "Identificación de hosts en línea ";
-            break;
-          case 14:
-            $RECOPILACION = "Identificación de IDS ";
-            break;
-          case 15:
-            $RECOPILACION = "Todos los tipos de recopilación de informacion ";
-            break;
-        }
+      switch ($ID_SO) {
+        case 1:
+        $SO = "Android ";
+        break;
+        case 2:
+        $SO = "iOS ";
+        break;
+        case 3:
+        $SO = "OS-X ";
+        break;
+        case 4:
+        $SO = "Ubuntu ";
+        break;
+        case 5:
+        $SO = "Windows ";
+        break;
+        case 6:
+        $SO = "Todos los SO ";
+        break;
+      }
 
-        switch ($ID_VULNERABILIDAD) {
-          case 1:
-            $VULNERABILIDAD = "Herramientas Cisco ";
-            break;
-          case 2:
-            $VULNERABILIDAD = "Evaluación de BBDD ";
-            break;
-          case 3:
-            $VULNERABILIDAD = "Fuzzing ";
-            break;
-          case 4:
-            $VULNERABILIDAD = "Evaluación de software ";
-            break;
-          case 5:
-            $VULNERABILIDAD = "Otros escáneres ";
-            break;
-          case 6:
-            $VULNERABILIDAD = "Todos los análisis de vulnerabilidades ";
-            break;
-        }
+      switch ($ID_RECOPILACION) {
+        case 1:
+        $RECOPILACION = "Análisis DNS ";
+        break;
+        case 2:
+        $RECOPILACION = "Análisis de tráfico ";
+        break;
+        case 3:
+        $RECOPILACION = "Análisis de OSINT ";
+        break;
+        case 4:
+        $RECOPILACION = "Análisis de routeo ";
+        break;
+        case 5:
+        $RECOPILACION = "Análisis de SMB ";
+        break;
+        case 6:
+        $RECOPILACION = "Análisis de SMTP ";
+        break;
+        case 7:
+        $RECOPILACION = "Análisis de SNMP ";
+        break;
+        case 8:
+        $RECOPILACION = "Análisis de SSL ";
+        break;
+        case 9:
+        $RECOPILACION = "Análisis de VoIP ";
+        break;
+        case 10:
+        $RECOPILACION = "Análisis de VPN ";
+        break;
+        case 11:
+        $RECOPILACION = "Detección de servicio ";
+        break;
+        case 12:
+        $RECOPILACION = "Detección de SO ";
+        break;
+        case 13:
+        $RECOPILACION = "Identificación de hosts en línea ";
+        break;
+        case 14:
+        $RECOPILACION = "Identificación de IDS ";
+        break;
+        case 15:
+        $RECOPILACION = "Todos los tipos de recopilación de informacion ";
+        break;
+      }
 
-        switch ($ID_CONTRASENA) {
-          case 1:
-            $CONTRASENA = "Herramientas para GPU ";
-            break;
-          case 2:
-            $CONTRASENA = "Ataques sin conexión ";
-            break;
-          case 3:
-            $CONTRASENA = "Ataques con conexión ";
-            break;
-          case 4:
-            $CONTRASENA = "Phising ";
-            break;
-          case 5:
-            $CONTRASENA = "Todas las herramientas de contraseñas ";
-            break;
-        }
+      switch ($ID_VULNERABILIDAD) {
+        case 1:
+        $VULNERABILIDAD = "Herramientas Cisco ";
+        break;
+        case 2:
+        $VULNERABILIDAD = "Evaluación de BBDD ";
+        break;
+        case 3:
+        $VULNERABILIDAD = "Fuzzing ";
+        break;
+        case 4:
+        $VULNERABILIDAD = "Evaluación de software ";
+        break;
+        case 5:
+        $VULNERABILIDAD = "Otros escáneres ";
+        break;
+        case 6:
+        $VULNERABILIDAD = "Todos los análisis de vulnerabilidades ";
+        break;
+      }
 
-        switch ($ID_WIRELESS) {
-          case 1:
-            $WIRELESS = "Herramientas Bluetooth ";
-            break;
-          case 2:
-            $WIRELESS = "Herramientas RFID/NFC ";
-            break;
-          case 3:
-            $WIRELESS = "Herramientas WiFi ";
-            break;
-          case 4:
-            $WIRELESS = "Todas las herramientas wireless ";
-            break;
-        }
-        
-        switch ($ID_EXPLOIT) {
-          case 1:
-            $EXPLOIT = "Explotación de redes ";
-            break;
-          case 2:
-            $EXPLOIT = "Ingeniería social ";
-            break;
-          case 3:
-            $EXPLOIT = "Denegación de servicio ";
-            break;
-          case 4:
-            $EXPLOIT = "Todas las herramientas de exploit ";
-            break;
-        }
+      switch ($ID_CONTRASENA) {
+        case 1:
+        $CONTRASENA = "Herramientas para GPU ";
+        break;
+        case 2:
+        $CONTRASENA = "Ataques sin conexión ";
+        break;
+        case 3:
+        $CONTRASENA = "Ataques con conexión ";
+        break;
+        case 4:
+        $CONTRASENA = "Phising ";
+        break;
+        case 5:
+        $CONTRASENA = "Todas las herramientas de contraseñas ";
+        break;
+      }
+
+      switch ($ID_WIRELESS) {
+        case 1:
+        $WIRELESS = "Herramientas Bluetooth ";
+        break;
+        case 2:
+        $WIRELESS = "Herramientas RFID/NFC ";
+        break;
+        case 3:
+        $WIRELESS = "Herramientas WiFi ";
+        break;
+        case 4:
+        $WIRELESS = "Todas las herramientas wireless ";
+        break;
+      }
+
+      switch ($ID_EXPLOIT) {
+        case 1:
+        $EXPLOIT = "Explotación de redes ";
+        break;
+        case 2:
+        $EXPLOIT = "Ingeniería social ";
+        break;
+        case 3:
+        $EXPLOIT = "Denegación de servicio ";
+        break;
+        case 4:
+        $EXPLOIT = "Todas las herramientas de exploit ";
+        break;
+      }
       
-        switch ($ID_SSF) {
-          case 1:
-            $SSF = "Network sniffer ";
-            break;
-          case 2:
-            $SSF = "Network spoofing ";
-            break;
-          case 3:
-            $SSF = "Herramientas VoIP ";
-            break;
-          case 4:
-            $SSF = "Web sniffer ";
-            break;
-          case 5:
-            $SSF = "Herramientas forense ";
-            break;
-          case 6:
-            $SSF = "Todas las herramientas SSF ";
-            break;
-        }
+      switch ($ID_SSF) {
+        case 1:
+        $SSF = "Network sniffer ";
+        break;
+        case 2:
+        $SSF = "Network spoofing ";
+        break;
+        case 3:
+        $SSF = "Herramientas VoIP ";
+        break;
+        case 4:
+        $SSF = "Web sniffer ";
+        break;
+        case 5:
+        $SSF = "Herramientas forense ";
+        break;
+        case 6:
+        $SSF = "Todas las herramientas SSF ";
+        break;
+      }
 
-        switch ($ID_ACCESS) {
-          case 1:
-            $ACCESS = "SO backdoor ";
-            break;
-          case 2:
-            $ACCESS = "Web backdoor ";
-            break;
-          case 3:
-            $ACCESS = "Herramientas para túneles ";
-            break;
-          case 4:
-            $ACCESS = "Todas las herramientas post exploit ";
-            break;
-        }
-        
-        switch ($ID_INVERSA) {
-          case 1:
-            $INVERSA = "Depurador ";
-            break;
-          case 2:
-            $INVERSA = "Desensamblador ";
-            break;
-          case 3:
-            $INVERSA = "Otras herramientas de ingeniería inversa ";
-            break;
-          case 4:
-            $INVERSA = "Todas las herramientas de ingeniería inversa ";
-            break;
-        }
+      switch ($ID_ACCESS) {
+        case 1:
+        $ACCESS = "SO backdoor ";
+        break;
+        case 2:
+        $ACCESS = "Web backdoor ";
+        break;
+        case 3:
+        $ACCESS = "Herramientas para túneles ";
+        break;
+        case 4:
+        $ACCESS = "Todas las herramientas post exploit ";
+        break;
+      }
 
-        switch ($ID_INFORME) {
-          case 1:
-            $INFORME = "Gestión de evidencia ";
-            break;
-          case 2:
-            $INFORME = "Capturador de medios ";
-            break;
-          case 3:
-            $INFORME = "Todas las herramientas de informes ";
-            break;
-        }
+      switch ($ID_INVERSA) {
+        case 1:
+        $INVERSA = "Depurador ";
+        break;
+        case 2:
+        $INVERSA = "Desensamblador ";
+        break;
+        case 3:
+        $INVERSA = "Otras herramientas de ingeniería inversa ";
+        break;
+        case 4:
+        $INVERSA = "Todas las herramientas de ingeniería inversa ";
+        break;
+      }
+
+      switch ($ID_INFORME) {
+        case 1:
+        $INFORME = "Gestión de evidencia ";
+        break;
+        case 2:
+        $INFORME = "Capturador de medios ";
+        break;
+        case 3:
+        $INFORME = "Todas las herramientas de informes ";
+        break;
+      }
 
         //Construcción del string que se mostrará en los resultados de la búsqueda, que nos lleva en cada caso a la página de información. 
 
-        $SOfinal = "<a href=" . "informacion.html#info_so>" . $SO . "</a>";
-        $RECOPILACIONfinal = "<a href=" . "informacion.html#info_reco>" . $RECOPILACION . "</a>";
-        $VULNERABILIDADfinal = "<a href=" . "informacion.html#info_vulnera>" . $VULNERABILIDAD . "</a>";
-        $CONTRASENAfinal = "<a href=" . "informacion.html#info_contrasena>" . $CONTRASENA . "</a>";
-        $WIRELESSfinal = "<a href=" . "informacion.html#info_wireless>" . $WIRELESS . "</a>";
-        $EXPLOITfinal = "<a href=" . "informacion.html#info_exploit>" . $EXPLOIT . "</a>";
-        $SSFfinal = "<a href=" . "informacion.html#info_ssf>" . $SSF . "</a>";
-        $ACCESSfinal = "<a href=" . "informacion.html#info_postexploit>" . $ACCESS . "</a>";
-        $INVERSAfinal = "<a href=" . "informacion.html#info_inversa>" . $INVERSA . "</a>";
-        $INFORMEfinal = "<a href=" . "informacion.html#info_informes>" . $INFORME . "</a>";
+      $SOfinal = "<a href=" . "informacion.html#info_so>" . $SO . "</a>";
+      $RECOPILACIONfinal = "<a href=" . "informacion.html#info_reco>" . $RECOPILACION . "</a>";
+      $VULNERABILIDADfinal = "<a href=" . "informacion.html#info_vulnera>" . $VULNERABILIDAD . "</a>";
+      $CONTRASENAfinal = "<a href=" . "informacion.html#info_contrasena>" . $CONTRASENA . "</a>";
+      $WIRELESSfinal = "<a href=" . "informacion.html#info_wireless>" . $WIRELESS . "</a>";
+      $EXPLOITfinal = "<a href=" . "informacion.html#info_exploit>" . $EXPLOIT . "</a>";
+      $SSFfinal = "<a href=" . "informacion.html#info_ssf>" . $SSF . "</a>";
+      $ACCESSfinal = "<a href=" . "informacion.html#info_postexploit>" . $ACCESS . "</a>";
+      $INVERSAfinal = "<a href=" . "informacion.html#info_inversa>" . $INVERSA . "</a>";
+      $INFORMEfinal = "<a href=" . "informacion.html#info_informes>" . $INFORME . "</a>";
 
       /*Esto solo sirve de guía para construir una sentencia compleja.
       $sentencia_mas_compleja = "SELECT * FROM Ataques INNER JOIN Reco ON Reco.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Analisis_vulnera ON Analisis_vulnera.ID_ATAQUE = Ataques.ID_ATAQUE INNER JOIN Obtener_info ON Obtener_info.ID_ATAQUE = Ataques.ID_ATAQUE WHERE Reco.ID_RECONOCIMIENTO = $ID_RECONOCIMIENTO AND Analisis_vulnera.ID_VULNERABILIDAD = $ID_VULNERABILIDAD AND Obtener_info.ID_TIPO = $ID_TIPO";*/
@@ -610,23 +601,47 @@
         echo '<legend id="recargar">Se han encontrado ' . $number_of_rows . ' resultados de la búsqueda: ' . '<i>' . $BUSQUEDA_RAPIDA . $SOfinal . $RECOPILACIONfinal . $VULNERABILIDADfinal . $CONTRASENAfinal . $WIRELESSfinal . $EXPLOITfinal . $SSFfinal . $ACCESSfinal . $INVERSAfinal . $INFORMEfinal . '</i>' . '</legend>';
       }
 
-      //Imprimir resultados en una tabla.
-        echo '<div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
+    //Imprimir resultados en una tabla.
+      echo '<div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
           <tr>
             <th id="nombre" class="header">Nombre</th>
             <th class="header">Descripción</th>
+            <th class="header">Acciones</th>
           </tr>
         </thead>
         <tbody>';
 
-      //Mostrar nombre y descripción de cada ataque.
+      //Mostrar nombre y descripción de cada herramienta junto con botón para editar/eliminar cada una.
           while( $datos = $stmt->fetch() ){
-            echo '<tr> <td class=centrado>' . $datos[1] . '</td> <td class=justificado>' . $datos[2] . '</td> </tr>';
+            echo '<tr> <td class=centrado>' . $datos[1] . '</td> <td class=justificado>' . $datos[2] . '</td> 
+            <td>
+              <form id="editar" class="form-horizontal" method="post" action="edit_tool.php">
+                <div class="volver">
+                  <input type="hidden" name="id_tool" value=" ' . $datos[0] . '">
+                  <input type="hidden" name="nombre" value=" ' . $datos[1] . '">
+                  <input type="hidden" name="descripcion" value=" ' . htmlspecialchars($datos[2]) . '">
+                  <button type="submit" class="btn btn-default" aria-label="Left Align" id="editar" name="editar">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+                  </button>
+                </div> 
+              </form>
+              <form name="eliminar" id="eliminar" class="form-horizontal" method="post" action="delete_tool.php">
+                <div class="volver">
+                  <input type="hidden" name="id_tool" value=" ' . $datos[0] . '"> 
+                  <input type="hidden" name="nombre" value=" ' . $datos[1] . '">
+                  <input type="hidden" name="description" value=" ' . htmlspecialchars($datos[2]) . '">
+                  <button type="submit" class="btn btn-default" aria-label="Left Align" id="eliminar">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+                  </button>
+                </div>
+              </form>
+            </td></tr>';
           }
 
-          echo '</tbody></table></div>';    
+          echo '</tbody></table></div>';  
+
         } else {
           echo '<legend id="recargar">Se han encontrado ' . $number_of_rows . ' resultados de la búsqueda: ' . '<i>' . $BUSQUEDA_RAPIDA . $SOfinal . $RECOPILACIONfinal . $VULNERABILIDADfinal . $CONTRASENAfinal . $WIRELESSfinal . $EXPLOITfinal . $SSFfinal . $ACCESSfinal . $INVERSAfinal . $INFORMEfinal . '</i>' . '</legend>';
           echo "Al seleccionar más de un filtro se buscan herramientas que contengan TODAS las categorías seleccionadas, lo que puede ocasionar que no se devuelva ningún resultado.";
@@ -636,18 +651,12 @@
         echo 'Error: ' . $e->getMessage();
       }
 
-
 # close the connection
       $DBH = null;
 
       ?>
 
-    </div>  <!-- div container -->
-
-    <a href="#" class="back-to-top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-
+    </div>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -683,4 +692,9 @@
 
   </body>
 
-  </html>
+
+
+
+
+
+
